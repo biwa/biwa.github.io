@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Map - UDB Script</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Map";
+    var mkdocs_page_input_path = "Map.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> UDB Script</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Map</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#isdoom">isDoom</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ishexen">isHexen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isudmf">isUDMF</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mouseposition">mousePosition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#clearallmarksmarkfalse">clearAllMarks(mark=false)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearallselected">clearAllSelected()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkelinedefsmarkfalse">clearMarkeLinedefs(mark=false)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkesectorsmark-false">clearMarkeSectors(mark = false)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkesidedefsmark-false">clearMarkeSidedefs(mark = false)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkedthingsmarkfalse">clearMarkedThings(mark=false)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkedverticesmarkfalse">clearMarkedVertices(mark=false)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearselectedsectors">clearSelectedSectors()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearselectedthings">clearSelectedThings()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearselectedvertices">clearSelectedVertices()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#createthingpos-type0">createThing(pos, type=0)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#createvertexpos">createVertex(pos)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_1">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#drawlinesdata">drawLines(data)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_2">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getlinedefs">getLinedefs()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_3">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedlinedefsmark-true">getMarkedLinedefs(mark = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_4">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedsectorsmark-true">getMarkedSectors(mark = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_5">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedsidedefsmark-true">getMarkedSidedefs(mark = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_11">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_6">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedthingsmark-true">getMarkedThings(mark = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_12">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_7">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedverticesmarktrue">getMarkedVertices(mark=true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_13">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_8">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmultiplenewtagscount">getMultipleNewTags(count)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_14">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_9">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getnewtagusedtags-null">getNewTag(usedtags = null)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_15">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_10">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getsectors">getSectors()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_11">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getselectedlinedefsselected-true">getSelectedLinedefs(selected = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_16">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_12">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getselectedsectorsselected-true">getSelectedSectors(selected = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_17">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_13">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getselectedthingsselected-true">getSelectedThings(selected = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_18">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_14">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getselectedverticesselectedtrue">getSelectedVertices(selected=true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_19">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_15">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getsidedefs">getSidedefs()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_16">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getsidedefsfromselectedlinedefsselected-true">getSidedefsFromSelectedLinedefs(selected = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_20">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_17">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getthings">getThings()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_18">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getvertices">getVertices()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_19">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#invertallmarks">invertAllMarks()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#invertmarkedlinedefs">invertMarkedLinedefs()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#invertmarkedsectors">invertMarkedSectors()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#invertmarkedsidedefs">invertMarkedSidedefs()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#invertmarkedthings">invertMarkedThings()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#invertmarkedvertices">invertMarkedVertices()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedlinedefsmark-true">markSelectedLinedefs(mark = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_21">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedsectorsmark-true">markSelectedSectors(mark = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_22">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedthingsmark-true">markSelectedThings(mark = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_23">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedverticesmarktrue">markSelectedVertices(mark=true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_24">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestlinedefpos-maxrange-doublenan">nearestLinedef(pos, maxrange = double.NaN)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_25">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_20">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestsidedefpos">nearestSidedef(pos)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_26">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_21">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestthingpos-maxrange-doublenan">nearestThing(pos, maxrange = double.NaN)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_27">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_22">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestvertexpos-maxrange-doublenan">nearestVertex(pos, maxrange = double.NaN)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_28">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_23">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#snapalltoaccuracyusepreciseposition-true">snapAllToAccuracy(usepreciseposition = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_29">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#snappedtogridpos">snappedToGrid(pos)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_30">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_24">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stitchgeometrymergemode-mergegeometrymodeclassic">stitchGeometry(mergemode = MergeGeometryMode.CLASSIC)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_31">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_25">Return value</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Built-in libraries</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">UDB Script</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>Map</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="map">Map</h1>
+<h2 id="properties">Properties</h2>
+<h3 id="isdoom">isDoom</h3>
+<p><code>true</code> if the map is in Doom format, <code>false</code> if it isn't. Read-only.</p>
+<h3 id="ishexen">isHexen</h3>
+<p><code>true</code> if the map is in Hexen format, <code>false</code> if it isn't. Read-only.</p>
+<h3 id="isudmf">isUDMF</h3>
+<p><code>true</code> if the map is in UDMF, <code>false</code> if it isn't. Read-only.</p>
+<h3 id="mouseposition">mousePosition</h3>
+<p>The map coordinates of the mouse position as a <code>Vector2D</code>. Read-only.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="clearallmarksmarkfalse">clearAllMarks(mark=false)</h3>
+<p>Sets the <code>marked</code> property of all map elements. Can be passed <code>true</code> to mark all map elements.</p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
+</ul>
+<h3 id="clearallselected">clearAllSelected()</h3>
+<p>Clears all selected map elements.</p>
+<h3 id="clearmarkelinedefsmarkfalse">clearMarkeLinedefs(mark=false)</h3>
+<p>Sets the <code>marked</code> property of all <code>Linedef</code>s. Can be passed <code>true</code> to mark all <code>Linedef</code>s.</p>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
+</ul>
+<h3 id="clearmarkesectorsmark-false">clearMarkeSectors(mark = false)</h3>
+<p>Sets the <code>marked</code> property of all <code>Sector</code>s. Can be passed <code>true</code> to mark all <code>Sector</code>s.</p>
+<h4 id="parameters_2">Parameters</h4>
+<ul>
+<li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
+</ul>
+<h3 id="clearmarkesidedefsmark-false">clearMarkeSidedefs(mark = false)</h3>
+<p>Sets the <code>marked</code> property of all <code>Sidedef</code>s. Can be passed <code>true</code> to mark all <code>Sidedef</code>s.</p>
+<h4 id="parameters_3">Parameters</h4>
+<ul>
+<li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
+</ul>
+<h3 id="clearmarkedthingsmarkfalse">clearMarkedThings(mark=false)</h3>
+<p>Sets the <code>marked</code> property of all <code>Thing</code>s. Can be passed <code>true</code> to mark all <code>Thing</code>s.</p>
+<h4 id="parameters_4">Parameters</h4>
+<ul>
+<li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
+</ul>
+<h3 id="clearmarkedverticesmarkfalse">clearMarkedVertices(mark=false)</h3>
+<p>Sets the <code>marked</code> property of all vertices. Can be passed <code>true</code> to mark all vertices.</p>
+<h4 id="parameters_5">Parameters</h4>
+<ul>
+<li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
+</ul>
+<h3 id="clearselectedsectors">clearSelectedSectors()</h3>
+<p>Clears all selected <code>Sector</code>s.</p>
+<h3 id="clearselectedthings">clearSelectedThings()</h3>
+<p>Clears all selected <code>Thing</code>s.</p>
+<h3 id="clearselectedvertices">clearSelectedVertices()</h3>
+<p>Clears all selected vertices.</p>
+<h3 id="createthingpos-type0">createThing(pos, type=0)</h3>
+<p>Creates a new <code>Thing</code> at the given position. The position can be a <code>Vector2D</code> or an <code>Array</code> of two numbers. A thing type can be supplied optionally.</p>
+<pre><code class="language-js">var t1 = Map.createThing(new Vector2D(32, 64));
+var t2 = Map.createThing([ 32, 64 ]);
+var t3 = Map.createThing(new Vector2D(32, 64), 3001); // Create an Imp
+var t4 = Map.createThing([ 32, 64 ], 3001); // Create an Imp
+</code></pre>
+<h4 id="parameters_6">Parameters</h4>
+<ul>
+<li>pos: Position where the <code>Thing</code> should be created at</li>
+<li>type: Thing type (optional)</li>
+</ul>
+<h4 id="return-value">Return value</h4>
+<p>The new <code>Thing</code></p>
+<h3 id="createvertexpos">createVertex(pos)</h3>
+<p>Creates a new <code>Vertex</code> at the given position. The position can be a <code>Vector2D</code> or an <code>Array</code> of two numbers.</p>
+<pre><code class="language-js">var v1 = Map.createVertex(new Vector2D(32, 64));
+var v2 = Map.createVertex([ 32, 64 ]);
+</code></pre>
+<h4 id="parameters_7">Parameters</h4>
+<ul>
+<li>pos: Position where the <code>Vertex</code> should be created at</li>
+</ul>
+<h4 id="return-value_1">Return value</h4>
+<p>The created <code>Vertex</code></p>
+<h3 id="drawlinesdata">drawLines(data)</h3>
+<p>Draws lines. Data has to be an <code>Array</code> of <code>Array</code> of numbers, <code>Vector2D</code>s, <code>Vector3D</code>s, or objects with x and y properties. Note that the first and last element have to be at the same positions to make a complete drawing.</p>
+<pre><code class="language-js">Map.drawLines([
+    new Vector2D(64, 0),
+    new Vector2D(128, 0),
+    new Vector2D(128, 64),
+    new Vector2D(64, 64),
+    new Vector2D(64, 0)
+]);
+
+Map.drawLines([
+    [ 0, 0 ],
+    [ 64, 0 ],
+    [ 64, 64 ],
+    [ 0, 64 ],
+    [ 0, 0 ]
+]);
+</code></pre>
+<h4 id="parameters_8">Parameters</h4>
+<ul>
+<li>data: <code>Array</code> of positions</li>
+</ul>
+<h4 id="return-value_2">Return value</h4>
+<p><code>true</code> if drawing was successful, <code>false</code> if it wasn't</p>
+<h3 id="getlinedefs">getLinedefs()</h3>
+<p>Returns an <code>Array</code> of all <code>Linedef</code>s in the map.</p>
+<h4 id="return-value_3">Return value</h4>
+<p><code>Array</code> of <code>Linedef</code>s</p>
+<h3 id="getmarkedlinedefsmark-true">getMarkedLinedefs(mark = true)</h3>
+<p>Gets all marked (default) or unmarked <code>Linedef</code>s.</p>
+<h4 id="parameters_9">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to get all marked <code>Linedef</code>s (default), <code>false</code> to get all unmarked <code>Linedef</code>s</li>
+</ul>
+<h4 id="return-value_4">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getmarkedsectorsmark-true">getMarkedSectors(mark = true)</h3>
+<p>Gets all marked (default) or unmarked <code>Sector</code>s.</p>
+<h4 id="parameters_10">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to get all marked <code>Sector</code>s (default), <code>false</code> to get all unmarked <code>Sector</code>s</li>
+</ul>
+<h4 id="return-value_5">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getmarkedsidedefsmark-true">getMarkedSidedefs(mark = true)</h3>
+<p>Gets all marked (default) or unmarked <code>Sidedef</code>s.</p>
+<h4 id="parameters_11">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to get all marked <code>Sidedef</code>s (default), <code>false</code> to get all unmarked <code>Sidedef</code>s</li>
+</ul>
+<h4 id="return-value_6">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getmarkedthingsmark-true">getMarkedThings(mark = true)</h3>
+<p>Gets all marked (default) or unmarked <code>Thing</code>s.</p>
+<h4 id="parameters_12">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to get all marked <code>Thing</code>s (default), <code>false</code> to get all unmarked <code>Thing</code>s</li>
+</ul>
+<h4 id="return-value_7">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getmarkedverticesmarktrue">getMarkedVertices(mark=true)</h3>
+<p>Gets all marked (default) or unmarked vertices.</p>
+<h4 id="parameters_13">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to get all marked vertices (default), <code>false</code> to get all unmarked vertices</li>
+</ul>
+<h4 id="return-value_8">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getmultiplenewtagscount">getMultipleNewTags(count)</h3>
+<p>Gets multiple new tags.</p>
+<h4 id="parameters_14">Parameters</h4>
+<ul>
+<li>count: Number of tags to get</li>
+</ul>
+<h4 id="return-value_9">Return value</h4>
+<p><code>Array</code> of the new tags</p>
+<h3 id="getnewtagusedtags-null">getNewTag(usedtags = null)</h3>
+<p>Gets a new tag.</p>
+<h4 id="parameters_15">Parameters</h4>
+<ul>
+<li>usedtags: <code>Array</code> of tags to skip</li>
+</ul>
+<h4 id="return-value_10">Return value</h4>
+<p>The new tag</p>
+<h3 id="getsectors">getSectors()</h3>
+<p>Returns an <code>Array</code> of all <code>Sector</code>s in the map.</p>
+<h4 id="return-value_11">Return value</h4>
+<p><code>Array</code> of <code>Sector</code>s</p>
+<h3 id="getselectedlinedefsselected-true">getSelectedLinedefs(selected = true)</h3>
+<p>Gets all selected (default) or unselected <code>Linedef</code>s.</p>
+<h4 id="parameters_16">Parameters</h4>
+<ul>
+<li>selected: <code>true</code> to get all selected <code>Linedef</code>s, <code>false</code> to get all unselected ones</li>
+</ul>
+<h4 id="return-value_12">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getselectedsectorsselected-true">getSelectedSectors(selected = true)</h3>
+<p>Gets all selected (default) or unselected <code>Sector</code>s.</p>
+<h4 id="parameters_17">Parameters</h4>
+<ul>
+<li>selected: <code>true</code> to get all selected <code>Sector</code>s, <code>false</code> to get all unselected ones</li>
+</ul>
+<h4 id="return-value_13">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getselectedthingsselected-true">getSelectedThings(selected = true)</h3>
+<p>Gets all selected (default) or unselected <code>Thing</code>s.</p>
+<h4 id="parameters_18">Parameters</h4>
+<ul>
+<li>selected: <code>true</code> to get all selected <code>Thing</code>s, <code>false</code> to get all unselected ones</li>
+</ul>
+<h4 id="return-value_14">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getselectedverticesselectedtrue">getSelectedVertices(selected=true)</h3>
+<p>Gets all selected (default) or unselected vertices.</p>
+<h4 id="parameters_19">Parameters</h4>
+<ul>
+<li>selected: <code>true</code> to get all selected vertices, <code>false</code> to get all unselected ones</li>
+</ul>
+<h4 id="return-value_15">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getsidedefs">getSidedefs()</h3>
+<p>Returns an <code>Array</code> of all <code>Sidedef</code>s in the map.</p>
+<h4 id="return-value_16">Return value</h4>
+<p><code>Array</code> of <code>Sidedef</code>s</p>
+<h3 id="getsidedefsfromselectedlinedefsselected-true">getSidedefsFromSelectedLinedefs(selected = true)</h3>
+<p>Gets all <code>Sidedef</code>s from the selected <code>Linedef</code>s.</p>
+<h4 id="parameters_20">Parameters</h4>
+<ul>
+<li>selected: <code>true</code> to get all <code>Sidedef</code>s of all selected <code>Linedef</code>s, <code>false</code> to get all <code>Sidedef</code>s of all unselected <code>Linedef</code>s</li>
+</ul>
+<h4 id="return-value_17">Return value</h4>
+<p><em>missing</em></p>
+<h3 id="getthings">getThings()</h3>
+<p>Returns an <code>Array</code> of all <code>Thing</code>s in the map.</p>
+<h4 id="return-value_18">Return value</h4>
+<p><code>Array</code> of <code>Thing</code>s</p>
+<h3 id="getvertices">getVertices()</h3>
+<p>Returns an <code>Array</code> of all <code>Vertex</code> in the map.</p>
+<h4 id="return-value_19">Return value</h4>
+<p><code>Array</code> of <code>Vertex</code></p>
+<h3 id="invertallmarks">invertAllMarks()</h3>
+<p>Inverts all marks of all map elements.</p>
+<h3 id="invertmarkedlinedefs">invertMarkedLinedefs()</h3>
+<p>Inverts the <code>marked</code> property of all <code>Linedef</code>s.</p>
+<h3 id="invertmarkedsectors">invertMarkedSectors()</h3>
+<p>Inverts the <code>marked</code> property of all <code>Sector</code>s.</p>
+<h3 id="invertmarkedsidedefs">invertMarkedSidedefs()</h3>
+<p>Inverts the <code>marked</code> property of all <code>Sidedef</code>s.</p>
+<h3 id="invertmarkedthings">invertMarkedThings()</h3>
+<p>Inverts the <code>marked</code> property of all <code>Thing</code>s.</p>
+<h3 id="invertmarkedvertices">invertMarkedVertices()</h3>
+<p>Inverts the <code>marked</code> property of all vertices.</p>
+<h3 id="markselectedlinedefsmark-true">markSelectedLinedefs(mark = true)</h3>
+<p>Marks (default) or unmarks all selected <code>Linedef</code>s.</p>
+<h4 id="parameters_21">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to mark all selected <code>Linedef</code>s (default), <code>false</code> to unmark</li>
+</ul>
+<h3 id="markselectedsectorsmark-true">markSelectedSectors(mark = true)</h3>
+<p>Marks (default) or unmarks all selected <code>Sector</code>s.</p>
+<h4 id="parameters_22">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to mark all selected <code>Sector</code>s (default), <code>false</code> to unmark</li>
+</ul>
+<h3 id="markselectedthingsmark-true">markSelectedThings(mark = true)</h3>
+<p>Marks (default) or unmarks all selected <code>Thing</code>s.</p>
+<h4 id="parameters_23">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to mark all selected <code>Thing</code>s (default), <code>false</code> to unmark</li>
+</ul>
+<h3 id="markselectedverticesmarktrue">markSelectedVertices(mark=true)</h3>
+<p>Marks (default) or unmarks all selected vertices.</p>
+<h4 id="parameters_24">Parameters</h4>
+<ul>
+<li>mark: <code>true</code> to mark all selected vertices (default), <code>false</code> to unmark</li>
+</ul>
+<h3 id="nearestlinedefpos-maxrange-doublenan">nearestLinedef(pos, maxrange = double.NaN)</h3>
+<p>Gets the <code>Linedef</code> that's nearest to the specified position.</p>
+<h4 id="parameters_25">Parameters</h4>
+<ul>
+<li>pos: Position to check against</li>
+<li>maxrange: Maximum range (optional)</li>
+</ul>
+<h4 id="return-value_20">Return value</h4>
+<p>Nearest <code>Linedef</code></p>
+<h3 id="nearestsidedefpos">nearestSidedef(pos)</h3>
+<p>Gets the <code>Sidedef</code> that's nearest to the specified position.</p>
+<h4 id="parameters_26">Parameters</h4>
+<ul>
+<li>pos: Position to check against</li>
+<li>maxrange: Maximum range (optional)</li>
+</ul>
+<h4 id="return-value_21">Return value</h4>
+<p>Nearest <code>Sidedef</code></p>
+<h3 id="nearestthingpos-maxrange-doublenan">nearestThing(pos, maxrange = double.NaN)</h3>
+<p>Gets the <code>Thing</code> that's nearest to the specified position.</p>
+<h4 id="parameters_27">Parameters</h4>
+<ul>
+<li>pos: Position to check against</li>
+<li>maxrange: Maximum range (optional)</li>
+</ul>
+<h4 id="return-value_22">Return value</h4>
+<p>Nearest <code>Linedef</code></p>
+<h3 id="nearestvertexpos-maxrange-doublenan">nearestVertex(pos, maxrange = double.NaN)</h3>
+<p>Gets the <code>Vertex</code> that's nearest to the specified position.</p>
+<h4 id="parameters_28">Parameters</h4>
+<ul>
+<li>pos: Position to check against</li>
+<li>maxrange: Maximum range (optional)</li>
+</ul>
+<h4 id="return-value_23">Return value</h4>
+<p>Nearest <code>Vertex</code></p>
+<h3 id="snapalltoaccuracyusepreciseposition-true">snapAllToAccuracy(usepreciseposition = true)</h3>
+<p>Snaps all vertices and things to the map format accuracy. Call this to ensure the vertices and things are at valid coordinates.</p>
+<h4 id="parameters_29">Parameters</h4>
+<ul>
+<li>usepreciseposition: <code>true</code> if decimal places defined by the map format should be used, <code>false</code> if no decimal places should be used</li>
+</ul>
+<h3 id="snappedtogridpos">snappedToGrid(pos)</h3>
+<p>Returns the given point snapped to the current grid.</p>
+<h4 id="parameters_30">Parameters</h4>
+<ul>
+<li>pos: Point that should be snapped to the grid</li>
+</ul>
+<h4 id="return-value_24">Return value</h4>
+<p>Snapped position as <code>Vector2D</code></p>
+<h3 id="stitchgeometrymergemode-mergegeometrymodeclassic">stitchGeometry(mergemode = MergeGeometryMode.CLASSIC)</h3>
+<p>Stitches marked geometry with non-marked geometry.</p>
+<h4 id="parameters_31">Parameters</h4>
+<ul>
+<li>mergemode: Mode to merge by</li>
+</ul>
+<h4 id="return-value_25">Return value</h4>
+<p><code>true</code> if successful, <code>false</code> if failed</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../QueryOptions/" class="btn btn-neutral float-right" title="QueryOptions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Linedef/" class="btn btn-neutral" title="Linedef"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Linedef/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../QueryOptions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

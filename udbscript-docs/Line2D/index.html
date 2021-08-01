@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Line2D - UDB Script</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Line2D";
+    var mkdocs_page_input_path = "Line2D.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> UDB Script</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Line2D</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#constructors">Constructors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#line2dv1-v2">Line2D(v1, v2)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#static-methods">Static methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#areintersectinga1-a2-b1-b2-boundedtrue">areIntersecting(a1, a2, b1, b2, bounded=true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#areintersectingline1-line2-boundedtrue">areIntersecting(line1, line2, bounded=true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_1">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getcoordinatesatv1-v2-u">getCoordinatesAt(v1, v2, u)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_2">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getdistancetolinev1-v2-p-boundedtrue">getDistanceToLine(v1, v2, p, bounded=true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_3">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getdistancetolinesqv1-v2-p-bounded-true">getDistanceToLineSq(v1, v2, p, bounded = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_4">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getintersectionpointa1-a2-b1-b2-bounded-true">getIntersectionPoint(a1, a2, b1, b2, bounded = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_5">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getnearestonlinev1-v2-p">getNearestOnLine(v1, v2, p)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_6">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getsideoflinev1-v2-p">getSideOfLine(v1, v2, p)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_7">Return value</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#v1">v1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#v2">v2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#getangle">getAngle()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_8">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getanglerad">getAngleRad()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_9">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getcoordinatesatu">getCoordinatesAt(u)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_10">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getintersectionpointa1-a2-bounded-true">getIntersectionPoint(a1, a2, bounded = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_11">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getintersectionpointray-boundedtrue">getIntersectionPoint(ray, bounded=true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_11">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_12">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getlength">getLength()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_13">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getperpendicular">getPerpendicular()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_14">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getsideoflinep">getSideOfLine(p)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_12">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_15">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isintersectinga1-a2-bounded-true">isIntersecting(a1, a2, bounded = true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_13">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_16">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isintersectingray-boundedtrue">isIntersecting(ray, bounded=true)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_14">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_17">Return value</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Map/">Map</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Built-in libraries</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">UDB Script</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>Line2D</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="line2d">Line2D</h1>
+<h2 id="constructors">Constructors</h2>
+<h3 id="line2dv1-v2">Line2D(v1, v2)</h3>
+<p>Creates a new <code>Line2D</code> from two points.</p>
+<pre><code class="language-js">let line1 = new Line2D(new Vector2D(32, 64), new Vector2D(96, 128));
+let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li>v1: First point</li>
+<li>v2: Second point</li>
+</ul>
+<h2 id="static-methods">Static methods</h2>
+<h3 id="areintersectinga1-a2-b1-b2-boundedtrue">areIntersecting(a1, a2, b1, b2, bounded=true)</h3>
+<p>Checks if two lines defined by their start and end points intersect. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li>a1: First point of first line</li>
+<li>a2: Second point of first line</li>
+<li>b1: First point of second line</li>
+<li>b2: Second point of second line</li>
+<li>bounded: <code>true</code> (default) to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value">Return value</h4>
+<p><code>true</code> if the lines intersect, <code>false</code> if they do not</p>
+<h3 id="areintersectingline1-line2-boundedtrue">areIntersecting(line1, line2, bounded=true)</h3>
+<p>Checks if two lines intersect. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_2">Parameters</h4>
+<ul>
+<li>line1: First <code>Line2D</code></li>
+<li>line2: Second <code>Line2D</code></li>
+<li>bounded: <code>true</code> to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value_1">Return value</h4>
+<p><code>true</code> if the lines intersect, <code>false</code> if they do not</p>
+<h3 id="getcoordinatesatv1-v2-u">getCoordinatesAt(v1, v2, u)</h3>
+<p>Returns the coordinate on a line defined by its start and end points as <code>Vector2D</code>.</p>
+<h4 id="parameters_3">Parameters</h4>
+<ul>
+<li>v1: First point of the line</li>
+<li>v2: Second point of the line</li>
+<li>u: Offset coordinate relative to the first point of the line</li>
+</ul>
+<h4 id="return-value_2">Return value</h4>
+<p>Point on the line as <code>Vector2D</code></p>
+<h3 id="getdistancetolinev1-v2-p-boundedtrue">getDistanceToLine(v1, v2, p, bounded=true)</h3>
+<p>Returns the shortest distance from point <code>p</code> to the line defined by its start and end points. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_4">Parameters</h4>
+<ul>
+<li>v1: First point of the line</li>
+<li>v2: Second point of the line</li>
+<li>p: Point to get the distance to</li>
+<li>bounded: <code>true</code> (default) to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value_3">Return value</h4>
+<p>The shortest distance to the line</p>
+<h3 id="getdistancetolinesqv1-v2-p-bounded-true">getDistanceToLineSq(v1, v2, p, bounded = true)</h3>
+<p>Returns the shortest square distance from point <code>p</code> to the line defined by its start and end points. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_5">Parameters</h4>
+<ul>
+<li>v1: First point of the line</li>
+<li>v2: Second point of the line</li>
+<li>p: Point to get the distance to</li>
+<li>bounded: <code>true</code> (default) to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value_4">Return value</h4>
+<p>The shortest square distance to the line</p>
+<h3 id="getintersectionpointa1-a2-b1-b2-bounded-true">getIntersectionPoint(a1, a2, b1, b2, bounded = true)</h3>
+<p>Returns the intersection point of two lines as <code>Vector2D</code>. If the lines do not intersect the <code>x</code> and <code>y</code> properties of the <code>Vector2D</code> are <code>NaN</code>. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_6">Parameters</h4>
+<ul>
+<li>a1: First point of first line</li>
+<li>a2: Second point of first line</li>
+<li>b1: First point of second line</li>
+<li>b2: Second point of second line</li>
+<li>bounded: <code>true</code> (default) to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value_5">Return value</h4>
+<p>The intersection point as <code>Vector2D</code></p>
+<h3 id="getnearestonlinev1-v2-p">getNearestOnLine(v1, v2, p)</h3>
+<p>Returns the offset coordinate on the line nearest to the given point. <code>0.0</code> being on the first point, <code>1.0</code> being on the second point, and <code>u = 0.5</code> being in the middle between the points.</p>
+<h4 id="parameters_7">Parameters</h4>
+<ul>
+<li>v1: First point of the line</li>
+<li>v2: Second point of the line</li>
+<li>p: Point to get the nearest offset coordinate from</li>
+</ul>
+<h4 id="return-value_6">Return value</h4>
+<p>The offset value relative to the first point of the line.</p>
+<h3 id="getsideoflinev1-v2-p">getSideOfLine(v1, v2, p)</h3>
+<p>Returns which the of the line defined by its start and end point a given point is on.</p>
+<h4 id="parameters_8">Parameters</h4>
+<ul>
+<li>v1: First point of the line</li>
+<li>v2: Second point of the line</li>
+<li>p: Point to check</li>
+</ul>
+<h4 id="return-value_7">Return value</h4>
+<p><code>&lt; 0</code> if <code>p</code> is on the front (right) side, <code>&gt; 0</code> if <code>p</code> is on the back (left) side, <code>== 0</code> if <code>p</code> in on the line</p>
+<h2 id="properties">Properties</h2>
+<h3 id="v1">v1</h3>
+<p><code>Vector2D</code> position of start of the line.</p>
+<h3 id="v2">v2</h3>
+<p><code>Vector2D</code> position of end of the line.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="getangle">getAngle()</h3>
+<p>Return the angle of the <code>Line2D</code> in degrees.</p>
+<h4 id="return-value_8">Return value</h4>
+<p>Angle of the <code>Line2D</code> in degrees</p>
+<h3 id="getanglerad">getAngleRad()</h3>
+<p>Returns the angle of the <code>Line2D</code> in radians.</p>
+<h4 id="return-value_9">Return value</h4>
+<p>Angle of <code>Line2D</code> in radians</p>
+<h3 id="getcoordinatesatu">getCoordinatesAt(u)</h3>
+<p>Returns the coordinates on the line, where <code>u</code> is the position between the first and second point, <code>u = 0.0</code> being on the first point, <code>u = 1.0</code> being on the second point, and <code>u = 0.5</code> being in the middle between the points.</p>
+<h4 id="parameters_9">Parameters</h4>
+<ul>
+<li>u: Position on the line, between 0.0 and 1.0</li>
+</ul>
+<h4 id="return-value_10">Return value</h4>
+<p>Position on the line as <code>Vector2D</code></p>
+<h3 id="getintersectionpointa1-a2-bounded-true">getIntersectionPoint(a1, a2, bounded = true)</h3>
+<p>Returns the intersection point of of the given line defined by its start and end points with this line as <code>Vector2D</code>. If the lines do not intersect the <code>x</code> and <code>y</code> properties of the <code>Vector2D</code> are <code>NaN</code>. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_10">Parameters</h4>
+<ul>
+<li>a1: First point of first line</li>
+<li>a2: Second point of first line</li>
+<li>bounded: <code>true</code> (default) to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value_11">Return value</h4>
+<p>The intersection point as <code>Vector2D</code></p>
+<h3 id="getintersectionpointray-boundedtrue">getIntersectionPoint(ray, bounded=true)</h3>
+<p>Returns the intersection point of of the given line with this line as <code>Vector2D</code>. If the lines do not intersect the <code>x</code> and <code>y</code> properties of the <code>Vector2D</code> are <code>NaN</code>. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_11">Parameters</h4>
+<ul>
+<li>ray: Other <code>Line2D</code> to get the intersection point from</li>
+<li>bounded: <code>true</code> (default) to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value_12">Return value</h4>
+<p>The intersection point as <code>Vector2D</code></p>
+<h3 id="getlength">getLength()</h3>
+<p>Returns the length of the <code>Line2D</code>.</p>
+<h4 id="return-value_13">Return value</h4>
+<p>Length of the <code>Line2D</code></p>
+<h3 id="getperpendicular">getPerpendicular()</h3>
+<p>Returns the perpendicular of this line as <code>Vector2D</code>.</p>
+<h4 id="return-value_14">Return value</h4>
+<p>Perpendicular of this line as <code>Vector2D</code></p>
+<h3 id="getsideoflinep">getSideOfLine(p)</h3>
+<p>Returns which the of the line defined by its start and end point a given point is on.</p>
+<h4 id="parameters_12">Parameters</h4>
+<ul>
+<li>p: Point to check</li>
+</ul>
+<h4 id="return-value_15">Return value</h4>
+<p><code>&lt; 0</code> if <code>p</code> is on the front (right) side, <code>&gt; 0</code> if <code>p</code> is on the back (left) side, <code>== 0</code> if <code>p</code> in on the line</p>
+<h3 id="isintersectinga1-a2-bounded-true">isIntersecting(a1, a2, bounded = true)</h3>
+<p>Checks if the given line intersects this line. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_13">Parameters</h4>
+<ul>
+<li>a1: First point of the line to check against</li>
+<li>a2: Second point of the line to check against</li>
+<li>bounded: <code>true</code> (default) to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value_16">Return value</h4>
+<p><code>true</code> if the lines intersect, <code>false</code> if they do not</p>
+<h3 id="isintersectingray-boundedtrue">isIntersecting(ray, bounded=true)</h3>
+<p>Checks if the given <code>Line2D</code> intersects this line. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
+<h4 id="parameters_14">Parameters</h4>
+<ul>
+<li>ray: <code>Line2D</code> to check against</li>
+<li>bounded: <code>true</code> (default) to use finite length of lines, <code>false</code> to use infinite length of lines</li>
+</ul>
+<h4 id="return-value_17">Return value</h4>
+<p><code>true</code> if lines intersect, <code>false</code> if they do not intersect</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Linedef/" class="btn btn-neutral float-right" title="Linedef">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ImageInfo/" class="btn btn-neutral" title="ImageInfo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ImageInfo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Linedef/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

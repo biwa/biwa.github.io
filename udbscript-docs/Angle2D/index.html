@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Angle2D - UDB Script</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Angle2D";
+    var mkdocs_page_input_path = "Angle2D.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> UDB Script</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Angle2D</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#static-methods">Static methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#degtoraddeg">degToRad(deg)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#doomtorealdoomangle">doomToReal(doomangle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_1">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#doomtorealraddoomangle">doomToRealRad(doomangle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_2">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getanglep1-p2-p3">getAngle(p1, p2, p3)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_3">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getangleradp1-p2-p3">getAngleRad(p1, p2, p3)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_4">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#normalizedangle">normalized(angle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_5">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#normalizedradangle">normalizedRad(angle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_6">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#radtodegrad">radToDeg(rad)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_7">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#realtodoomrealangle">realToDoom(realangle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_8">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#realtodoomradrealangle">realToDoomRad(realangle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_9">Return value</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Map/">Map</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Built-in libraries</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">UDB Script</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>Angle2D</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="angle2d">Angle2D</h1>
+<h2 id="static-methods">Static methods</h2>
+<h3 id="degtoraddeg">degToRad(deg)</h3>
+<p>Converts degrees to radians.</p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li>deg: Angle in degrees</li>
+</ul>
+<h4 id="return-value">Return value</h4>
+<p>Angle in radians</p>
+<h3 id="doomtorealdoomangle">doomToReal(doomangle)</h3>
+<p>Converts a Doom angle (where 0° is east) to a real world angle (where 0° is north).</p>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li>doomangle: Doom angle in degrees</li>
+</ul>
+<h4 id="return-value_1">Return value</h4>
+<p>Doom angle in degrees</p>
+<h3 id="doomtorealraddoomangle">doomToRealRad(doomangle)</h3>
+<p>Converts a Doom angle (where 0° is east) to a real world angle (where 0° is north) in radians.</p>
+<h4 id="parameters_2">Parameters</h4>
+<ul>
+<li>doomangle: Doom angle in degrees</li>
+</ul>
+<h4 id="return-value_2">Return value</h4>
+<p>Doom angle in radians</p>
+<h3 id="getanglep1-p2-p3">getAngle(p1, p2, p3)</h3>
+<p>Returns the angle between three positions.</p>
+<h4 id="parameters_3">Parameters</h4>
+<ul>
+<li>p1: First position</li>
+<li>p2: Second position</li>
+<li>p3: Third position</li>
+</ul>
+<h4 id="return-value_3">Return value</h4>
+<p>Angle in degrees</p>
+<h3 id="getangleradp1-p2-p3">getAngleRad(p1, p2, p3)</h3>
+<p>Returns the angle between three positions in radians.</p>
+<h4 id="parameters_4">Parameters</h4>
+<ul>
+<li>p1: First position</li>
+<li>p2: Second position</li>
+<li>p3: Third position</li>
+</ul>
+<h4 id="return-value_4">Return value</h4>
+<p>Angle in radians</p>
+<h3 id="normalizedangle">normalized(angle)</h3>
+<p>Normalizes an angle in degrees so that it is bigger or equal to 0° and smaller than 360°.</p>
+<h4 id="parameters_5">Parameters</h4>
+<ul>
+<li>angle: Angle in degrees</li>
+</ul>
+<h4 id="return-value_5">Return value</h4>
+<p>Normalized angle in degrees</p>
+<h3 id="normalizedradangle">normalizedRad(angle)</h3>
+<p>Normalizes an angle in radians so that it is bigger or equal to 0 and smaller than 2 Pi.</p>
+<h4 id="parameters_6">Parameters</h4>
+<ul>
+<li>angle: Angle in radians</li>
+</ul>
+<h4 id="return-value_6">Return value</h4>
+<p>Normalized angle in radians</p>
+<h3 id="radtodegrad">radToDeg(rad)</h3>
+<p>Converts radians to degrees.</p>
+<h4 id="parameters_7">Parameters</h4>
+<ul>
+<li>rad: Angle in radians</li>
+</ul>
+<h4 id="return-value_7">Return value</h4>
+<p>Angle in degrees</p>
+<h3 id="realtodoomrealangle">realToDoom(realangle)</h3>
+<p>Converts a real world angle (where 0° is north) to a Doom angle (where 0° is east).</p>
+<h4 id="parameters_8">Parameters</h4>
+<ul>
+<li>realangle: Real world angle in degrees</li>
+</ul>
+<h4 id="return-value_8">Return value</h4>
+<p>Doom angle in degrees</p>
+<h3 id="realtodoomradrealangle">realToDoomRad(realangle)</h3>
+<p>Converts a real world  angle (where 0° is north) to a Doom angle (where 0° is east) in radians.</p>
+<h4 id="parameters_9">Parameters</h4>
+<ul>
+<li>realangle: Real world angle in radians</li>
+</ul>
+<h4 id="return-value_9">Return value</h4>
+<p>Doom angle in degrees</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Data/" class="btn btn-neutral float-right" title="Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../gettingstarted/" class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../gettingstarted/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Data/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

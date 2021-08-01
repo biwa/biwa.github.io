@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Vector2D - UDB Script</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Vector2D";
+    var mkdocs_page_input_path = "Vector2D.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> UDB Script</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Map/">Map</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Vector2D</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#constructors">Constructors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vector2dv">Vector2D(v)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vector2dx-y">Vector2D(x, y)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#static-methods">Static methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#crossproducta-b">crossProduct(a, b)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dotproducta-b">dotProduct(a, b)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_1">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fromangleangle">fromAngle(angle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_2">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fromangleradangle">fromAngleRad(angle)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_3">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getanglea-b">getAngle(a, b)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_4">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getanglerada-b">getAngleRad(a, b)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_5">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getdistancea-b">getDistance(a, b)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_6">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getdistancesqa-b">getDistanceSq(a, b)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_7">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reflectv-m">reflect(v, m)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_8">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reversedv">reversed(v)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_11">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_9">Return value</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#getangle">getAngle()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_10">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getanglerad">getAngleRad()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_11">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getinversetransformedinvoffsetx-invoffsety-invscalex-invscaley">getInverseTransformed(invoffsetx, invoffsety, invscalex, invscaley)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_12">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_12">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getlength">getLength()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_13">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getlengthsq">getLengthSq()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_14">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getnormal">getNormal()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_15">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getperpendicular">getPerpendicular()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_16">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getrotatedtheta">getRotated(theta)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_13">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_17">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getrotatedradtheta">getRotatedRad(theta)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_14">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_18">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getsign">getSign()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_19">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gettransformedoffsetx-offsety-scalex-scaley">getTransformed(offsetx, offsety, scalex, scaley)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_15">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_20">Return value</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Built-in libraries</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">UDB Script</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>Vector2D</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="vector2d">Vector2D</h1>
+<h2 id="constructors">Constructors</h2>
+<h3 id="vector2dv">Vector2D(v)</h3>
+<p>Creates a new <code>Vector2D</code> from a point.</p>
+<pre><code class="language-js">let v = new Vector2D([ 32, 64 ]);
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li>v: The vector to create the <code>Vector2D</code> from</li>
+</ul>
+<h3 id="vector2dx-y">Vector2D(x, y)</h3>
+<p>Creates a new <code>Vector2D</code> from x and y coordinates</p>
+<pre><code class="language-js">let v = new Vector2D(32, 64);
+</code></pre>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li>x: The x coordinate</li>
+<li>y: The y coordinate</li>
+</ul>
+<h2 id="static-methods">Static methods</h2>
+<h3 id="crossproducta-b">crossProduct(a, b)</h3>
+<p>Returns the cross product of two <code>Vector2D</code>s.</p>
+<h4 id="parameters_2">Parameters</h4>
+<ul>
+<li>a: First <code>Vector2D</code></li>
+<li>b: Second <code>Vector2D</code></li>
+</ul>
+<h4 id="return-value">Return value</h4>
+<p>Cross product of the two vectors as <code>Vector2D</code></p>
+<h3 id="dotproducta-b">dotProduct(a, b)</h3>
+<p>Returns the dot product of two <code>Vector2D</code>s.</p>
+<h4 id="parameters_3">Parameters</h4>
+<ul>
+<li>a: First <code>Vector2D</code></li>
+<li>b: Second <code>Vector2D</code></li>
+</ul>
+<h4 id="return-value_1">Return value</h4>
+<p>The dot product of the two vectors</p>
+<h3 id="fromangleangle">fromAngle(angle)</h3>
+<p>Creates a <code>Vector2D</code> from an angle in degrees,</p>
+<h4 id="parameters_4">Parameters</h4>
+<ul>
+<li>angle: Angle in degrees</li>
+</ul>
+<h4 id="return-value_2">Return value</h4>
+<p>Vector as <code>Vector2D</code></p>
+<h3 id="fromangleradangle">fromAngleRad(angle)</h3>
+<p>Creates a <code>Vector2D</code> from an angle in radians,</p>
+<h4 id="parameters_5">Parameters</h4>
+<ul>
+<li>angle: Angle in radians</li>
+</ul>
+<h4 id="return-value_3">Return value</h4>
+<p>Vector as <code>Vector2D</code></p>
+<h3 id="getanglea-b">getAngle(a, b)</h3>
+<p>Returns the angle between two <code>Vector2D</code>s in radians.</p>
+<h4 id="parameters_6">Parameters</h4>
+<ul>
+<li>a: First <code>Vector2D</code></li>
+<li>b: Second <code>Vector2D</code></li>
+</ul>
+<h4 id="return-value_4">Return value</h4>
+<p>Angle in radians</p>
+<h3 id="getanglerada-b">getAngleRad(a, b)</h3>
+<p>Returns the angle between two <code>Vector2D</code>s in radians</p>
+<h4 id="parameters_7">Parameters</h4>
+<ul>
+<li>a: First <code>Vector2D</code></li>
+<li>b: Second <code>Vector2D</code></li>
+</ul>
+<h4 id="return-value_5">Return value</h4>
+<p>Angle in radians</p>
+<h3 id="getdistancea-b">getDistance(a, b)</h3>
+<p>Returns the distance between two <code>Vector2D</code>s.</p>
+<h4 id="parameters_8">Parameters</h4>
+<ul>
+<li>a: First <code>Vector2D</code></li>
+<li>b: Second <code>Vector2D</code></li>
+</ul>
+<h4 id="return-value_6">Return value</h4>
+<p>The distance</p>
+<h3 id="getdistancesqa-b">getDistanceSq(a, b)</h3>
+<p>Returns the square distance between two <code>Vector2D</code>s.</p>
+<h4 id="parameters_9">Parameters</h4>
+<ul>
+<li>a: First <code>Vector2D</code></li>
+<li>b: Second <code>Vector2D</code></li>
+</ul>
+<h4 id="return-value_7">Return value</h4>
+<p>The squared distance</p>
+<h3 id="reflectv-m">reflect(v, m)</h3>
+<p>Reflects a <code>Vector2D</code> over a mirror <code>Vector2D</code>.</p>
+<h4 id="parameters_10">Parameters</h4>
+<ul>
+<li>v: <code>Vector2D</code> to reflect</li>
+<li>m: Mirror <code>Vector2D</code></li>
+</ul>
+<h4 id="return-value_8">Return value</h4>
+<p>The reflected vector as <code>Vector2D</code></p>
+<h3 id="reversedv">reversed(v)</h3>
+<p>Returns a reversed <code>Vector2D</code>.</p>
+<h4 id="parameters_11">Parameters</h4>
+<ul>
+<li>v: <code>Vector2D</code> to reverse</li>
+</ul>
+<h4 id="return-value_9">Return value</h4>
+<p>The reversed vector as <code>Vector2D</code></p>
+<h2 id="methods">Methods</h2>
+<h3 id="getangle">getAngle()</h3>
+<p>Returns the angle of the <code>Vector2D</code> in degree.</p>
+<h4 id="return-value_10">Return value</h4>
+<p>The angle of the <code>Vector2D</code> in degree</p>
+<h3 id="getanglerad">getAngleRad()</h3>
+<p>Returns the angle of the <code>Vector2D</code> in radians.</p>
+<h4 id="return-value_11">Return value</h4>
+<p>The angle of the <code>Vector2D</code> in radians</p>
+<h3 id="getinversetransformedinvoffsetx-invoffsety-invscalex-invscaley">getInverseTransformed(invoffsetx, invoffsety, invscalex, invscaley)</h3>
+<p>Returns the inverse transformed vector as <code>Vector2D</code>.</p>
+<h4 id="parameters_12">Parameters</h4>
+<ul>
+<li>invoffsetx: X offset</li>
+<li>invoffsety: Y offset</li>
+<li>invscalex: X scale</li>
+<li>invscaley: Y scale</li>
+</ul>
+<h4 id="return-value_12">Return value</h4>
+<p>The inverse transformed vector as <code>Vector2D</code></p>
+<h3 id="getlength">getLength()</h3>
+<p>Returns the length of the <code>Vector2D</code>.</p>
+<h4 id="return-value_13">Return value</h4>
+<p>The length of the <code>Vector2D</code></p>
+<h3 id="getlengthsq">getLengthSq()</h3>
+<p>Returns the square length of the <code>Vector2D</code>.</p>
+<h4 id="return-value_14">Return value</h4>
+<p>The square length of the <code>Vector2D</code></p>
+<h3 id="getnormal">getNormal()</h3>
+<p>Returns the normal of the <code>Vector2D</code>.</p>
+<h4 id="return-value_15">Return value</h4>
+<p>The normal as <code>Vector2D</code></p>
+<h3 id="getperpendicular">getPerpendicular()</h3>
+<p>Returns the perpendicular to the <code>Vector2D</code>.</p>
+<h4 id="return-value_16">Return value</h4>
+<p>The perpendicular as <code>Vector2D</code></p>
+<h3 id="getrotatedtheta">getRotated(theta)</h3>
+<p>Returns the rotated vector as <code>Vector2D</code>.</p>
+<h4 id="parameters_13">Parameters</h4>
+<ul>
+<li>theta: Angle in degree to rotate by</li>
+</ul>
+<h4 id="return-value_17">Return value</h4>
+<p>The rotated <code>Vector2D</code></p>
+<h3 id="getrotatedradtheta">getRotatedRad(theta)</h3>
+<p>Returns the rotated vector as <code>Vector2D</code>.</p>
+<h4 id="parameters_14">Parameters</h4>
+<ul>
+<li>theta: Angle in radians to rotate by</li>
+</ul>
+<h4 id="return-value_18">Return value</h4>
+<p>The rotated <code>Vector2D</code></p>
+<h3 id="getsign">getSign()</h3>
+<p>Returns a <code>Vector2D</code> with the sign of all components.</p>
+<h4 id="return-value_19">Return value</h4>
+<p>A <code>Vector2D</code> with the sign of all components</p>
+<h3 id="gettransformedoffsetx-offsety-scalex-scaley">getTransformed(offsetx, offsety, scalex, scaley)</h3>
+<p>Returns the transformed vector as <code>Vector2D</code>.</p>
+<h4 id="parameters_15">Parameters</h4>
+<ul>
+<li>offsetx: X offset</li>
+<li>offsety: Y offset</li>
+<li>scalex: X scale</li>
+<li>scaley: Y scale</li>
+</ul>
+<h4 id="return-value_20">Return value</h4>
+<p>The transformed vector as <code>Vector2D</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Vector3D/" class="btn btn-neutral float-right" title="Vector3D">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Thing/" class="btn btn-neutral" title="Thing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Thing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Vector3D/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Linedef - UDB Script</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Linedef";
+    var mkdocs_page_input_path = "Linedef.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> UDB Script</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Linedef</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#action">action</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#angle">angle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#anglerad">angleRad</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#args">args</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#back">back</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#end">end</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fields">fields</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flags">flags</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#front">front</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#index">index</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#length">length</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lengthinv">lengthInv</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lengthsq">lengthSq</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#line">line</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#marked">marked</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#selected">selected</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#start">start</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tag">tag</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#addtagtag">addTag(tag)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#applysidedflags">applySidedFlags()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clearflags">clearFlags()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#copypropertiestoother">copyPropertiesTo(other)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delete">delete()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#distancetopos-bounded">distanceTo(pos, bounded)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_1">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#distancetosqpos-bounded">distanceToSq(pos, bounded)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_2">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flipsidedefs">flipSidedefs()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flipvertices">flipVertices()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getcenterpoint">getCenterPoint()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_3">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getsidepointfront">getSidePoint(front)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_4">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gettags">getTags()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_5">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestonlinepos">nearestOnLine(pos)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_6">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removetagtag">removeTag(tag)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_7">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#safedistancetopos-bounded">safeDistanceTo(pos, bounded)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_8">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#safedistancetosqpos-bounded">safeDistanceToSq(pos, bounded)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_9">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sideoflinepos">sideOfLine(pos)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_10">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#splitv">split(v)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_11">Return value</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Map/">Map</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Built-in libraries</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">UDB Script</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>Linedef</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="linedef">Linedef</h1>
+<h2 id="properties">Properties</h2>
+<h3 id="action">action</h3>
+<p><code>Linedef</code> action.</p>
+<h3 id="angle">angle</h3>
+<p>The <code>Linedef</code>'s angle in degree. Read-only.</p>
+<h3 id="anglerad">angleRad</h3>
+<p>The <code>Linedef</code>'s angle in radians. Read-only.</p>
+<h3 id="args">args</h3>
+<p><code>Array</code> of arguments of the <code>Linedef</code>. Number of arguments depends on game config (usually 5). Hexen format and UDMF only.</p>
+<h3 id="back">back</h3>
+<p>The <code>Linedef</code>'s back <code>Sidedef</code>. Is <code>null</code> when there is no back.</p>
+<h3 id="end">end</h3>
+<p>The linedef's end <code>Vertex</code>.</p>
+<h3 id="fields">fields</h3>
+<p>UDMF fields. It's an object with the fields as properties.</p>
+<pre><code class="language-js">s.fields.comment = 'This is a comment';
+s.fields['comment'] = 'This is a comment'; // Also  works
+s.fields.xscalefloor = 2.0;
+t.score = 100;
+</code></pre>
+<p>It is also possible to define new fields:</p>
+<pre><code class="language-js">s.fields.user_myboolfield = true;
+</code></pre>
+<p>There are some restrictions, though:</p>
+<ul>
+<li>it only works for fields that are not in the base UDMF standard, since those are handled directly in the respective class</li>
+<li>it does not work for flags. While they are technically also UDMF fields, they are handled in the <code>flags</code> field of the respective class (where applicable)</li>
+<li>JavaScript does not distinguish between integer and floating point numbers, it only has floating point numbers (of double precision). For fields where UDB knows that they are integers this it not a problem, since it'll automatically convert the floating point numbers to integers (dropping the fractional part). However, if you need to specify an integer value for an unknown or custom field you have to work around this limitation, using the <code>UniValue</code> class:</li>
+</ul>
+<pre><code class="language-js">s.fields.user_myintfield = new UniValue(0, 25); // Sets the 'user_myintfield' field to an integer value of 25
+</code></pre>
+<h3 id="flags">flags</h3>
+<p><code>Linedef</code> flags. It's an object with the flags as properties. In Doom format and Hexen format they are identified by numbers, in UDMF by their name.
+Doom and Hexen:</p>
+<pre><code class="language-js">ld.flags['64'] = true; // Set the block sound flag
+</code></pre>
+<p>UDMF:</p>
+<pre><code class="language-js">ld.flags['blocksound'] = true; // Set the block sound flag
+ld.flags.blocksound = true; // Also works
+</code></pre>
+<h3 id="front">front</h3>
+<p>The <code>Linedef</code>'s front <code>Sidedef</code>. Is <code>null</code> when there is no front (should not happen).</p>
+<h3 id="index">index</h3>
+<p>The linedef's index. Read-only.</p>
+<h3 id="length">length</h3>
+<p>The <code>Linedef</code>'s length. Read-only.</p>
+<h3 id="lengthinv">lengthInv</h3>
+<p>1.0 / length. Read-only.</p>
+<h3 id="lengthsq">lengthSq</h3>
+<p>The <code>Linedef</code>'s squared length. Read-only.</p>
+<h3 id="line">line</h3>
+<p>The <code>Line2D</code> from the <code>start</code> to the <code>end</code> <code>Vertex</code>.</p>
+<h3 id="marked">marked</h3>
+<p>If the <code>Linedef</code> is marked or not. It is used to mark map elements that were created or changed (for example after drawing new geometry).</p>
+<h3 id="selected">selected</h3>
+<p>If the <code>Linedef</code> is selected or not.</p>
+<h3 id="start">start</h3>
+<p>The linedef's start <code>Vertex</code>.</p>
+<h3 id="tag">tag</h3>
+<p><code>Linedef</code> tag. UDMF only.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="addtagtag">addTag(tag)</h3>
+<p>Adds a tag to the <code>Linedef</code>. UDMF only. Supported game configurations only.</p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li>tag: Tag to add</li>
+</ul>
+<h4 id="return-value">Return value</h4>
+<p><code>true</code> when the tag was added, <code>false</code> when the tag already exists</p>
+<h3 id="applysidedflags">applySidedFlags()</h3>
+<p>Automatically sets the blocking and two-sided flags based on the existing <code>Sidedef</code>s.</p>
+<h3 id="clearflags">clearFlags()</h3>
+<p>Clears all flags.</p>
+<h3 id="copypropertiestoother">copyPropertiesTo(other)</h3>
+<p>Copies the properties of this <code>Linedef</code> to another <code>Linedef</code>.</p>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li>other: The <code>Linedef</code> to copy the properties to</li>
+</ul>
+<h3 id="delete">delete()</h3>
+<p>Deletes the <code>Linedef</code>. Note that this will result in unclosed <code>Sector</code>s unless it has the same <code>Sector</code>s on both sides.</p>
+<h3 id="distancetopos-bounded">distanceTo(pos, bounded)</h3>
+<p>Gets the shortest distance from <code>pos</code> to the line.</p>
+<h4 id="parameters_2">Parameters</h4>
+<ul>
+<li>pos: Point to check against</li>
+<li>bounded: <code>true</code> if only the finite length of the line should be used, <code>false</code> if the infinite length of the line should be used</li>
+</ul>
+<h4 id="return-value_1">Return value</h4>
+<p>Distance to the line</p>
+<h3 id="distancetosqpos-bounded">distanceToSq(pos, bounded)</h3>
+<p>Gets the shortest squared distance from <code>pos</code> to the line.</p>
+<h4 id="parameters_3">Parameters</h4>
+<ul>
+<li>pos: Point to check against</li>
+<li>bounded: <code>true</code> if only the finite length of the line should be used, <code>false</code> if the infinite length of the line should be used</li>
+</ul>
+<h4 id="return-value_2">Return value</h4>
+<p>Squared distance to the line</p>
+<h3 id="flipsidedefs">flipSidedefs()</h3>
+<p>Flips the <code>Linedef</code>'s <code>Sidedefs</code>.</p>
+<h3 id="flipvertices">flipVertices()</h3>
+<p>Flips the <code>Linedef</code>'s vertex attachments.</p>
+<h3 id="getcenterpoint">getCenterPoint()</h3>
+<p>Gets a <code>Vector2D</code> that's in the center of the <code>Linedef</code>.</p>
+<h4 id="return-value_3">Return value</h4>
+<p><code>Vector2D</code> in the center of the <code>Linedef</code></p>
+<h3 id="getsidepointfront">getSidePoint(front)</h3>
+<p>Gets a <code>Vector2D</code> for testing on one side. The <code>Vector2D</code> is on the front when <code>true</code> is passed, otherwise on the back.</p>
+<h4 id="parameters_4">Parameters</h4>
+<ul>
+<li>front: <code>true</code> for front, <code>false</code> for back</li>
+</ul>
+<h4 id="return-value_4">Return value</h4>
+<p><code>Vector2D</code> that's either on the front of back of the Linedef</p>
+<h3 id="gettags">getTags()</h3>
+<p>Returns an <code>Array</code> of the <code>Linedef</code>'s tags. UDMF only. Supported game configurations only.</p>
+<h4 id="return-value_5">Return value</h4>
+<p><code>Array</code> of tags</p>
+<h3 id="nearestonlinepos">nearestOnLine(pos)</h3>
+<p>Get a <code>Vector2D</code> that's <em>on</em> the line, closest to <code>pos</code>. <code>pos</code> can either be a <code>Vector2D</code>, or an array of numbers.</p>
+<pre><code class="language-js">var v1 = ld.nearestOnLine(new Vector2D(32, 64));
+var v2 = ld.nearestOnLine([ 32, 64 ]);
+</code></pre>
+<h4 id="parameters_5">Parameters</h4>
+<ul>
+<li>pos: Point to check against</li>
+</ul>
+<h4 id="return-value_6">Return value</h4>
+<p><code>Vector2D</code> that's on the linedef</p>
+<h3 id="removetagtag">removeTag(tag)</h3>
+<p>Removes a tag from the <code>Linedef</code>. UDMF only. Supported game configurations only.</p>
+<h4 id="parameters_6">Parameters</h4>
+<ul>
+<li>tag: Tag to remove</li>
+</ul>
+<h4 id="return-value_7">Return value</h4>
+<p><code>true</code> when the tag was removed successfully, <code>false</code> when the tag did not exist</p>
+<h3 id="safedistancetopos-bounded">safeDistanceTo(pos, bounded)</h3>
+<p>Gets the shortest "safe" distance from <code>pos</code> to the line. If <code>bounded</code> is <code>true</code> that means that the not the whole line's length will be used, but <code>lengthInv</code> less at the start and end.</p>
+<h4 id="parameters_7">Parameters</h4>
+<ul>
+<li>pos: Point to check against</li>
+<li>bounded: <code>true</code> if only the finite length of the line should be used, <code>false</code> if the infinite length of the line should be used</li>
+</ul>
+<h4 id="return-value_8">Return value</h4>
+<p>Distance to the line</p>
+<h3 id="safedistancetosqpos-bounded">safeDistanceToSq(pos, bounded)</h3>
+<p>Gets the shortest "safe" squared distance from <code>pos</code> to the line. If <code>bounded</code> is <code>true</code> that means that the not the whole line's length will be used, but <code>lengthInv</code> less at the start and end.</p>
+<h4 id="parameters_8">Parameters</h4>
+<ul>
+<li>pos: Point to check against</li>
+<li>bounded: <code>true</code> if only the finite length of the line should be used, <code>false</code> if the infinite length of the line should be used</li>
+</ul>
+<h4 id="return-value_9">Return value</h4>
+<p>Squared distance to the line</p>
+<h3 id="sideoflinepos">sideOfLine(pos)</h3>
+<p>Tests which side of the <code>Linedef</code> <code>pos</code> is on. Returns &lt; 0 for front (right) side, &gt; for back (left) side, and 0 if <code>pos</code> is on the line.</p>
+<h4 id="parameters_9">Parameters</h4>
+<ul>
+<li>pos: Point to check against</li>
+</ul>
+<h4 id="return-value_10">Return value</h4>
+<p>&lt; 0 for front (right) side, &gt; for back (left) side, and 0 if <code>pos</code> is on the line</p>
+<h3 id="splitv">split(v)</h3>
+<p>Splits the <code>Linedef</code> at the given <code>Vertex</code>. The result will be two lines, from the start <code>Vertex</code> of the <code>Linedef</code> to <code>v</code>, and from <code>v</code> to the end <code>Vertex</code> of the <code>Linedef</code>.</p>
+<h4 id="parameters_10">Parameters</h4>
+<ul>
+<li>v: <code>Vertex</code> to split by</li>
+</ul>
+<h4 id="return-value_11">Return value</h4>
+<p>The newly created <code>Linedef</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Map/" class="btn btn-neutral float-right" title="Map">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Line2D/" class="btn btn-neutral" title="Line2D"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Line2D/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Map/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
