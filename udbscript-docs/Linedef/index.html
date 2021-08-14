@@ -72,6 +72,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#action">action</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#activate">activate</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#angle">angle</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#anglerad">angleRad</a>
@@ -145,6 +147,8 @@
     <li class="toctree-l4"><a class="reference internal" href="#return-value_2">Return value</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flip">flip()</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#flipsidedefs">flipSidedefs()</a>
     </li>
@@ -284,6 +288,8 @@
 <h2 id="properties">Properties</h2>
 <h3 id="action">action</h3>
 <p><code>Linedef</code> action.</p>
+<h3 id="activate">activate</h3>
+<p>The activation flag. Hexen format only.</p>
 <h3 id="angle">angle</h3>
 <p>The <code>Linedef</code>'s angle in degree. Read-only.</p>
 <h3 id="anglerad">angleRad</h3>
@@ -380,8 +386,10 @@ ld.flags.blocksound = true; // Also works
 </ul>
 <h4 id="return-value_2">Return value</h4>
 <p>Squared distance to the line</p>
+<h3 id="flip">flip()</h3>
+<p>Flips the <code>Linedef</code>'s vertex attachments and <code>Sidedef</code>s. This is a shortcut to using both <code>flipVertices()</code> and <code>flipSidedefs()</code>.</p>
 <h3 id="flipsidedefs">flipSidedefs()</h3>
-<p>Flips the <code>Linedef</code>'s <code>Sidedefs</code>.</p>
+<p>Flips the <code>Linedef</code>'s <code>Sidedef</code>s.</p>
 <h3 id="flipvertices">flipVertices()</h3>
 <p>Flips the <code>Linedef</code>'s vertex attachments.</p>
 <h3 id="getcenterpoint">getCenterPoint()</h3>
