@@ -134,11 +134,17 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gettriangles">getTriangles()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_3">Return value</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#intersectp">intersect(p)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-value_3">Return value</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_4">Return value</a>
     </li>
         </ul>
     </li>
@@ -152,7 +158,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-value_4">Return value</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_5">Return value</a>
     </li>
         </ul>
     </li>
@@ -284,6 +290,10 @@ s.flags.noattack = true; // Also works
 <p>Returns an <code>Array</code> of the <code>Sector</code>'s tags. UDMF only. Supported game configurations only.</p>
 <h4 id="return-value_2">Return value</h4>
 <p><code>Array</code> of tags</p>
+<h3 id="gettriangles">getTriangles()</h3>
+<p>Gets an array of <code>Vector2D</code> arrays, representing the vertices of the triangulated sector.</p>
+<h4 id="return-value_3">Return value</h4>
+<p>Array of <code>Vector2D</code> arrays</p>
 <h3 id="intersectp">intersect(p)</h3>
 <p>Checks if the given point is in this <code>Sector</code> or not. The given point can be a <code>Vector2D</code> or an <code>Array</code> of two numbers.</p>
 <pre><code class="language-js">if(s.intersect(new Vector2D(32, 64)))
@@ -296,7 +306,7 @@ if(s.intersect([ 32, 64 ]))
 <ul>
 <li>p: Point to test</li>
 </ul>
-<h4 id="return-value_3">Return value</h4>
+<h4 id="return-value_4">Return value</h4>
 <p><em>missing</em></p>
 <h3 id="joinother">join(other)</h3>
 <p>Joins this <code>Sector</code> with another <code>Sector</code>. Lines shared between the sectors will not be removed.</p>
@@ -310,7 +320,7 @@ if(s.intersect([ 32, 64 ]))
 <ul>
 <li>tag: Tag to remove</li>
 </ul>
-<h4 id="return-value_4">Return value</h4>
+<h4 id="return-value_5">Return value</h4>
 <p><code>true</code> when the tag was removed successfully, <code>false</code> when the tag did not exist</p>
               
             </div>
