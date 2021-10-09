@@ -220,6 +220,9 @@ t.score = 100;
 </ul>
 <pre><code class="language-js">s.fields.user_myintfield = new UniValue(0, 25); // Sets the 'user_myintfield' field to an integer value of 25
 </code></pre>
+<p>To remove a field you have to assign <code>null</code> to it:</p>
+<pre><code class="language-js">s.fields.user_myintfield = null;
+</code></pre>
 <h3 id="floorz">floorZ</h3>
 <p>The floor z position of the <code>Vertex</code>. Only available in UDMF. Only available for supported game configurations.</p>
 <h3 id="index">index</h3>
