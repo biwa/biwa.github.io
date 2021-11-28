@@ -91,7 +91,7 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#constructors">Constructors</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#penpos">Pen(pos)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#penposnew-vector2d00-00">Pen(pos=new Vector2D(0.0, 0.0))</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
     </li>
@@ -127,25 +127,25 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#turnleftdegrees">turnLeft(degrees)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#turnleftdegrees900">turnLeft(degrees=90.0)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#turnleftradiansradians">turnLeftRadians(radians)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#turnleftradiansradiansmathpi2">turnLeftRadians(radians=Math.PI/2)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#turnrightdegrees">turnRight(degrees)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#turnrightdegrees900">turnRight(degrees=90.0)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#turnrightradiansradians">turnRightRadians(radians)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#turnrightradiansradiansmathpi2">turnRightRadians(radians=Math.PI/2)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
     </li>
@@ -153,7 +153,11 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#drawvertex">drawVertex()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#finishdrawing">finishDrawing()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#finishdrawingclosefalse">finishDrawing(close=false)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -213,7 +217,7 @@ for(let i=0; i &lt; 5; i++)
 p.finishDrawing();
 </code></pre>
 <h2 id="constructors">Constructors</h2>
-<h3 id="penpos">Pen(pos)</h3>
+<h3 id="penposnew-vector2d00-00">Pen(pos=new Vector2D(0.0, 0.0))</h3>
 <p>Creates an instance of the <code>Pen</code> class. The position can be a <code>Vector2D</code> or an <code>Array</code> of two numbers.</p>
 <h4 id="parameters">Parameters</h4>
 <ul>
@@ -246,25 +250,25 @@ p.finishDrawing();
 <ul>
 <li>radians: radians to set the angle to</li>
 </ul>
-<h3 id="turnleftdegrees">turnLeft(degrees)</h3>
+<h3 id="turnleftdegrees900">turnLeft(degrees=90.0)</h3>
 <p>Turns the pen left by the given degrees.</p>
 <h4 id="parameters_5">Parameters</h4>
 <ul>
 <li>degrees: degrees to turn left by. If omitted it will turn by 90°</li>
 </ul>
-<h3 id="turnleftradiansradians">turnLeftRadians(radians)</h3>
+<h3 id="turnleftradiansradiansmathpi2">turnLeftRadians(radians=Math.PI/2)</h3>
 <p>Turns the pen left by the given radians.</p>
 <h4 id="parameters_6">Parameters</h4>
 <ul>
 <li>radians: radians to turn left by. If omitted it will turn by Pi/2</li>
 </ul>
-<h3 id="turnrightdegrees">turnRight(degrees)</h3>
+<h3 id="turnrightdegrees900">turnRight(degrees=90.0)</h3>
 <p>Turns the pen right by the given degrees.</p>
 <h4 id="parameters_7">Parameters</h4>
 <ul>
 <li>degrees: degrees to turn right by. If omitted it will turn by 90°</li>
 </ul>
-<h3 id="turnrightradiansradians">turnRightRadians(radians)</h3>
+<h3 id="turnrightradiansradiansmathpi2">turnRightRadians(radians=Math.PI/2)</h3>
 <p>Turns the pen right by the given radians.</p>
 <h4 id="parameters_8">Parameters</h4>
 <ul>
@@ -272,8 +276,12 @@ p.finishDrawing();
 </ul>
 <h3 id="drawvertex">drawVertex()</h3>
 <p>Draws a <code>Vertex</code> at the current position.</p>
-<h3 id="finishdrawing">finishDrawing()</h3>
+<h3 id="finishdrawingclosefalse">finishDrawing(close=false)</h3>
 <p>Finishes the drawing, actually creating the geometry. Also resets the vertices of this instance of <code>Pen</code>.</p>
+<h4 id="parameters_9">Parameters</h4>
+<ul>
+<li>close: if the drawing should be automatically close (going back to the first vertex) or not</li>
+</ul>
               
             </div>
           </div>

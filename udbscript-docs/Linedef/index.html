@@ -214,7 +214,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#splitv">split(v)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#splitpos">split(pos)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
     </li>
@@ -456,11 +456,11 @@ var v2 = ld.nearestOnLine([ 32, 64 ]);
 </ul>
 <h4 id="return-value_10">Return value</h4>
 <p>&lt; 0 for front (right) side, &gt; for back (left) side, and 0 if <code>pos</code> is on the line</p>
-<h3 id="splitv">split(v)</h3>
-<p>Splits the <code>Linedef</code> at the given <code>Vertex</code>. The result will be two lines, from the start <code>Vertex</code> of the <code>Linedef</code> to <code>v</code>, and from <code>v</code> to the end <code>Vertex</code> of the <code>Linedef</code>.</p>
+<h3 id="splitpos">split(pos)</h3>
+<p>Splits the <code>Linedef</code> at the given position. This can either be a <code>Vector2D</code>, an array of numbers, or an existing <code>Vertex</code>. The result will be two lines, from the start <code>Vertex</code> of the <code>Linedef</code> to <code>pos</code>, and from <code>pos</code> to the end <code>Vertex</code> of the <code>Linedef</code>.</p>
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>v: <code>Vertex</code> to split by</li>
+<li>pos: <code>Vertex</code> to split by</li>
 </ul>
 <h4 id="return-value_11">Return value</h4>
 <p>The newly created <code>Linedef</code></p>

@@ -340,33 +340,45 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#invertmarkedvertices">invertMarkedVertices()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#markselectedlinedefsmark-true">markSelectedLinedefs(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#joinsectorssectors">joinSectors(sectors)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_21">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#markselectedsectorsmark-true">markSelectedSectors(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedlinedefsmark-true">markSelectedLinedefs(mark = true)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_22">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#markselectedthingsmark-true">markSelectedThings(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedsectorsmark-true">markSelectedSectors(mark = true)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_23">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#markselectedverticesmarktrue">markSelectedVertices(mark=true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedthingsmark-true">markSelectedThings(mark = true)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_24">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#nearestlinedefpos-maxrange-doublenan">nearestLinedef(pos, maxrange = double.NaN)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedverticesmarktrue">markSelectedVertices(mark=true)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_25">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mergesectorssectors">mergeSectors(sectors)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_26">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestlinedefpos-maxrange-doublenan">nearestLinedef(pos, maxrange = double.NaN)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_27">Parameters</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#return-value_28">Return value</a>
     </li>
@@ -374,7 +386,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#nearestsidedefpos">nearestSidedef(pos)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_26">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_28">Parameters</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#return-value_29">Return value</a>
     </li>
@@ -382,7 +394,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#nearestthingpos-maxrange-doublenan">nearestThing(pos, maxrange = double.NaN)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_27">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_29">Parameters</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#return-value_30">Return value</a>
     </li>
@@ -390,7 +402,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#nearestvertexpos-maxrange-doublenan">nearestVertex(pos, maxrange = double.NaN)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_28">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_30">Parameters</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#return-value_31">Return value</a>
     </li>
@@ -398,13 +410,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#snapalltoaccuracyusepreciseposition-true">snapAllToAccuracy(usepreciseposition = true)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_29">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_31">Parameters</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#snappedtogridpos">snappedToGrid(pos)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_30">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_32">Parameters</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#return-value_32">Return value</a>
     </li>
@@ -412,7 +424,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#stitchgeometrymergemode-mergegeometrymodeclassic">stitchGeometry(mergemode = MergeGeometryMode.CLASSIC)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parameters_31">Parameters</a>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_33">Parameters</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#return-value_33">Return value</a>
     </li>
@@ -536,7 +548,7 @@
 <h3 id="clearselectedvertices">clearSelectedVertices()</h3>
 <p>Clears all selected vertices.</p>
 <h3 id="createthingpos-type0">createThing(pos, type=0)</h3>
-<p>Creates a new <code>Thing</code> at the given position. The position can be a <code>Vector2D</code> or an <code>Array</code> of two numbers. A thing type can be supplied optionally.</p>
+<p>Creates a new <code>Thing</code> at the given position. The position can be a <code>Vector2D</code>, <code>Vector3D</code>, or an <code>Array</code> of two numbers or three numbers (note that the z position only works for game configurations that support vertical pos. A thing type can be supplied optionally.</p>
 <pre><code class="language-js">var t1 = Map.createThing(new Vector2D(32, 64));
 var t2 = Map.createThing([ 32, 64 ]);
 var t3 = Map.createThing(new Vector2D(32, 64), 3001); // Create an Imp
@@ -744,33 +756,45 @@ Map.drawLines([
 <p>Inverts the <code>marked</code> property of all <code>Thing</code>s.</p>
 <h3 id="invertmarkedvertices">invertMarkedVertices()</h3>
 <p>Inverts the <code>marked</code> property of all vertices.</p>
+<h3 id="joinsectorssectors">joinSectors(sectors)</h3>
+<p>Joins <code>Sector</code>s, keeping lines shared by the <code>Sector</code>s. All <code>Sector</code>s will be joined with the first <code>Sector</code> in the array.</p>
+<h4 id="parameters_21">Parameters</h4>
+<ul>
+<li>sectors: <code>Array</code> of <code>Sector</code>s</li>
+</ul>
 <h3 id="markselectedlinedefsmark-true">markSelectedLinedefs(mark = true)</h3>
 <p>Marks (default) or unmarks all selected <code>Linedef</code>s.</p>
-<h4 id="parameters_21">Parameters</h4>
+<h4 id="parameters_22">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Linedef</code>s (default), <code>false</code> to unmark</li>
 </ul>
 <h3 id="markselectedsectorsmark-true">markSelectedSectors(mark = true)</h3>
 <p>Marks (default) or unmarks all selected <code>Sector</code>s.</p>
-<h4 id="parameters_22">Parameters</h4>
+<h4 id="parameters_23">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Sector</code>s (default), <code>false</code> to unmark</li>
 </ul>
 <h3 id="markselectedthingsmark-true">markSelectedThings(mark = true)</h3>
 <p>Marks (default) or unmarks all selected <code>Thing</code>s.</p>
-<h4 id="parameters_23">Parameters</h4>
+<h4 id="parameters_24">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Thing</code>s (default), <code>false</code> to unmark</li>
 </ul>
 <h3 id="markselectedverticesmarktrue">markSelectedVertices(mark=true)</h3>
 <p>Marks (default) or unmarks all selected vertices.</p>
-<h4 id="parameters_24">Parameters</h4>
+<h4 id="parameters_25">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected vertices (default), <code>false</code> to unmark</li>
 </ul>
+<h3 id="mergesectorssectors">mergeSectors(sectors)</h3>
+<p>Merges <code>Sector</code>s, deleting lines shared by the <code>Sector</code>s. All <code>Sector</code>s will be merged into the first <code>Sector</code> in the array.</p>
+<h4 id="parameters_26">Parameters</h4>
+<ul>
+<li>sectors: <code>Array</code> of <code>Sector</code>s</li>
+</ul>
 <h3 id="nearestlinedefpos-maxrange-doublenan">nearestLinedef(pos, maxrange = double.NaN)</h3>
 <p>Gets the <code>Linedef</code> that's nearest to the specified position.</p>
-<h4 id="parameters_25">Parameters</h4>
+<h4 id="parameters_27">Parameters</h4>
 <ul>
 <li>pos: Position to check against</li>
 <li>maxrange: Maximum range (optional)</li>
@@ -779,7 +803,7 @@ Map.drawLines([
 <p>Nearest <code>Linedef</code></p>
 <h3 id="nearestsidedefpos">nearestSidedef(pos)</h3>
 <p>Gets the <code>Sidedef</code> that's nearest to the specified position.</p>
-<h4 id="parameters_26">Parameters</h4>
+<h4 id="parameters_28">Parameters</h4>
 <ul>
 <li>pos: Position to check against</li>
 <li>maxrange: Maximum range (optional)</li>
@@ -788,7 +812,7 @@ Map.drawLines([
 <p>Nearest <code>Sidedef</code></p>
 <h3 id="nearestthingpos-maxrange-doublenan">nearestThing(pos, maxrange = double.NaN)</h3>
 <p>Gets the <code>Thing</code> that's nearest to the specified position.</p>
-<h4 id="parameters_27">Parameters</h4>
+<h4 id="parameters_29">Parameters</h4>
 <ul>
 <li>pos: Position to check against</li>
 <li>maxrange: Maximum range (optional)</li>
@@ -797,7 +821,7 @@ Map.drawLines([
 <p>Nearest <code>Linedef</code></p>
 <h3 id="nearestvertexpos-maxrange-doublenan">nearestVertex(pos, maxrange = double.NaN)</h3>
 <p>Gets the <code>Vertex</code> that's nearest to the specified position.</p>
-<h4 id="parameters_28">Parameters</h4>
+<h4 id="parameters_30">Parameters</h4>
 <ul>
 <li>pos: Position to check against</li>
 <li>maxrange: Maximum range (optional)</li>
@@ -806,13 +830,13 @@ Map.drawLines([
 <p>Nearest <code>Vertex</code></p>
 <h3 id="snapalltoaccuracyusepreciseposition-true">snapAllToAccuracy(usepreciseposition = true)</h3>
 <p>Snaps all vertices and things to the map format accuracy. Call this to ensure the vertices and things are at valid coordinates.</p>
-<h4 id="parameters_29">Parameters</h4>
+<h4 id="parameters_31">Parameters</h4>
 <ul>
 <li>usepreciseposition: <code>true</code> if decimal places defined by the map format should be used, <code>false</code> if no decimal places should be used</li>
 </ul>
 <h3 id="snappedtogridpos">snappedToGrid(pos)</h3>
 <p>Returns the given point snapped to the current grid.</p>
-<h4 id="parameters_30">Parameters</h4>
+<h4 id="parameters_32">Parameters</h4>
 <ul>
 <li>pos: Point that should be snapped to the grid</li>
 </ul>
@@ -820,7 +844,7 @@ Map.drawLines([
 <p>Snapped position as <code>Vector2D</code></p>
 <h3 id="stitchgeometrymergemode-mergegeometrymodeclassic">stitchGeometry(mergemode = MergeGeometryMode.CLASSIC)</h3>
 <p>Stitches marked geometry with non-marked geometry.</p>
-<h4 id="parameters_31">Parameters</h4>
+<h4 id="parameters_33">Parameters</h4>
 <ul>
 <li>mergemode: Mode to merge by</li>
 </ul>
