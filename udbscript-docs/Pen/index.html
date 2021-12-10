@@ -107,11 +107,15 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_1">Return value</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#movetopos">moveTo(pos)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_2">Return value</a>
     </li>
         </ul>
     </li>
@@ -119,11 +123,15 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_3">Return value</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#setangleradiansradians">setAngleRadians(radians)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_4">Return value</a>
     </li>
         </ul>
     </li>
@@ -131,11 +139,15 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_5">Return value</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#turnleftradiansradiansmathpi2">turnLeftRadians(radians=Math.PI/2)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_6">Return value</a>
     </li>
         </ul>
     </li>
@@ -143,15 +155,23 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_7">Return value</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#turnrightradiansradiansmathpi2">turnRightRadians(radians=Math.PI/2)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_8">Return value</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#drawvertex">drawVertex()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_9">Return value</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#finishdrawingclosefalse">finishDrawing(close=false)</a>
         <ul>
@@ -205,7 +225,7 @@
 <p>The class is inspired of the <code>Pen</code> class in Doom Builder X.</p>
 <p>Example:</p>
 <pre><code class="language-js">// Draw a regular pentagon
-let p = new Pen([0, 0]);
+let p = new Pen([ 0, 0 ]);
 
 for(let i=0; i &lt; 5; i++)
 {
@@ -213,6 +233,15 @@ for(let i=0; i &lt; 5; i++)
     p.moveForward(128);
     p.turnRight(72);
 }
+
+p.finishDrawing();
+</code></pre>
+<p>Example with method chaining (new in version 2):</p>
+<pre><code class="language-js">// Draw a regular pentagon
+let p = new Pen([ 0, 0 ]);
+
+for(let i=0; i &lt; 5; i++)
+    p.drawVertex().moveForward(128).turnRight(72);
 
 p.finishDrawing();
 </code></pre>
@@ -232,50 +261,68 @@ p.finishDrawing();
 <ul>
 <li>distance: number of units to move</li>
 </ul>
+<h4 id="return-value_1">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="movetopos">moveTo(pos)</h3>
 <p>Moves the pen to the given position. The position can be a <code>Vector2D</code> or an <code>Array</code> of two numbers.</p>
 <h4 id="parameters_2">Parameters</h4>
 <ul>
 <li>pos: position to move the pen to</li>
 </ul>
+<h4 id="return-value_2">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="setangledegrees">setAngle(degrees)</h3>
 <p>Sets the angle to the given degrees.</p>
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>degrees: degrees to set the angle to</li>
 </ul>
+<h4 id="return-value_3">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="setangleradiansradians">setAngleRadians(radians)</h3>
 <p>Sets the angle to the given radians.</p>
 <h4 id="parameters_4">Parameters</h4>
 <ul>
 <li>radians: radians to set the angle to</li>
 </ul>
+<h4 id="return-value_4">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="turnleftdegrees900">turnLeft(degrees=90.0)</h3>
 <p>Turns the pen left by the given degrees.</p>
 <h4 id="parameters_5">Parameters</h4>
 <ul>
 <li>degrees: degrees to turn left by. If omitted it will turn by 90°</li>
 </ul>
+<h4 id="return-value_5">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="turnleftradiansradiansmathpi2">turnLeftRadians(radians=Math.PI/2)</h3>
 <p>Turns the pen left by the given radians.</p>
 <h4 id="parameters_6">Parameters</h4>
 <ul>
 <li>radians: radians to turn left by. If omitted it will turn by Pi/2</li>
 </ul>
+<h4 id="return-value_6">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="turnrightdegrees900">turnRight(degrees=90.0)</h3>
 <p>Turns the pen right by the given degrees.</p>
 <h4 id="parameters_7">Parameters</h4>
 <ul>
 <li>degrees: degrees to turn right by. If omitted it will turn by 90°</li>
 </ul>
+<h4 id="return-value_7">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="turnrightradiansradiansmathpi2">turnRightRadians(radians=Math.PI/2)</h3>
 <p>Turns the pen right by the given radians.</p>
 <h4 id="parameters_8">Parameters</h4>
 <ul>
 <li>radians: radians to turn right by. If omitted it will turn by Pi/2</li>
 </ul>
+<h4 id="return-value_8">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="drawvertex">drawVertex()</h3>
 <p>Draws a <code>Vertex</code> at the current position.</p>
+<h4 id="return-value_9">Return value</h4>
+<p>The instance of the <code>Pen</code> class (new in version 2)</p>
 <h3 id="finishdrawingclosefalse">finishDrawing(close=false)</h3>
 <p>Finishes the drawing, actually creating the geometry. Also resets the vertices of this instance of <code>Pen</code>.</p>
 <h4 id="parameters_9">Parameters</h4>
