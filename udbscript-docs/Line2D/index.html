@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Line2D - UDB Script</title>
+  <title>Line2D - UDBScript</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> UDB Script</a>
+        <a href=".." class="icon icon-home"> UDBScript</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -47,11 +47,13 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <p class="caption"><span class="caption-text">UDBScript</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API</span></p>
@@ -263,7 +265,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">UDB Script</a>
+        <a href="..">UDBScript</a>
       </nav>
 
       
@@ -292,6 +294,7 @@
               
                 <h1 id="line2d">Line2D</h1>
 <h2 id="constructors">Constructors</h2>
+<hr />
 <h3 id="line2dv1-v2">Line2D(v1, v2)</h3>
 <p>Creates a new <code>Line2D</code> from two points.</p>
 <pre><code class="language-js">let line1 = new Line2D(new Vector2D(32, 64), new Vector2D(96, 128));
@@ -303,6 +306,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 <li>v2: Second point</li>
 </ul>
 <h2 id="static-methods">Static methods</h2>
+<hr />
 <h3 id="areintersectinga1-a2-b1-b2-boundedtrue">areIntersecting(a1, a2, b1, b2, bounded=true)</h3>
 <p>Checks if two lines defined by their start and end points intersect. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_1">Parameters</h4>
@@ -315,6 +319,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value">Return value</h4>
 <p><code>true</code> if the lines intersect, <code>false</code> if they do not</p>
+<hr />
 <h3 id="areintersectingline1-line2-boundedtrue">areIntersecting(line1, line2, bounded=true)</h3>
 <p>Checks if two lines intersect. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_2">Parameters</h4>
@@ -325,6 +330,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_1">Return value</h4>
 <p><code>true</code> if the lines intersect, <code>false</code> if they do not</p>
+<hr />
 <h3 id="getcoordinatesatv1-v2-u">getCoordinatesAt(v1, v2, u)</h3>
 <p>Returns the coordinate on a line defined by its start and end points as <code>Vector2D</code>.</p>
 <h4 id="parameters_3">Parameters</h4>
@@ -335,6 +341,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_2">Return value</h4>
 <p>Point on the line as <code>Vector2D</code></p>
+<hr />
 <h3 id="getdistancetolinev1-v2-p-boundedtrue">getDistanceToLine(v1, v2, p, bounded=true)</h3>
 <p>Returns the shortest distance from point <code>p</code> to the line defined by its start and end points. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_4">Parameters</h4>
@@ -346,6 +353,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_3">Return value</h4>
 <p>The shortest distance to the line</p>
+<hr />
 <h3 id="getdistancetolinesqv1-v2-p-bounded-true">getDistanceToLineSq(v1, v2, p, bounded = true)</h3>
 <p>Returns the shortest square distance from point <code>p</code> to the line defined by its start and end points. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_5">Parameters</h4>
@@ -357,6 +365,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_4">Return value</h4>
 <p>The shortest square distance to the line</p>
+<hr />
 <h3 id="getintersectionpointa1-a2-b1-b2-bounded-true">getIntersectionPoint(a1, a2, b1, b2, bounded = true)</h3>
 <p>Returns the intersection point of two lines as <code>Vector2D</code>. If the lines do not intersect the <code>x</code> and <code>y</code> properties of the <code>Vector2D</code> are <code>NaN</code>. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_6">Parameters</h4>
@@ -369,6 +378,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_5">Return value</h4>
 <p>The intersection point as <code>Vector2D</code></p>
+<hr />
 <h3 id="getnearestonlinev1-v2-p">getNearestOnLine(v1, v2, p)</h3>
 <p>Returns the offset coordinate on the line nearest to the given point. <code>0.0</code> being on the first point, <code>1.0</code> being on the second point, and <code>u = 0.5</code> being in the middle between the points.</p>
 <h4 id="parameters_7">Parameters</h4>
@@ -379,6 +389,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_6">Return value</h4>
 <p>The offset value relative to the first point of the line.</p>
+<hr />
 <h3 id="getsideoflinev1-v2-p">getSideOfLine(v1, v2, p)</h3>
 <p>Returns which the of the line defined by its start and end point a given point is on.</p>
 <h4 id="parameters_8">Parameters</h4>
@@ -390,19 +401,24 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 <h4 id="return-value_7">Return value</h4>
 <p><code>&lt; 0</code> if <code>p</code> is on the front (right) side, <code>&gt; 0</code> if <code>p</code> is on the back (left) side, <code>== 0</code> if <code>p</code> in on the line</p>
 <h2 id="properties">Properties</h2>
+<hr />
 <h3 id="v1">v1</h3>
 <p><code>Vector2D</code> position of start of the line.</p>
+<hr />
 <h3 id="v2">v2</h3>
 <p><code>Vector2D</code> position of end of the line.</p>
 <h2 id="methods">Methods</h2>
+<hr />
 <h3 id="getangle">getAngle()</h3>
 <p>Return the angle of the <code>Line2D</code> in degrees.</p>
 <h4 id="return-value_8">Return value</h4>
 <p>Angle of the <code>Line2D</code> in degrees</p>
+<hr />
 <h3 id="getanglerad">getAngleRad()</h3>
 <p>Returns the angle of the <code>Line2D</code> in radians.</p>
 <h4 id="return-value_9">Return value</h4>
 <p>Angle of <code>Line2D</code> in radians</p>
+<hr />
 <h3 id="getcoordinatesatu">getCoordinatesAt(u)</h3>
 <p>Returns the coordinates on the line, where <code>u</code> is the position between the first and second point, <code>u = 0.0</code> being on the first point, <code>u = 1.0</code> being on the second point, and <code>u = 0.5</code> being in the middle between the points.</p>
 <h4 id="parameters_9">Parameters</h4>
@@ -411,6 +427,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_10">Return value</h4>
 <p>Position on the line as <code>Vector2D</code></p>
+<hr />
 <h3 id="getintersectionpointa1-a2-bounded-true">getIntersectionPoint(a1, a2, bounded = true)</h3>
 <p>Returns the intersection point of of the given line defined by its start and end points with this line as <code>Vector2D</code>. If the lines do not intersect the <code>x</code> and <code>y</code> properties of the <code>Vector2D</code> are <code>NaN</code>. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_10">Parameters</h4>
@@ -421,6 +438,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_11">Return value</h4>
 <p>The intersection point as <code>Vector2D</code></p>
+<hr />
 <h3 id="getintersectionpointray-boundedtrue">getIntersectionPoint(ray, bounded=true)</h3>
 <p>Returns the intersection point of of the given line with this line as <code>Vector2D</code>. If the lines do not intersect the <code>x</code> and <code>y</code> properties of the <code>Vector2D</code> are <code>NaN</code>. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_11">Parameters</h4>
@@ -430,14 +448,17 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_12">Return value</h4>
 <p>The intersection point as <code>Vector2D</code></p>
+<hr />
 <h3 id="getlength">getLength()</h3>
 <p>Returns the length of the <code>Line2D</code>.</p>
 <h4 id="return-value_13">Return value</h4>
 <p>Length of the <code>Line2D</code></p>
+<hr />
 <h3 id="getperpendicular">getPerpendicular()</h3>
 <p>Returns the perpendicular of this line as <code>Vector2D</code>.</p>
 <h4 id="return-value_14">Return value</h4>
 <p>Perpendicular of this line as <code>Vector2D</code></p>
+<hr />
 <h3 id="getsideoflinep">getSideOfLine(p)</h3>
 <p>Returns which the of the line defined by its start and end point a given point is on.</p>
 <h4 id="parameters_12">Parameters</h4>
@@ -446,6 +467,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_15">Return value</h4>
 <p><code>&lt; 0</code> if <code>p</code> is on the front (right) side, <code>&gt; 0</code> if <code>p</code> is on the back (left) side, <code>== 0</code> if <code>p</code> in on the line</p>
+<hr />
 <h3 id="isintersectinga1-a2-bounded-true">isIntersecting(a1, a2, bounded = true)</h3>
 <p>Checks if the given line intersects this line. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_13">Parameters</h4>
@@ -456,6 +478,7 @@ let line2 = new Line2D([ 32, 64 ], [ 96, 128 ]);
 </ul>
 <h4 id="return-value_16">Return value</h4>
 <p><code>true</code> if the lines intersect, <code>false</code> if they do not</p>
+<hr />
 <h3 id="isintersectingray-boundedtrue">isIntersecting(ray, bounded=true)</h3>
 <p>Checks if the given <code>Line2D</code> intersects this line. If <code>bounded</code> is set to <code>true</code> (default) the finite length of the lines is used, otherwise the infinite length of the lines is used.</p>
 <h4 id="parameters_14">Parameters</h4>

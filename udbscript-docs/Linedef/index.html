@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Linedef - UDB Script</title>
+  <title>Linedef - UDBScript</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> UDB Script</a>
+        <a href=".." class="icon icon-home"> UDBScript</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -47,11 +47,13 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <p class="caption"><span class="caption-text">UDBScript</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API</span></p>
@@ -257,7 +259,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">UDB Script</a>
+        <a href="..">UDBScript</a>
       </nav>
 
       
@@ -286,20 +288,28 @@
               
                 <h1 id="linedef">Linedef</h1>
 <h2 id="properties">Properties</h2>
+<hr />
 <h3 id="action">action</h3>
 <p><code>Linedef</code> action.</p>
+<hr />
 <h3 id="activate">activate</h3>
 <p>The activation flag. Hexen format only.</p>
+<hr />
 <h3 id="angle">angle</h3>
 <p>The <code>Linedef</code>'s angle in degree. Read-only.</p>
+<hr />
 <h3 id="anglerad">angleRad</h3>
 <p>The <code>Linedef</code>'s angle in radians. Read-only.</p>
+<hr />
 <h3 id="args">args</h3>
 <p><code>Array</code> of arguments of the <code>Linedef</code>. Number of arguments depends on game config (usually 5). Hexen format and UDMF only.</p>
+<hr />
 <h3 id="back">back</h3>
 <p>The <code>Linedef</code>'s back <code>Sidedef</code>. Is <code>null</code> when there is no back.</p>
+<hr />
 <h3 id="end">end</h3>
 <p>The linedef's end <code>Vertex</code>.</p>
+<hr />
 <h3 id="fields">fields</h3>
 <p>UDMF fields. It's an object with the fields as properties.</p>
 <pre><code class="language-js">s.fields.comment = 'This is a comment';
@@ -321,6 +331,7 @@ t.score = 100;
 <p>To remove a field you have to assign <code>null</code> to it:</p>
 <pre><code class="language-js">s.fields.user_myintfield = null;
 </code></pre>
+<hr />
 <h3 id="flags">flags</h3>
 <p><code>Linedef</code> flags. It's an object with the flags as properties. In Doom format and Hexen format they are identified by numbers, in UDMF by their name.
 Doom and Hexen:</p>
@@ -330,27 +341,38 @@ Doom and Hexen:</p>
 <pre><code class="language-js">ld.flags['blocksound'] = true; // Set the block sound flag
 ld.flags.blocksound = true; // Also works
 </code></pre>
+<hr />
 <h3 id="front">front</h3>
 <p>The <code>Linedef</code>'s front <code>Sidedef</code>. Is <code>null</code> when there is no front (should not happen).</p>
+<hr />
 <h3 id="index">index</h3>
 <p>The linedef's index. Read-only.</p>
+<hr />
 <h3 id="length">length</h3>
 <p>The <code>Linedef</code>'s length. Read-only.</p>
+<hr />
 <h3 id="lengthinv">lengthInv</h3>
 <p>1.0 / length. Read-only.</p>
+<hr />
 <h3 id="lengthsq">lengthSq</h3>
 <p>The <code>Linedef</code>'s squared length. Read-only.</p>
+<hr />
 <h3 id="line">line</h3>
 <p>The <code>Line2D</code> from the <code>start</code> to the <code>end</code> <code>Vertex</code>.</p>
+<hr />
 <h3 id="marked">marked</h3>
 <p>If the <code>Linedef</code> is marked or not. It is used to mark map elements that were created or changed (for example after drawing new geometry).</p>
+<hr />
 <h3 id="selected">selected</h3>
 <p>If the <code>Linedef</code> is selected or not.</p>
+<hr />
 <h3 id="start">start</h3>
 <p>The linedef's start <code>Vertex</code>.</p>
+<hr />
 <h3 id="tag">tag</h3>
 <p><code>Linedef</code> tag. UDMF only.</p>
 <h2 id="methods">Methods</h2>
+<hr />
 <h3 id="addtagtag">addTag(tag)</h3>
 <p>Adds a tag to the <code>Linedef</code>. UDMF only. Supported game configurations only.</p>
 <h4 id="parameters">Parameters</h4>
@@ -359,18 +381,23 @@ ld.flags.blocksound = true; // Also works
 </ul>
 <h4 id="return-value">Return value</h4>
 <p><code>true</code> when the tag was added, <code>false</code> when the tag already exists</p>
+<hr />
 <h3 id="applysidedflags">applySidedFlags()</h3>
 <p>Automatically sets the blocking and two-sided flags based on the existing <code>Sidedef</code>s.</p>
+<hr />
 <h3 id="clearflags">clearFlags()</h3>
 <p>Clears all flags.</p>
+<hr />
 <h3 id="copypropertiestoother">copyPropertiesTo(other)</h3>
 <p>Copies the properties of this <code>Linedef</code> to another <code>Linedef</code>.</p>
 <h4 id="parameters_1">Parameters</h4>
 <ul>
 <li>other: The <code>Linedef</code> to copy the properties to</li>
 </ul>
+<hr />
 <h3 id="delete">delete()</h3>
 <p>Deletes the <code>Linedef</code>. Note that this will result in unclosed <code>Sector</code>s unless it has the same <code>Sector</code>s on both sides.</p>
+<hr />
 <h3 id="distancetopos-bounded">distanceTo(pos, bounded)</h3>
 <p>Gets the shortest distance from <code>pos</code> to the line.</p>
 <h4 id="parameters_2">Parameters</h4>
@@ -380,6 +407,7 @@ ld.flags.blocksound = true; // Also works
 </ul>
 <h4 id="return-value_1">Return value</h4>
 <p>Distance to the line</p>
+<hr />
 <h3 id="distancetosqpos-bounded">distanceToSq(pos, bounded)</h3>
 <p>Gets the shortest squared distance from <code>pos</code> to the line.</p>
 <h4 id="parameters_3">Parameters</h4>
@@ -389,16 +417,21 @@ ld.flags.blocksound = true; // Also works
 </ul>
 <h4 id="return-value_2">Return value</h4>
 <p>Squared distance to the line</p>
+<hr />
 <h3 id="flip">flip()</h3>
 <p>Flips the <code>Linedef</code>'s vertex attachments and <code>Sidedef</code>s. This is a shortcut to using both <code>flipVertices()</code> and <code>flipSidedefs()</code>.</p>
+<hr />
 <h3 id="flipsidedefs">flipSidedefs()</h3>
 <p>Flips the <code>Linedef</code>'s <code>Sidedef</code>s.</p>
+<hr />
 <h3 id="flipvertices">flipVertices()</h3>
 <p>Flips the <code>Linedef</code>'s vertex attachments.</p>
+<hr />
 <h3 id="getcenterpoint">getCenterPoint()</h3>
 <p>Gets a <code>Vector2D</code> that's in the center of the <code>Linedef</code>.</p>
 <h4 id="return-value_3">Return value</h4>
 <p><code>Vector2D</code> in the center of the <code>Linedef</code></p>
+<hr />
 <h3 id="getsidepointfront">getSidePoint(front)</h3>
 <p>Gets a <code>Vector2D</code> for testing on one side. The <code>Vector2D</code> is on the front when <code>true</code> is passed, otherwise on the back.</p>
 <h4 id="parameters_4">Parameters</h4>
@@ -407,10 +440,12 @@ ld.flags.blocksound = true; // Also works
 </ul>
 <h4 id="return-value_4">Return value</h4>
 <p><code>Vector2D</code> that's either on the front of back of the Linedef</p>
+<hr />
 <h3 id="gettags">getTags()</h3>
 <p>Returns an <code>Array</code> of the <code>Linedef</code>'s tags. UDMF only. Supported game configurations only.</p>
 <h4 id="return-value_5">Return value</h4>
 <p><code>Array</code> of tags</p>
+<hr />
 <h3 id="nearestonlinepos">nearestOnLine(pos)</h3>
 <p>Get a <code>Vector2D</code> that's <em>on</em> the line, closest to <code>pos</code>. <code>pos</code> can either be a <code>Vector2D</code>, or an array of numbers.</p>
 <pre><code class="language-js">var v1 = ld.nearestOnLine(new Vector2D(32, 64));
@@ -422,6 +457,7 @@ var v2 = ld.nearestOnLine([ 32, 64 ]);
 </ul>
 <h4 id="return-value_6">Return value</h4>
 <p><code>Vector2D</code> that's on the linedef</p>
+<hr />
 <h3 id="removetagtag">removeTag(tag)</h3>
 <p>Removes a tag from the <code>Linedef</code>. UDMF only. Supported game configurations only.</p>
 <h4 id="parameters_6">Parameters</h4>
@@ -430,6 +466,7 @@ var v2 = ld.nearestOnLine([ 32, 64 ]);
 </ul>
 <h4 id="return-value_7">Return value</h4>
 <p><code>true</code> when the tag was removed successfully, <code>false</code> when the tag did not exist</p>
+<hr />
 <h3 id="safedistancetopos-bounded">safeDistanceTo(pos, bounded)</h3>
 <p>Gets the shortest "safe" distance from <code>pos</code> to the line. If <code>bounded</code> is <code>true</code> that means that the not the whole line's length will be used, but <code>lengthInv</code> less at the start and end.</p>
 <h4 id="parameters_7">Parameters</h4>
@@ -439,6 +476,7 @@ var v2 = ld.nearestOnLine([ 32, 64 ]);
 </ul>
 <h4 id="return-value_8">Return value</h4>
 <p>Distance to the line</p>
+<hr />
 <h3 id="safedistancetosqpos-bounded">safeDistanceToSq(pos, bounded)</h3>
 <p>Gets the shortest "safe" squared distance from <code>pos</code> to the line. If <code>bounded</code> is <code>true</code> that means that the not the whole line's length will be used, but <code>lengthInv</code> less at the start and end.</p>
 <h4 id="parameters_8">Parameters</h4>
@@ -448,6 +486,7 @@ var v2 = ld.nearestOnLine([ 32, 64 ]);
 </ul>
 <h4 id="return-value_9">Return value</h4>
 <p>Squared distance to the line</p>
+<hr />
 <h3 id="sideoflinepos">sideOfLine(pos)</h3>
 <p>Tests which side of the <code>Linedef</code> <code>pos</code> is on. Returns &lt; 0 for front (right) side, &gt; for back (left) side, and 0 if <code>pos</code> is on the line.</p>
 <h4 id="parameters_9">Parameters</h4>
@@ -456,6 +495,7 @@ var v2 = ld.nearestOnLine([ 32, 64 ]);
 </ul>
 <h4 id="return-value_10">Return value</h4>
 <p>&lt; 0 for front (right) side, &gt; for back (left) side, and 0 if <code>pos</code> is on the line</p>
+<hr />
 <h3 id="splitpos">split(pos)</h3>
 <p>Splits the <code>Linedef</code> at the given position. This can either be a <code>Vector2D</code>, an array of numbers, or an existing <code>Vertex</code>. The result will be two lines, from the start <code>Vertex</code> of the <code>Linedef</code> to <code>pos</code>, and from <code>pos</code> to the end <code>Vertex</code> of the <code>Linedef</code>.</p>
 <h4 id="parameters_10">Parameters</h4>

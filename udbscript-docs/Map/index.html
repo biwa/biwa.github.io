@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Map - UDB Script</title>
+  <title>Map - UDBScript</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> UDB Script</a>
+        <a href=".." class="icon icon-home"> UDBScript</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -47,11 +47,13 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <p class="caption"><span class="caption-text">UDBScript</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API</span></p>
@@ -316,15 +318,21 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getthings">getThings()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getsidedefsfromselectedorhighlightedlinedefs">getSidedefsFromSelectedOrHighlightedLinedefs()</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#return-value_26">Return value</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getvertices">getVertices()</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getthings">getThings()</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#return-value_27">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getvertices">getVertices()</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_28">Return value</a>
     </li>
         </ul>
     </li>
@@ -380,7 +388,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_27">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-value_28">Return value</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_29">Return value</a>
     </li>
         </ul>
     </li>
@@ -388,7 +396,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_28">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-value_29">Return value</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_30">Return value</a>
     </li>
         </ul>
     </li>
@@ -396,7 +404,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_29">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-value_30">Return value</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_31">Return value</a>
     </li>
         </ul>
     </li>
@@ -404,7 +412,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_30">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-value_31">Return value</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_32">Return value</a>
     </li>
         </ul>
     </li>
@@ -418,7 +426,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_32">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-value_32">Return value</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_33">Return value</a>
     </li>
         </ul>
     </li>
@@ -426,7 +434,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_33">Parameters</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#return-value_33">Return value</a>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_34">Return value</a>
     </li>
         </ul>
     </li>
@@ -463,7 +471,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">UDB Script</a>
+        <a href="..">UDBScript</a>
       </nav>
 
       
@@ -492,61 +500,77 @@
               
                 <h1 id="map">Map</h1>
 <h2 id="properties">Properties</h2>
+<hr />
 <h3 id="camera">camera</h3>
 <p><code>VisualCamera</code> object with information about the position of the camera in visual mode. Read-only.</p>
+<hr />
 <h3 id="isdoom">isDoom</h3>
 <p><code>true</code> if the map is in Doom format, <code>false</code> if it isn't. Read-only.</p>
+<hr />
 <h3 id="ishexen">isHexen</h3>
 <p><code>true</code> if the map is in Hexen format, <code>false</code> if it isn't. Read-only.</p>
+<hr />
 <h3 id="isudmf">isUDMF</h3>
 <p><code>true</code> if the map is in UDMF, <code>false</code> if it isn't. Read-only.</p>
+<hr />
 <h3 id="mouseposition">mousePosition</h3>
 <p>The map coordinates of the mouse position as a <code>Vector2D</code>. Read-only.</p>
 <h2 id="methods">Methods</h2>
+<hr />
 <h3 id="clearallmarksmarkfalse">clearAllMarks(mark=false)</h3>
 <p>Sets the <code>marked</code> property of all map elements. Can be passed <code>true</code> to mark all map elements.</p>
 <h4 id="parameters">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
+<hr />
 <h3 id="clearallselected">clearAllSelected()</h3>
 <p>Clears all selected map elements.</p>
+<hr />
 <h3 id="clearmarkelinedefsmarkfalse">clearMarkeLinedefs(mark=false)</h3>
 <p>Sets the <code>marked</code> property of all <code>Linedef</code>s. Can be passed <code>true</code> to mark all <code>Linedef</code>s.</p>
 <h4 id="parameters_1">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
+<hr />
 <h3 id="clearmarkesectorsmark-false">clearMarkeSectors(mark = false)</h3>
 <p>Sets the <code>marked</code> property of all <code>Sector</code>s. Can be passed <code>true</code> to mark all <code>Sector</code>s.</p>
 <h4 id="parameters_2">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
+<hr />
 <h3 id="clearmarkesidedefsmark-false">clearMarkeSidedefs(mark = false)</h3>
 <p>Sets the <code>marked</code> property of all <code>Sidedef</code>s. Can be passed <code>true</code> to mark all <code>Sidedef</code>s.</p>
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
+<hr />
 <h3 id="clearmarkedthingsmarkfalse">clearMarkedThings(mark=false)</h3>
 <p>Sets the <code>marked</code> property of all <code>Thing</code>s. Can be passed <code>true</code> to mark all <code>Thing</code>s.</p>
 <h4 id="parameters_4">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
+<hr />
 <h3 id="clearmarkedverticesmarkfalse">clearMarkedVertices(mark=false)</h3>
 <p>Sets the <code>marked</code> property of all vertices. Can be passed <code>true</code> to mark all vertices.</p>
 <h4 id="parameters_5">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
+<hr />
 <h3 id="clearselectedsectors">clearSelectedSectors()</h3>
 <p>Clears all selected <code>Sector</code>s.</p>
+<hr />
 <h3 id="clearselectedthings">clearSelectedThings()</h3>
 <p>Clears all selected <code>Thing</code>s.</p>
+<hr />
 <h3 id="clearselectedvertices">clearSelectedVertices()</h3>
 <p>Clears all selected vertices.</p>
+<hr />
 <h3 id="createthingpos-type0">createThing(pos, type=0)</h3>
 <p>Creates a new <code>Thing</code> at the given position. The position can be a <code>Vector2D</code>, <code>Vector3D</code>, or an <code>Array</code> of two numbers or three numbers (note that the z position only works for game configurations that support vertical pos. A thing type can be supplied optionally.</p>
 <pre><code class="language-js">var t1 = Map.createThing(new Vector2D(32, 64));
@@ -561,6 +585,7 @@ var t4 = Map.createThing([ 32, 64 ], 3001); // Create an Imp
 </ul>
 <h4 id="return-value">Return value</h4>
 <p>The new <code>Thing</code></p>
+<hr />
 <h3 id="createvertexpos">createVertex(pos)</h3>
 <p>Creates a new <code>Vertex</code> at the given position. The position can be a <code>Vector2D</code> or an <code>Array</code> of two numbers.</p>
 <pre><code class="language-js">var v1 = Map.createVertex(new Vector2D(32, 64));
@@ -572,6 +597,7 @@ var v2 = Map.createVertex([ 32, 64 ]);
 </ul>
 <h4 id="return-value_1">Return value</h4>
 <p>The created <code>Vertex</code></p>
+<hr />
 <h3 id="drawlinesdata">drawLines(data)</h3>
 <p>Draws lines. Data has to be an <code>Array</code> of <code>Array</code> of numbers, <code>Vector2D</code>s, <code>Vector3D</code>s, or objects with x and y properties. Note that the first and last element have to be at the same positions to make a complete drawing.</p>
 <pre><code class="language-js">Map.drawLines([
@@ -596,26 +622,32 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_2">Return value</h4>
 <p><code>true</code> if drawing was successful, <code>false</code> if it wasn't</p>
+<hr />
 <h3 id="gethighlightedlinedef">getHighlightedLinedef()</h3>
 <p>Get the currently highlighted <code>Linedef</code>.</p>
 <h4 id="return-value_3">Return value</h4>
 <p>The currently highlighted <code>Linedef</code> or <code>null</code> if no <code>Linedef</code> is highlighted</p>
+<hr />
 <h3 id="gethighlightedsector">getHighlightedSector()</h3>
 <p>Get the currently highlighted <code>Sector</code>.</p>
 <h4 id="return-value_4">Return value</h4>
 <p>The currently highlighted <code>Sector</code> or <code>null</code> if no <code>Sector</code> is highlighted</p>
+<hr />
 <h3 id="gethighlightedthing">getHighlightedThing()</h3>
 <p>Get the currently highlighted <code>Thing</code>.</p>
 <h4 id="return-value_5">Return value</h4>
 <p>The currently highlighted <code>Thing</code> or <code>null</code> if no <code>Thing</code> is highlighted</p>
+<hr />
 <h3 id="gethighlightedvertex">getHighlightedVertex()</h3>
 <p>Get the currently highlighted <code>Vertex</code>.</p>
 <h4 id="return-value_6">Return value</h4>
 <p>The currently highlighted <code>Vertex</code> or <code>null</code> if no <code>Vertex</code> is highlighted</p>
+<hr />
 <h3 id="getlinedefs">getLinedefs()</h3>
 <p>Returns an <code>Array</code> of all <code>Linedef</code>s in the map.</p>
 <h4 id="return-value_7">Return value</h4>
 <p><code>Array</code> of <code>Linedef</code>s</p>
+<hr />
 <h3 id="getmarkedlinedefsmark-true">getMarkedLinedefs(mark = true)</h3>
 <p>Gets all marked (default) or unmarked <code>Linedef</code>s.</p>
 <h4 id="parameters_9">Parameters</h4>
@@ -624,6 +656,7 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_8">Return value</h4>
 <p><em>missing</em></p>
+<hr />
 <h3 id="getmarkedsectorsmark-true">getMarkedSectors(mark = true)</h3>
 <p>Gets all marked (default) or unmarked <code>Sector</code>s.</p>
 <h4 id="parameters_10">Parameters</h4>
@@ -632,6 +665,7 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_9">Return value</h4>
 <p><em>missing</em></p>
+<hr />
 <h3 id="getmarkedsidedefsmark-true">getMarkedSidedefs(mark = true)</h3>
 <p>Gets all marked (default) or unmarked <code>Sidedef</code>s.</p>
 <h4 id="parameters_11">Parameters</h4>
@@ -640,6 +674,7 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_10">Return value</h4>
 <p><em>missing</em></p>
+<hr />
 <h3 id="getmarkedthingsmark-true">getMarkedThings(mark = true)</h3>
 <p>Gets all marked (default) or unmarked <code>Thing</code>s.</p>
 <h4 id="parameters_12">Parameters</h4>
@@ -648,6 +683,7 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_11">Return value</h4>
 <p><em>missing</em></p>
+<hr />
 <h3 id="getmarkedverticesmarktrue">getMarkedVertices(mark=true)</h3>
 <p>Gets all marked (default) or unmarked vertices.</p>
 <h4 id="parameters_13">Parameters</h4>
@@ -656,6 +692,7 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_12">Return value</h4>
 <p><em>missing</em></p>
+<hr />
 <h3 id="getmultiplenewtagscount">getMultipleNewTags(count)</h3>
 <p>Gets multiple new tags.</p>
 <h4 id="parameters_14">Parameters</h4>
@@ -664,6 +701,7 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_13">Return value</h4>
 <p><code>Array</code> of the new tags</p>
+<hr />
 <h3 id="getnewtagusedtags-null">getNewTag(usedtags = null)</h3>
 <p>Gets a new tag.</p>
 <h4 id="parameters_15">Parameters</h4>
@@ -672,10 +710,12 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_14">Return value</h4>
 <p>The new tag</p>
+<hr />
 <h3 id="getsectors">getSectors()</h3>
 <p>Returns an <code>Array</code> of all <code>Sector</code>s in the map.</p>
 <h4 id="return-value_15">Return value</h4>
 <p><code>Array</code> of <code>Sector</code>s</p>
+<hr />
 <h3 id="getselectedlinedefsselected-true">getSelectedLinedefs(selected = true)</h3>
 <p>Gets all selected (default) or unselected <code>Linedef</code>s.</p>
 <h4 id="parameters_16">Parameters</h4>
@@ -684,22 +724,27 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_16">Return value</h4>
 <p><code>Array</code> of <code>Linedef</code>s</p>
+<hr />
 <h3 id="getselectedorhighlightedlinedefs">getSelectedOrHighlightedLinedefs()</h3>
 <p>Gets the currently selected <code>Linedef</code>s <em>or</em>, if no <code>Linede</code>f<code>s are selected, a currently highlighted</code>Linedef`.</p>
 <h4 id="return-value_17">Return value</h4>
 <p><code>Array</code> of <code>Linedef</code>s</p>
+<hr />
 <h3 id="getselectedorhighlightedsectors">getSelectedOrHighlightedSectors()</h3>
 <p>Gets the currently selected <code>Sector</code>s <em>or</em>, if no <code>Sector</code>s are selected, a currently highlighted <code>Sector</code>.</p>
 <h4 id="return-value_18">Return value</h4>
 <p><code>Array</code> of <code>Sector</code>s</p>
+<hr />
 <h3 id="getselectedorhighlightedthings">getSelectedOrHighlightedThings()</h3>
 <p>Gets the currently selected <code>Thing</code>s <em>or</em>, if no <code>Thing</code>s are selected, a currently highlighted <code>Thing</code>.</p>
 <h4 id="return-value_19">Return value</h4>
 <p><code>Array</code> of <code>Thing</code>s</p>
+<hr />
 <h3 id="getselectedorhighlightedvertices">getSelectedOrHighlightedVertices()</h3>
 <p>Gets the currently selected <code>Vertex</code>s <em>or</em>, if no <code>Vertex</code>s are selected, a currently highlighted <code>Vertex</code>.</p>
 <h4 id="return-value_20">Return value</h4>
 <p><code>Array</code> of <code>Vertex</code></p>
+<hr />
 <h3 id="getselectedsectorsselected-true">getSelectedSectors(selected = true)</h3>
 <p>Gets all selected (default) or unselected <code>Sector</code>s.</p>
 <h4 id="parameters_17">Parameters</h4>
@@ -708,6 +753,7 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_21">Return value</h4>
 <p><code>Array</code> of <code>Sector</code>s</p>
+<hr />
 <h3 id="getselectedthingsselected-true">getSelectedThings(selected = true)</h3>
 <p>Gets all selected (default) or unselected <code>Thing</code>s.</p>
 <h4 id="parameters_18">Parameters</h4>
@@ -716,6 +762,7 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_22">Return value</h4>
 <p><code>Array</code> of <code>Thing</code>s</p>
+<hr />
 <h3 id="getselectedverticesselectedtrue">getSelectedVertices(selected=true)</h3>
 <p>Gets all selected (default) or unselected vertices.</p>
 <h4 id="parameters_19">Parameters</h4>
@@ -724,74 +771,99 @@ Map.drawLines([
 </ul>
 <h4 id="return-value_23">Return value</h4>
 <p><code>Array</code> of <code>Vertex</code></p>
+<hr />
 <h3 id="getsidedefs">getSidedefs()</h3>
 <p>Returns an <code>Array</code> of all <code>Sidedef</code>s in the map.</p>
 <h4 id="return-value_24">Return value</h4>
 <p><code>Array</code> of <code>Sidedef</code>s</p>
+<hr />
 <h3 id="getsidedefsfromselectedlinedefsselected-true">getSidedefsFromSelectedLinedefs(selected = true)</h3>
-<p>Gets all <code>Sidedef</code>s from the selected <code>Linedef</code>s.</p>
+<p>Gets all <code>Sidedef</code>s from the selected <code>Linedef</code>s.
+In classic modes this will return both sidedefs of 2-sided lines, in visual mode it will only return the actually selected <code>Sidedef</code>.</p>
 <h4 id="parameters_20">Parameters</h4>
 <ul>
 <li>selected: <code>true</code> to get all <code>Sidedef</code>s of all selected <code>Linedef</code>s, <code>false</code> to get all <code>Sidedef</code>s of all unselected <code>Linedef</code>s</li>
 </ul>
 <h4 id="return-value_25">Return value</h4>
-<p><em>missing</em></p>
+<p><code>Array</code> of <code>Sidedef</code></p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 3</span></p>
+<h3 id="getsidedefsfromselectedorhighlightedlinedefs">getSidedefsFromSelectedOrHighlightedLinedefs()</h3>
+<p>Gets the <code>Sidedef</code>s of the currently selected <code>Linedef</code>s <em>or</em>, if no <code>Linede</code>f<code>s are selected, the</code>Sidedef<code>s of the currently highlighted</code>Linedef<code>.
+In classic modes this will return both sidedefs of 2-sided lines, in visual mode it will only return the actually selected</code>Sidedef`.</p>
+<h4 id="return-value_26">Return value</h4>
+<p><code>Array</code> of <code>Sidedef</code>s</p>
+<hr />
 <h3 id="getthings">getThings()</h3>
 <p>Returns an <code>Array</code> of all <code>Thing</code>s in the map.</p>
-<h4 id="return-value_26">Return value</h4>
+<h4 id="return-value_27">Return value</h4>
 <p><code>Array</code> of <code>Thing</code>s</p>
+<hr />
 <h3 id="getvertices">getVertices()</h3>
 <p>Returns an <code>Array</code> of all <code>Vertex</code> in the map.</p>
-<h4 id="return-value_27">Return value</h4>
+<h4 id="return-value_28">Return value</h4>
 <p><code>Array</code> of <code>Vertex</code></p>
+<hr />
 <h3 id="invertallmarks">invertAllMarks()</h3>
 <p>Inverts all marks of all map elements.</p>
+<hr />
 <h3 id="invertmarkedlinedefs">invertMarkedLinedefs()</h3>
 <p>Inverts the <code>marked</code> property of all <code>Linedef</code>s.</p>
+<hr />
 <h3 id="invertmarkedsectors">invertMarkedSectors()</h3>
 <p>Inverts the <code>marked</code> property of all <code>Sector</code>s.</p>
+<hr />
 <h3 id="invertmarkedsidedefs">invertMarkedSidedefs()</h3>
 <p>Inverts the <code>marked</code> property of all <code>Sidedef</code>s.</p>
+<hr />
 <h3 id="invertmarkedthings">invertMarkedThings()</h3>
 <p>Inverts the <code>marked</code> property of all <code>Thing</code>s.</p>
+<hr />
 <h3 id="invertmarkedvertices">invertMarkedVertices()</h3>
 <p>Inverts the <code>marked</code> property of all vertices.</p>
+<hr />
 <h3 id="joinsectorssectors">joinSectors(sectors)</h3>
 <p>Joins <code>Sector</code>s, keeping lines shared by the <code>Sector</code>s. All <code>Sector</code>s will be joined with the first <code>Sector</code> in the array.</p>
 <h4 id="parameters_21">Parameters</h4>
 <ul>
 <li>sectors: <code>Array</code> of <code>Sector</code>s</li>
 </ul>
+<hr />
 <h3 id="markselectedlinedefsmark-true">markSelectedLinedefs(mark = true)</h3>
 <p>Marks (default) or unmarks all selected <code>Linedef</code>s.</p>
 <h4 id="parameters_22">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Linedef</code>s (default), <code>false</code> to unmark</li>
 </ul>
+<hr />
 <h3 id="markselectedsectorsmark-true">markSelectedSectors(mark = true)</h3>
 <p>Marks (default) or unmarks all selected <code>Sector</code>s.</p>
 <h4 id="parameters_23">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Sector</code>s (default), <code>false</code> to unmark</li>
 </ul>
+<hr />
 <h3 id="markselectedthingsmark-true">markSelectedThings(mark = true)</h3>
 <p>Marks (default) or unmarks all selected <code>Thing</code>s.</p>
 <h4 id="parameters_24">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Thing</code>s (default), <code>false</code> to unmark</li>
 </ul>
+<hr />
 <h3 id="markselectedverticesmarktrue">markSelectedVertices(mark=true)</h3>
 <p>Marks (default) or unmarks all selected vertices.</p>
 <h4 id="parameters_25">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected vertices (default), <code>false</code> to unmark</li>
 </ul>
+<hr />
 <h3 id="mergesectorssectors">mergeSectors(sectors)</h3>
 <p>Merges <code>Sector</code>s, deleting lines shared by the <code>Sector</code>s. All <code>Sector</code>s will be merged into the first <code>Sector</code> in the array.</p>
 <h4 id="parameters_26">Parameters</h4>
 <ul>
 <li>sectors: <code>Array</code> of <code>Sector</code>s</li>
 </ul>
+<hr />
 <h3 id="nearestlinedefpos-maxrange-doublenan">nearestLinedef(pos, maxrange = double.NaN)</h3>
 <p>Gets the <code>Linedef</code> that's nearest to the specified position.</p>
 <h4 id="parameters_27">Parameters</h4>
@@ -799,8 +871,9 @@ Map.drawLines([
 <li>pos: Position to check against</li>
 <li>maxrange: Maximum range (optional)</li>
 </ul>
-<h4 id="return-value_28">Return value</h4>
+<h4 id="return-value_29">Return value</h4>
 <p>Nearest <code>Linedef</code></p>
+<hr />
 <h3 id="nearestsidedefpos">nearestSidedef(pos)</h3>
 <p>Gets the <code>Sidedef</code> that's nearest to the specified position.</p>
 <h4 id="parameters_28">Parameters</h4>
@@ -808,8 +881,9 @@ Map.drawLines([
 <li>pos: Position to check against</li>
 <li>maxrange: Maximum range (optional)</li>
 </ul>
-<h4 id="return-value_29">Return value</h4>
+<h4 id="return-value_30">Return value</h4>
 <p>Nearest <code>Sidedef</code></p>
+<hr />
 <h3 id="nearestthingpos-maxrange-doublenan">nearestThing(pos, maxrange = double.NaN)</h3>
 <p>Gets the <code>Thing</code> that's nearest to the specified position.</p>
 <h4 id="parameters_29">Parameters</h4>
@@ -817,8 +891,9 @@ Map.drawLines([
 <li>pos: Position to check against</li>
 <li>maxrange: Maximum range (optional)</li>
 </ul>
-<h4 id="return-value_30">Return value</h4>
+<h4 id="return-value_31">Return value</h4>
 <p>Nearest <code>Linedef</code></p>
+<hr />
 <h3 id="nearestvertexpos-maxrange-doublenan">nearestVertex(pos, maxrange = double.NaN)</h3>
 <p>Gets the <code>Vertex</code> that's nearest to the specified position.</p>
 <h4 id="parameters_30">Parameters</h4>
@@ -826,29 +901,32 @@ Map.drawLines([
 <li>pos: Position to check against</li>
 <li>maxrange: Maximum range (optional)</li>
 </ul>
-<h4 id="return-value_31">Return value</h4>
+<h4 id="return-value_32">Return value</h4>
 <p>Nearest <code>Vertex</code></p>
+<hr />
 <h3 id="snapalltoaccuracyusepreciseposition-true">snapAllToAccuracy(usepreciseposition = true)</h3>
 <p>Snaps all vertices and things to the map format accuracy. Call this to ensure the vertices and things are at valid coordinates.</p>
 <h4 id="parameters_31">Parameters</h4>
 <ul>
 <li>usepreciseposition: <code>true</code> if decimal places defined by the map format should be used, <code>false</code> if no decimal places should be used</li>
 </ul>
+<hr />
 <h3 id="snappedtogridpos">snappedToGrid(pos)</h3>
 <p>Returns the given point snapped to the current grid.</p>
 <h4 id="parameters_32">Parameters</h4>
 <ul>
 <li>pos: Point that should be snapped to the grid</li>
 </ul>
-<h4 id="return-value_32">Return value</h4>
+<h4 id="return-value_33">Return value</h4>
 <p>Snapped position as <code>Vector2D</code></p>
+<hr />
 <h3 id="stitchgeometrymergemode-mergegeometrymodeclassic">stitchGeometry(mergemode = MergeGeometryMode.CLASSIC)</h3>
 <p>Stitches marked geometry with non-marked geometry.</p>
 <h4 id="parameters_33">Parameters</h4>
 <ul>
 <li>mergemode: Mode to merge by</li>
 </ul>
-<h4 id="return-value_33">Return value</h4>
+<h4 id="return-value_34">Return value</h4>
 <p><code>true</code> if successful, <code>false</code> if failed</p>
               
             </div>

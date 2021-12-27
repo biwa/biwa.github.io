@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Sidedef - UDB Script</title>
+  <title>Sidedef - UDBScript</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> UDB Script</a>
+        <a href=".." class="icon icon-home"> UDBScript</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -47,11 +47,13 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <p class="caption"><span class="caption-text">UDBScript</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API</span></p>
@@ -92,7 +94,15 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#line">line</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lowerhighlighted">lowerHighlighted</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lowerselected">lowerSelected</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#lowertexture">lowerTexture</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#middlehighlighted">middleHighlighted</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#middleselected">middleSelected</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#middletexture">middleTexture</a>
     </li>
@@ -103,6 +113,10 @@
     <li class="toctree-l3"><a class="reference internal" href="#other">other</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#sector">sector</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#upperhighlighted">upperHighlighted</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#upperselected">upperSelected</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#uppertexture">upperTexture</a>
     </li>
@@ -133,7 +147,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">UDB Script</a>
+        <a href="..">UDBScript</a>
       </nav>
 
       
@@ -162,10 +176,13 @@
               
                 <h1 id="sidedef">Sidedef</h1>
 <h2 id="properties">Properties</h2>
+<hr />
 <h3 id="angle">angle</h3>
 <p>The <code>Sidedef</code>'s angle in degrees. Read-only.</p>
+<hr />
 <h3 id="anglerad">angleRad</h3>
 <p>The <code>Sidedef</code>'s angle in radians. Read-only.</p>
+<hr />
 <h3 id="fields">fields</h3>
 <p>UDMF fields. It's an object with the fields as properties.</p>
 <pre><code class="language-js">s.fields.comment = 'This is a comment';
@@ -187,29 +204,64 @@ t.score = 100;
 <p>To remove a field you have to assign <code>null</code> to it:</p>
 <pre><code class="language-js">s.fields.user_myintfield = null;
 </code></pre>
+<hr />
 <h3 id="flags">flags</h3>
 <p><code>Sidedef</code> flags. It's an object with the flags as properties. Only available in UDMF.</p>
 <pre><code class="language-js">s.flags['noattack'] = true; // Monsters in this sector don't attack
 s.flags.noattack = true; // Also works
 </code></pre>
+<hr />
 <h3 id="index">index</h3>
 <p>The <code>Sidedef</code>'s index. Read-only.</p>
+<hr />
 <h3 id="isfront">isFront</h3>
 <p><code>true</code> if this <code>Sidedef</code> is the front of its <code>Linedef</code>, otherwise <code>false</code>. Read-only.</p>
+<hr />
 <h3 id="line">line</h3>
 <p>The <code>Linedef</code> the <code>Sidedef</code> belongs to. Read-only.</p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 3</span></p>
+<h3 id="lowerhighlighted">lowerHighlighted</h3>
+<p>If the <code>Sidedef</code>'s lower part is highlighted or not. Will always return <code>true</code> in classic modes if the parent <code>Linedef</code> is selected.</p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 3</span></p>
+<h3 id="lowerselected">lowerSelected</h3>
+<p>If the <code>Sidedef</code>'s lower part is selected or not. Will always return <code>true</code> in classic modes if the parent <code>Linedef</code> is selected.</p>
+<hr />
 <h3 id="lowertexture">lowerTexture</h3>
 <p>The <code>Sidedef</code>'s lower texture.</p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 3</span></p>
+<h3 id="middlehighlighted">middleHighlighted</h3>
+<p>If the <code>Sidedef</code>'s middle part is highlighted or not. Will always return <code>true</code> in classic modes if the parent <code>Linedef</code> is selected.</p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 3</span></p>
+<h3 id="middleselected">middleSelected</h3>
+<p>If the <code>Sidedef</code>'s middle part is selected or not. Will always return <code>true</code> in classic modes if the parent <code>Linedef</code> is selected.</p>
+<hr />
 <h3 id="middletexture">middleTexture</h3>
 <p>The <code>Sidedef</code>'s middle texture.</p>
+<hr />
 <h3 id="offsetx">offsetX</h3>
 <p>The x offset of the <code>Sidedef</code>'s textures.</p>
+<hr />
 <h3 id="offsety">offsetY</h3>
 <p>The y offset of the <code>Sidedef</code>'s textures.</p>
+<hr />
 <h3 id="other">other</h3>
 <p>The <code>Sidedef</code> on the other side of this <code>Sidedef</code>'s <code>Linedef</code>. Returns <code>null</code> if there is no other. Read-only.</p>
+<hr />
 <h3 id="sector">sector</h3>
 <p>The <code>Sector</code> the <code>Sidedef</code> belongs to. Read-only.</p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 3</span></p>
+<h3 id="upperhighlighted">upperHighlighted</h3>
+<p>If the <code>Sidedef</code>'s upper part is highlighted or not. Will always return <code>true</code> in classic modes if the parent <code>Linedef</code> is selected.</p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 3</span></p>
+<h3 id="upperselected">upperSelected</h3>
+<p>If the <code>Sidedef</code>'s upper part is selected or not. Will always return <code>true</code> in classic modes if the parent <code>Linedef</code> is selected.</p>
+<hr />
 <h3 id="uppertexture">upperTexture</h3>
 <p>The <code>Sidedef</code>'s upper texture.</p>
               

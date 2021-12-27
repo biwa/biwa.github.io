@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Thing - UDB Script</title>
+  <title>Thing - UDBScript</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> UDB Script</a>
+        <a href=".." class="icon icon-home"> UDBScript</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -47,11 +47,13 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <p class="caption"><span class="caption-text">UDBScript</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API</span></p>
@@ -173,7 +175,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">UDB Script</a>
+        <a href="..">UDBScript</a>
       </nav>
 
       
@@ -202,14 +204,19 @@
               
                 <h1 id="thing">Thing</h1>
 <h2 id="properties">Properties</h2>
+<hr />
 <h3 id="action">action</h3>
 <p><code>Thing</code> action. Hexen and UDMF only.</p>
+<hr />
 <h3 id="angle">angle</h3>
 <p>Angle of the <code>Thing</code> in degrees, see https://doomwiki.org/wiki/Angle.</p>
+<hr />
 <h3 id="anglerad">angleRad</h3>
 <p>Angle of the <code>Thing</code> in radians.</p>
+<hr />
 <h3 id="args">args</h3>
 <p><code>Array</code> of arguments of the <code>Thing</code>. Number of arguments depends on game config (usually 5). Hexen format and UDMF only.</p>
+<hr />
 <h3 id="fields">fields</h3>
 <p>UDMF fields. It's an object with the fields as properties.</p>
 <pre><code class="language-js">s.fields.comment = 'This is a comment';
@@ -231,6 +238,7 @@ t.score = 100;
 <p>To remove a field you have to assign <code>null</code> to it:</p>
 <pre><code class="language-js">s.fields.user_myintfield = null;
 </code></pre>
+<hr />
 <h3 id="flags">flags</h3>
 <p><code>Thing</code> flags. It's an object with the flags as properties. In Doom format and Hexen format they are identified by numbers, in UDMF by their name.
 Doom and Hexen:</p>
@@ -240,12 +248,16 @@ Doom and Hexen:</p>
 <pre><code class="language-js">t.flags['ambush'] = true; // Set the ambush flag
 t.flags.ambush = true; // Also works
 </code></pre>
+<hr />
 <h3 id="index">index</h3>
 <p>Index of the <code>Thing</code>. Read-only.</p>
+<hr />
 <h3 id="marked">marked</h3>
 <p>If the <code>Thing</code> is marked or not. It is used to mark map elements that were created or changed (for example after drawing new geometry).</p>
+<hr />
 <h3 id="pitch">pitch</h3>
 <p>Pitch of the <code>Thing</code> in degrees. Only valid for supporting game configurations.</p>
+<hr />
 <h3 id="position">position</h3>
 <p>Position of the <code>Thing</code>. It's an object with <code>x</code>, <code>y</code>, and <code>z</code> properties. The latter is only relevant in Hexen format and UDMF.
 The <code>x</code>, <code>y</code>, and <code>z</code> accept numbers:</p>
@@ -258,25 +270,33 @@ t.position = new Vector3D(32, 64, 128);
 t.position = [ 32, 64 ];
 t.position = [ 32, 64, 128 ];
 </code></pre>
+<hr />
 <h3 id="roll">roll</h3>
 <p>Roll of the <code>Thing</code> in degrees. Only valid for supporting game configurations.</p>
+<hr />
 <h3 id="selected">selected</h3>
 <p>If the <code>Thing</code> is selected or not.</p>
+<hr />
 <h3 id="tag">tag</h3>
 <p><code>Thing</code> tag. UDMF only.</p>
+<hr />
 <h3 id="type">type</h3>
 <p>Type of the <code>Thing</code>.</p>
 <h2 id="methods">Methods</h2>
+<hr />
 <h3 id="clearflags">clearFlags()</h3>
 <p>Clears all flags.</p>
+<hr />
 <h3 id="copypropertiestot">copyPropertiesTo(t)</h3>
 <p>Copies the properties from this <code>Thing</code> to another.</p>
 <h4 id="parameters">Parameters</h4>
 <ul>
 <li>t: The <code>Thing</code> to copy the properties to</li>
 </ul>
+<hr />
 <h3 id="delete">delete()</h3>
 <p>Deletes the <code>Thing</code>.</p>
+<hr />
 <h3 id="distancetopos">distanceTo(pos)</h3>
 <p>Gets the distance between this <code>Thing</code> and the given point. The point can be either a <code>Vector2D</code> or an array of numbers.</p>
 <pre><code class="language-js">t.distanceToSq(new Vector2D(32, 64));
@@ -288,6 +308,7 @@ t.distanceToSq([ 32, 64 ]);
 </ul>
 <h4 id="return-value">Return value</h4>
 <p>Distance to <code>pos</code></p>
+<hr />
 <h3 id="distancetosqpos">distanceToSq(pos)</h3>
 <p>Gets the squared distance between this <code>Thing</code> and the given point.
 The point can be either a <code>Vector2D</code> or an array of numbers.</p>
@@ -300,12 +321,15 @@ t.distanceToSq([ 32, 64 ]);
 </ul>
 <h4 id="return-value_1">Return value</h4>
 <p>Distance to <code>pos</code></p>
+<hr />
 <h3 id="getsector">getSector()</h3>
 <p>Determines and returns the <code>Sector</code> the <code>Thing</code> is in.</p>
 <h4 id="return-value_2">Return value</h4>
 <p>The <code>Sector</code> the <code>Thing</code> is in</p>
+<hr />
 <h3 id="snaptoaccuracy">snapToAccuracy()</h3>
 <p>Snaps the <code>Thing</code>'s position to the map format's accuracy.</p>
+<hr />
 <h3 id="snaptogrid">snapToGrid()</h3>
 <p>Snaps the <code>Thing</code>'s position to the grid.</p>
               

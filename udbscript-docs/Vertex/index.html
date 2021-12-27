@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Vertex - UDB Script</title>
+  <title>Vertex - UDBScript</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> UDB Script</a>
+        <a href=".." class="icon icon-home"> UDBScript</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -47,11 +47,13 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">UDB Script</span></p>
+                <p class="caption"><span class="caption-text">UDBScript</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">API</span></p>
@@ -171,7 +173,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">UDB Script</a>
+        <a href="..">UDBScript</a>
       </nav>
 
       
@@ -200,8 +202,10 @@
               
                 <h1 id="vertex">Vertex</h1>
 <h2 id="properties">Properties</h2>
+<hr />
 <h3 id="ceilingz">ceilingZ</h3>
 <p>The ceiling z position of the <code>Vertex</code>. Only available in UDMF. Only available for supported game configurations.</p>
+<hr />
 <h3 id="fields">fields</h3>
 <p>UDMF fields. It's an object with the fields as properties.</p>
 <pre><code class="language-js">s.fields.comment = 'This is a comment';
@@ -223,12 +227,16 @@ t.score = 100;
 <p>To remove a field you have to assign <code>null</code> to it:</p>
 <pre><code class="language-js">s.fields.user_myintfield = null;
 </code></pre>
+<hr />
 <h3 id="floorz">floorZ</h3>
 <p>The floor z position of the <code>Vertex</code>. Only available in UDMF. Only available for supported game configurations.</p>
+<hr />
 <h3 id="index">index</h3>
 <p>The vertex index. Read-only.</p>
+<hr />
 <h3 id="marked">marked</h3>
 <p>If the <code>Vertex</code> is marked or not. It is used to mark map elements that were created or changed (for example after drawing new geometry).</p>
+<hr />
 <h3 id="position">position</h3>
 <p>Position of the <code>Vertex</code>. It's an object with <code>x</code> and <code>y</code> properties.
 The <code>x</code> and <code>y</code> accept numbers:</p>
@@ -239,17 +247,21 @@ v.position.y = 64;
 <pre><code class="language-js">v.position = new Vector2D(32, 64);
 v.position = [ 32, 64 ];
 </code></pre>
+<hr />
 <h3 id="selected">selected</h3>
 <p>If the <code>Vertex</code> is selected or not.</p>
 <h2 id="methods">Methods</h2>
+<hr />
 <h3 id="copypropertiestov">copyPropertiesTo(v)</h3>
 <p>Copies the properties from this <code>Vertex</code> to another.</p>
 <h4 id="parameters">Parameters</h4>
 <ul>
 <li>v: the vertex to copy the properties to</li>
 </ul>
+<hr />
 <h3 id="delete">delete()</h3>
 <p>Deletes the <code>Vertex</code>. Note that this can result in unclosed sectors.</p>
+<hr />
 <h3 id="distancetopos">distanceTo(pos)</h3>
 <p>Gets the distance between this <code>Vertex</code> and the given point.
 The point can be either a <code>Vector2D</code> or an array of numbers.</p>
@@ -262,6 +274,7 @@ v.distanceTo([ 32, 64 ]);
 </ul>
 <h4 id="return-value">Return value</h4>
 <p>Distance to <code>pos</code></p>
+<hr />
 <h3 id="distancetosqpos">distanceToSq(pos)</h3>
 <p>Gets the squared distance between this <code>Vertex</code> and the given point.
 The point can be either a <code>Vector2D</code> or an array of numbers.</p>
@@ -274,16 +287,19 @@ v.distanceToSq([ 32, 64 ]);
 </ul>
 <h4 id="return-value_1">Return value</h4>
 <p>Squared distance to <code>pos</code></p>
+<hr />
 <h3 id="getlinedefs">getLinedefs()</h3>
 <p>Gets all <code>Linedefs</code> that are connected to this <code>Vertex</code>.</p>
 <h4 id="return-value_2">Return value</h4>
 <p>Array of linedefs</p>
+<hr />
 <h3 id="joinother">join(other)</h3>
 <p>Joins this <code>Vertex</code> with another <code>Vertex</code>, deleting this <code>Vertex</code> and keeping the other.</p>
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>other: <code>Vertex</code> to join with</li>
 </ul>
+<hr />
 <h3 id="nearestlinedefpos">nearestLinedef(pos)</h3>
 <p>Returns the <code>Linedef</code> that is connected to this <code>Vertex</code> that is closest to the given point.</p>
 <h4 id="parameters_4">Parameters</h4>
@@ -292,8 +308,10 @@ v.distanceToSq([ 32, 64 ]);
 </ul>
 <h4 id="return-value_3">Return value</h4>
 <p><em>missing</em></p>
+<hr />
 <h3 id="snaptoaccuracy">snapToAccuracy()</h3>
 <p>Snaps the <code>Vertex</code>'s position to the map format's accuracy.</p>
+<hr />
 <h3 id="snaptogrid">snapToGrid()</h3>
 <p>Snaps the <code>Vertex</code>'s position to the grid.</p>
               
