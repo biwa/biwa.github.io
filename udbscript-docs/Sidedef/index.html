@@ -126,11 +126,15 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Built-in libraries</span></p>
@@ -188,7 +192,7 @@
 <pre><code class="language-js">s.fields.comment = 'This is a comment';
 s.fields['comment'] = 'This is a comment'; // Also  works
 s.fields.xscalefloor = 2.0;
-t.score = 100;
+t.fields.score = 100;
 </code></pre>
 <p>It is also possible to define new fields:</p>
 <pre><code class="language-js">s.fields.user_myboolfield = true;
@@ -199,7 +203,7 @@ t.score = 100;
 <li>it does not work for flags. While they are technically also UDMF fields, they are handled in the <code>flags</code> field of the respective class (where applicable)</li>
 <li>JavaScript does not distinguish between integer and floating point numbers, it only has floating point numbers (of double precision). For fields where UDB knows that they are integers this it not a problem, since it'll automatically convert the floating point numbers to integers (dropping the fractional part). However, if you need to specify an integer value for an unknown or custom field you have to work around this limitation, using the <code>UniValue</code> class:</li>
 </ul>
-<pre><code class="language-js">s.fields.user_myintfield = new UniValue(0, 25); // Sets the 'user_myintfield' field to an integer value of 25
+<pre><code class="language-js">s.fields.user_myintfield = new UDB.UniValue(0, 25); // Sets the 'user_myintfield' field to an integer value of 25
 </code></pre>
 <p>To remove a field you have to assign <code>null</code> to it:</p>
 <pre><code class="language-js">s.fields.user_myintfield = null;

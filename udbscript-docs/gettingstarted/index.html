@@ -73,6 +73,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-global-udb-namespace">The global UDB namespace</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#working-with-vectors">Working with vectors</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#vector-arithmetic">Vector arithmetic</a>
@@ -118,11 +120,15 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Built-in libraries</span></p>
@@ -222,6 +228,10 @@
 <li><code>description</code>: description of the script. Should include what the script does and what the requirements are (for example if something has to be selected for the script to work)</li>
 <li><code>scriptoptions</code>: the script options. The payload has to be in UDB's configuration file format (see below)</li>
 </ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>It is highliy recommended to set the feature version through the <code>version</code> metadata command. The global <code>UDB</code> namespace was added in version 4, and new features will be exclusively added to this namespace!</p>
+</div>
 <h4 id="setting-script-options">Setting script options</h4>
 <p>The script options that can be set in the docker prior to running the script can be defined using the <code>scriptoptions</code> metadata command. The payload has to be in UDB's configuration file format.</p>
 <p>The payload consists of one or more blocks, each defining an option. The blocks have the following format:</p>
@@ -299,7 +309,7 @@ height { description = &quot;Height of the sector&quot;; type = 0; default = 512
 </ul>
 <p>&ast; these are quality of life type for interger, floating point numbers, and strings. Clicking into their field will show context sensitive controls. For example when using type 3 (boolean) there will be drop down list where you can choose between <code>true</code> or <code>false</code>, when using type 6 (texture) a button button that will open the texture browser, when using type 13 (sector tag) will show a drop down list of sector tags in the map etc.<br><img alt="Script option quality of life button" src="../scriptoptions.png" /></p>
 <h4 id="accessing-script-options-in-a-script">Accessing script options in a script</h4>
-<p>The script option can be accessed through the global object <code>ScriptOptions</code>. This object has properties by the name of the blocks of the script option definition, and contains the value set in the docker.</p>
+<p>The script option can be accessed through the <code>ScriptOptions</code> object in the global <code>UDB</code> namespace. This object has properties by the name of the blocks of the script option definition, and contains the value set in the docker.</p>
 <p>Example:</p>
 <pre><code class="language-js">`#scriptoptions
 
@@ -311,47 +321,55 @@ length
 }
 `;
 
-showMessage('The given length is ' + ScriptOptions.length);
+UDB.showMessage('The given length is ' + UDB.ScriptOptions.length);
 </code></pre>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can also query options at runtime. See the <code>QueryOptions</code> API documentation.</p>
 </div>
+<h3 id="the-global-udb-namespace">The global UDB namespace</h3>
+<p>Starting with feature version 4 of UDBScript all objects, methods, and classes are combined in the global <code>UDB</code> namespace. This is to prevent clashes with existing and future features of Javascript (for example Javascript has a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a> class). It is highly recommended to specify the feature version through the <code>version</code> metadata command (see above). New UDBScript features will only be added to the global <code>UDB</code> namespace.</p>
+<p>In practice that means that all methods, objects, and classes have to be prefixed with <code>UDB.</code>, for example getting all sectors in a map looked like this in versions prior to 4:</p>
+<pre><code class="language-js">let sectors = Map.getSectors();
+</code></pre>
+<p>while in version 4 and later the following code has to be used:</p>
+<pre><code class="language-js">let sectors = UDB.Map.getSectors();
+</code></pre>
 <h3 id="working-with-vectors">Working with vectors</h3>
 <p>In UDBScript vectors are commonly used to represent positions, like thing and vertex positions. They come in two flavors, <code>Vector2D</code> (representing a two-dimentional vector with <code>x</code> and <code>y</code> components) and <code>Vector3D</code> (representing a three-dimentional vector with <code>x</code>, <code>y</code>, and <code>z</code> components). They feature a range of vector math methods, such as rotating the vector.</p>
 <p>There are several ways to create a new vector:</p>
-<pre><code class="language-js">let v1 = new Vector2D(32, 64); // From x and y values
-let v2 = new Vector2D([ 32, 64 ]); // From an array with two numbers
-let v3 = new Vector2D({ x: 32, y: 64 }); // From an object with x and y properties
-let v4 = new Vector2D(v1); // From another Vector2D
+<pre><code class="language-js">let v1 = new UDB.Vector2D(32, 64); // From x and y values
+let v2 = new UDB.Vector2D([ 32, 64 ]); // From an array with two numbers
+let v3 = new UDB.Vector2D({ x: 32, y: 64 }); // From an object with x and y properties
+let v4 = new UDB.Vector2D(v1); // From another Vector2D
 
-let v5 = new Vector3D(32, 64, 16); // From x, y, and z values
-let v6 = new Vector3D([ 32, 64, 16 ]); // From an array with three numbers
-let v7 = new Vector3D({ x: 32, y: 64, z: 16 }); // From an object with x, y, and z properties
-let v8 = new Vector3D(v5); // From another Vector3D
+let v5 = new UDB.Vector3D(32, 64, 16); // From x, y, and z values
+let v6 = new UDB.Vector3D([ 32, 64, 16 ]); // From an array with three numbers
+let v7 = new UDB.Vector3D({ x: 32, y: 64, z: 16 }); // From an object with x, y, and z properties
+let v8 = new UDB.Vector3D(v5); // From another Vector3D
 </code></pre>
 <p>API methods that accept a <code>Vector2D</code> or <code>Vector3D</code> as a parameter also accept the array notation. For example the following lines are equivalent:</p>
-<pre><code class="language-js">let t1 = Map.createThing(new Vector2D(32, 64), 3001); // Create an Imp
-let t2 = Map.createThing([ 32, 64 ], 3001); // Create an Imp
-let t3 = Map.createThing({ x: 32, y: 64 }, 3001); // Create an Imp
+<pre><code class="language-js">let t1 = UDB.Map.createThing(new UDB.Vector2D(32, 64), 3001); // Create an Imp
+let t2 = UDB.Map.createThing([ 32, 64 ], 3001); // Create an Imp
+let t3 = UDB.Map.createThing({ x: 32, y: 64 }, 3001); // Create an Imp
 
-let v = new Vector2D(32, 64); // Supplying the x and y values
-let t4 = Map.createThing(v, 3001); // Create an Imp
+let v = new UDB.Vector2D(32, 64); // Supplying the x and y values
+let t4 = UDB.Map.createThing(v, 3001); // Create an Imp
 </code></pre>
 <h4 id="vector-arithmetic">Vector arithmetic</h4>
 <p>It is possible to do elementary arithmetic with vectors, i.e. you can add, substract, multiply, and divide them.</p>
-<pre><code class="language-js">let v1 = new Vector2D(2, 3) + new Vector2D(4, 5); // Results in new Vector(6, 8)
-let v2 = new Vector2D(2, 3) - new Vector2D(4, 5); // Results in new Vector(-2, -2)
-let v3 = new Vector2D(2, 3) * new Vector2D(4, 5); // Results in new Vector(8, 15)
-let v4 = new Vector2D(2, 3) / new Vector2D(4, 5); // Results in new Vector(0.5, 0.6)
+<pre><code class="language-js">let v1 = new UDB.Vector2D(2, 3) + new UDB.Vector2D(4, 5); // Results in new Vector(6, 8)
+let v2 = new UDB.Vector2D(2, 3) - new UDB.Vector2D(4, 5); // Results in new Vector(-2, -2)
+let v3 = new UDB.Vector2D(2, 3) * new UDB.Vector2D(4, 5); // Results in new Vector(8, 15)
+let v4 = new UDB.Vector2D(2, 3) / new UDB.Vector2D(4, 5); // Results in new Vector(0.5, 0.6)
 </code></pre>
 <p>This also works with the array and object notation:</p>
-<pre><code class="language-js">let v1 = new Vector2D(2, 3) + [ 4, 5 ]; // Results in new Vector(6, 8)
-let v2 = new Vector2D(2, 3) + { x: 4, y: 5 }; // Results in new Vector(6, 8)
+<pre><code class="language-js">let v1 = new UDB.Vector2D(2, 3) + [ 4, 5 ]; // Results in new Vector(6, 8)
+let v2 = new UDB.Vector2D(2, 3) + { x: 4, y: 5 }; // Results in new Vector(6, 8)
 </code></pre>
 <p>You can also use only a number as one side of the operation, in  which case the operation will be applied to each element of the vector:</p>
-<pre><code class="language-js">let v1 = new Vector2D(2, 3) + 3; // Results in new Vector(5, 6)
-let v2 = new Vector2D(2, 3) * 3; // Results in new Vector(6, 9)
+<pre><code class="language-js">let v1 = new UDB.Vector2D(2, 3) + 3; // Results in new Vector(5, 6)
+let v2 = new UDB.Vector2D(2, 3) * 3; // Results in new Vector(6, 9)
 </code></pre>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -359,29 +377,29 @@ let v2 = new Vector2D(2, 3) * 3; // Results in new Vector(6, 9)
 <code>let v1 = [ 2, 3 ] + [ 4, 5 ]; // Results in the string "2, 34, 5"</code></p>
 </div>
 <h3 id="working-with-map-elements">Working with map elements</h3>
-<p>Map elements (things, sectors, linedefs, sidedefs, vertices) can be accessed through the global <code>Map</code> object. This object has methods that return an array of map elements, for example <code>Map.getSectors()</code> returns an array of <code>Sector</code> objects, which are are all sectors in the map. There are also methods to get all selected (for example <code>Map.getSelectedSectors()</code>) and marked (for example <code>Map.getMarkedSectors()</code>), or the currently highlighted (for example <code>Map.getHighlightedSector()</code>) map elements. There are also methods to get either the currently selected map elements, <em>or</em> the currently highlighted map elements (for example <code>Map.getSelectedOrHighlightedSectors()</code>). These map elements can then be modified, see the documentation for the particular map element type in the API section.</p>
+<p>Map elements (things, sectors, linedefs, sidedefs, vertices) can be accessed through the <code>UDB.Map</code> object. This object has methods that return an array of map elements, for example <code>UDB.Map.getSectors()</code> returns an array of <code>Sector</code> objects, which are are all sectors in the map. There are also methods to get all selected (for example <code>UDB.Map.getSelectedSectors()</code>) and marked (for example <code>UDB.Map.getMarkedSectors()</code>), or the currently highlighted (for example <code>UDB.Map.getHighlightedSector()</code>) map elements. There are also methods to get either the currently selected map elements, <em>or</em> the currently highlighted map elements (for example <code>UDB.Map.getSelectedOrHighlightedSectors()</code>). These map elements can then be modified, see the documentation for the particular map element type in the API section.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>"Marking" a map element is a way to denote that something happened to this map element. For example when using the <code>Map.drawLines()</code> method all new geometry will be marked.</p>
+<p>"Marking" a map element is a way to denote that something happened to this map element. For example when using the <code>UDB.Map.drawLines()</code> method all new geometry will be marked.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>UDB differentiates between "selecting" and "highlighting" map elements. "Selecting" means clicking on the map element, "highlighting" means just hovering the mouse on (or near) a map element. All the <code>Map.getSelectedOrHighlighted...()</code> methods behave like UDB usually works, i.e. if at least one map element is selected, the selected map elements will be returned (and the highlighted map element will be ignored), if no map elements are selected the highlighted map element will be returned.
-In most circumstances it is recommended to use the <code>Map.getSelectedOrHighlighted...()</code> to stay close to UDB's built-in actions.</p>
+<p>UDB differentiates between "selecting" and "highlighting" map elements. "Selecting" means clicking on the map element, "highlighting" means just hovering the mouse on (or near) a map element. All the <code>UDB.Map.getSelectedOrHighlighted...()</code> methods behave like UDB usually works, i.e. if at least one map element is selected, the selected map elements will be returned (and the highlighted map element will be ignored), if no map elements are selected the highlighted map element will be returned.
+In most circumstances it is recommended to use the <code>UDB.Map.getSelectedOrHighlighted...()</code> to stay close to UDB's built-in actions.</p>
 </div>
 <h3 id="creating-new-geometry">Creating new geometry</h3>
-<p>New map geometry can be created with the <code>drawLines()</code> method of the <code>Map</code> object. It accepts an array of coordinates in map space. The coordinates can either by instances of <code>Vector2D</code>, <code>Vector3D</code>, or an array of numbers.</p>
+<p>New map geometry can be created with the <code>drawLines()</code> method of the <code>UDB.Map</code> object. It accepts an array of coordinates in map space. The coordinates can either by instances of <code>Vector2D</code>, <code>Vector3D</code>, or an array of numbers.</p>
 <p>Example 1:</p>
-<pre><code class="language-js">Map.drawLines([
-    new Vector2D(0, 0),
-    new Vector2D(64, 0),
-    new Vector2D(64, 64),
-    new Vector2D(0, 64),
-    new Vector2D(0, 0)
+<pre><code class="language-js">UDB.Map.drawLines([
+    new UDB.Vector2D(0, 0),
+    new UDB.Vector2D(64, 0),
+    new UDB.Vector2D(64, 64),
+    new UDB.Vector2D(0, 64),
+    new UDB.Vector2D(0, 0)
 ]);
 </code></pre>
 <p>Example 2:</p>
-<pre><code class="language-js">Map.drawLines([
+<pre><code class="language-js">UDB.Map.drawLines([
     [ 0, 0 ],
     [ 64, 0 ],
     [ 64, 64 ],
@@ -418,34 +436,41 @@ p.finishDrawing();
 <h3 id="ending-scripts-prematurely">Ending scripts prematurely</h3>
 <p>Normally a script ends when the last instruction is executed. But there can be situations where you want to end a script early.</p>
 <ul>
-<li><code>exit()</code>: this global function ends the script with success. It can optionally take a string argument that is shown in the status bar upon ending the script</li>
-<li><code>die()</code>: this global function ends the script with a failure. This means that it will undo any changes the script has made. It can optionally take a string argument that is shown in the status bar upon ending the script</li>
+<li><code>UDB.exit()</code>: this global function ends the script with success. It can optionally take a string argument that is shown in the status bar upon ending the script</li>
+<li><code>UDB.die()</code>: this global function ends the script with a failure. This means that it will undo any changes the script has made. It can optionally take a string argument that is shown in the status bar upon ending the script</li>
 <li><code>throw</code>: throws an exception. Only ends the script if it's not caught in a <code>try</code>/<code>catch</code> block. If not caught it'll end the script with a failure. This means that it will undo any changes the script has made. The string given as a parameter is shown in the status bar upon ending the script</li>
 </ul>
-<pre><code class="language-js">let sectors = Map.getSelectedSectors();
+<pre><code class="language-js">let sectors = UDB.Map.getSelectedSectors();
 
 if(sectors.length == 0)
-    die('You have to select at least one sector');
+    UDB.die('You have to select at least one sector');
 
-exit('There were ' + sectors.length + ' sectors selected');
+UDB.exit('There were ' + sectors.length + ' sectors selected');
 
 throw 'This part of the script should never be reached!';
 </code></pre>
 <h3 id="communicating-with-the-user">Communicating with the user</h3>
-<p>Sometimes you might want to let the script directly communicate with the user. To do that there are two global functions, <code>showMessage()</code> and <code>showMessageYesNo()</code>.</p>
+<p>Sometimes you might want to let the script directly communicate with the user. To do that there are two functions, <code>UDB.showMessage()</code> and <code>UDB.showMessageYesNo()</code>.</p>
 <ul>
-<li><code>showMessage()</code>: shows a message box with an "OK" button and the text given as the parameter<br></li>
+<li><code>UDB.showMessage()</code>: shows a message box with an "OK" button and the text given as the parameter<br></li>
 </ul>
-<pre><code class="language-js">showMessage('Hello, world!');
+<pre><code class="language-js">UDB.showMessage('Hello, world!');
 </code></pre>
 <ul>
-<li><code>showMessageYesNo()</code>: shows a message box with an "Yes" and "No" button and the text given as the parameter. Returns <code>true</code> if the "Yes" button was clicked, and <code>false</code> if the "No" button was clicked</li>
+<li><code>UDB.showMessageYesNo()</code>: shows a message box with an "Yes" and "No" button and the text given as the parameter. Returns <code>true</code> if the "Yes" button was clicked, and <code>false</code> if the "No" button was clicked</li>
 </ul>
-<pre><code class="language-js">if(showMessageYesNo('Are you sure you want to replace all imps with Arch-Viles? That\'s not remotely fair!'))
+<pre><code class="language-js">if(UDB.showMessageYesNo('Are you sure you want to replace all imps with Arch-Viles? That\'s not remotely fair!'))
 {
-    Map.getThings().filter(t =&gt; t.type == 3001).forEach(t =&gt; t.type=64);
+    UDB.Map.getThings().filter(t =&gt; t.type == 3001).forEach(t =&gt; t.type=64);
 }
 </code></pre>
+<p>For long-running scripts it's also possible to report the progress to the user using the <code>UDB.setProgress()</code> method, which accepts values from 0 to 100. For example the following code will set the progress bar to 25%:</p>
+<pre><code class="language-js">UDB.setProgress(25);
+</code></pre>
+<p>Additional output can be shown using the <code>UDB.log()</code> method, which will add a line of text to the log in the running script dialog:</p>
+<pre><code class="language-js">UDB.log('Hello, world!');
+</code></pre>
+<p><img alt="Running Script Dialog" src="../runningscriptdialog.png" /></p>
               
             </div>
           </div>

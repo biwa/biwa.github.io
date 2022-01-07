@@ -55,6 +55,8 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Changes</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#verstion-4">Verstion 4</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#version-3">Version 3</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#version-2">Version 2</a>
@@ -86,11 +88,15 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Built-in libraries</span></p>
@@ -136,6 +142,11 @@
               
                 <h1 id="changes">Changes</h1>
 <p>This site lists all changes between different API version of UDBScript</p>
+<h2 id="verstion-4">Verstion 4</h2>
+<ul>
+<li>Moved all classes, object, and methods into the <code>UDB</code> namespace (everything has to be prefixed wiht <code>UDB.</code>)</li>
+<li>Added methods to report progress for long running scripts and script log output. See <a href="gettingstartet.md#communicating-with-the-user">Communicating with the user</a> for more information</li>
+</ul>
 <h2 id="version-3">Version 3</h2>
 <ul>
 <li>Exported the classes <code>Linedef</code>, <code>Sector</code>, <code>Sidedef</code>, <code>Thing</code>, and <code>Vertex</code>, so that they can be used with <code>instanceof</code></li>

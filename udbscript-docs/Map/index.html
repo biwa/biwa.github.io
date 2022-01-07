@@ -450,11 +450,15 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Built-in libraries</span></p>
@@ -573,10 +577,10 @@
 <hr />
 <h3 id="createthingpos-type0">createThing(pos, type=0)</h3>
 <p>Creates a new <code>Thing</code> at the given position. The position can be a <code>Vector2D</code>, <code>Vector3D</code>, or an <code>Array</code> of two numbers or three numbers (note that the z position only works for game configurations that support vertical pos. A thing type can be supplied optionally.</p>
-<pre><code class="language-js">var t1 = Map.createThing(new Vector2D(32, 64));
-var t2 = Map.createThing([ 32, 64 ]);
-var t3 = Map.createThing(new Vector2D(32, 64), 3001); // Create an Imp
-var t4 = Map.createThing([ 32, 64 ], 3001); // Create an Imp
+<pre><code class="language-js">var t1 = UDB.Map.createThing(new UDB.Vector2D(32, 64));
+var t2 = UDB.Map.createThing([ 32, 64 ]);
+var t3 = UDB.Map.createThing(new UDB.Vector2D(32, 64), 3001); // Create an Imp
+var t4 = UDB.Map.createThing([ 32, 64 ], 3001); // Create an Imp
 </code></pre>
 <h4 id="parameters_6">Parameters</h4>
 <ul>
@@ -588,8 +592,8 @@ var t4 = Map.createThing([ 32, 64 ], 3001); // Create an Imp
 <hr />
 <h3 id="createvertexpos">createVertex(pos)</h3>
 <p>Creates a new <code>Vertex</code> at the given position. The position can be a <code>Vector2D</code> or an <code>Array</code> of two numbers.</p>
-<pre><code class="language-js">var v1 = Map.createVertex(new Vector2D(32, 64));
-var v2 = Map.createVertex([ 32, 64 ]);
+<pre><code class="language-js">var v1 = UDB.Map.createVertex(new Vector2D(32, 64));
+var v2 = UDB.Map.createVertex([ 32, 64 ]);
 </code></pre>
 <h4 id="parameters_7">Parameters</h4>
 <ul>
@@ -600,15 +604,15 @@ var v2 = Map.createVertex([ 32, 64 ]);
 <hr />
 <h3 id="drawlinesdata">drawLines(data)</h3>
 <p>Draws lines. Data has to be an <code>Array</code> of <code>Array</code> of numbers, <code>Vector2D</code>s, <code>Vector3D</code>s, or objects with x and y properties. Note that the first and last element have to be at the same positions to make a complete drawing.</p>
-<pre><code class="language-js">Map.drawLines([
-    new Vector2D(64, 0),
-    new Vector2D(128, 0),
-    new Vector2D(128, 64),
-    new Vector2D(64, 64),
-    new Vector2D(64, 0)
+<pre><code class="language-js">UDB.Map.drawLines([
+    new UDB.Vector2D(64, 0),
+    new UDB.Vector2D(128, 0),
+    new UDB.Vector2D(128, 64),
+    new UDB.Vector2D(64, 64),
+    new UDB.Vector2D(64, 0)
 ]);
 
-Map.drawLines([
+UDB.Map.drawLines([
     [ 0, 0 ],
     [ 64, 0 ],
     [ 64, 64 ],
@@ -789,8 +793,8 @@ In classic modes this will return both sidedefs of 2-sided lines, in visual mode
 <hr />
 <p><span style="float:right;font-weight:normal;font-size:66%">Version: 3</span></p>
 <h3 id="getsidedefsfromselectedorhighlightedlinedefs">getSidedefsFromSelectedOrHighlightedLinedefs()</h3>
-<p>Gets the <code>Sidedef</code>s of the currently selected <code>Linedef</code>s <em>or</em>, if no <code>Linede</code>f<code>s are selected, the</code>Sidedef<code>s of the currently highlighted</code>Linedef<code>.
-In classic modes this will return both sidedefs of 2-sided lines, in visual mode it will only return the actually selected</code>Sidedef`.</p>
+<p>Gets the <code>Sidedef</code>s of the currently selected <code>Linedef</code>s <em>or</em>, if no <code>Linedef</code>s are selected, the <code>Sidedef</code>s of the currently highlighted <code>Linedef</code>.
+In classic modes this will return both sidedefs of 2-sided lines, in visual mode it will only return the actually selected <code>Sidedef</code>.</p>
 <h4 id="return-value_26">Return value</h4>
 <p><code>Array</code> of <code>Sidedef</code>s</p>
 <hr />
