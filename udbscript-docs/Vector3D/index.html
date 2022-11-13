@@ -1,100 +1,101 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Vector3D - UDBScript</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Vector3D";
-    var mkdocs_page_input_path = "Vector3D.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Vector3D - UDBScript</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Vector3D";
+        var mkdocs_page_input_path = "Vector3D.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> UDBScript</a>
-        <div role="search">
+          <a href=".." class="icon icon-home"> UDBScript
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">UDBScript</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Map/">Map</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Vector3D</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">UDBScript</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BlockEntry/">BlockEntry</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BlockMap/">BlockMap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BlockMapQueryResult/">BlockMapQueryResult</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Map/">Map</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Plane/">Plane</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Vector3D</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#constructors">Constructors</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#vector3dv">Vector3D(v)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#vector3dx-double-y-double-z-double">Vector3D(x: double, y: double, z: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#vector3dx-y-z">Vector3D(x, y, z)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#vector3dv-object">Vector3D(v: object)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
     </li>
@@ -104,7 +105,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#static-methods">Static methods</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#crossproducta-b">crossProduct(a, b)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#crossproducta-object-b-object">crossProduct(a: object, b: object)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
     </li>
@@ -112,7 +113,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dotproducta-b">dotProduct(a, b)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#dotproducta-vector3d-b-vector3d">dotProduct(a: Vector3D, b: Vector3D)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
     </li>
@@ -120,7 +121,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fromanglexyangle">fromAngleXY(angle)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#fromanglexyangle-double">fromAngleXY(angle: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
     </li>
@@ -128,7 +129,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fromanglexyradangle">fromAngleXYRad(angle)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#fromanglexyradangle-double">fromAngleXYRad(angle: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
     </li>
@@ -136,7 +137,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fromanglexyzanglexy-anglez">fromAngleXYZ(anglexy, anglez)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#fromanglexyzanglexy-double-anglez-double">fromAngleXYZ(anglexy: double, anglez: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
     </li>
@@ -144,7 +145,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fromanglexyzradanglexy-anglez">fromAngleXYZRad(anglexy, anglez)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#fromanglexyzradanglexy-double-anglez-double">fromAngleXYZRad(anglexy: double, anglez: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
     </li>
@@ -152,7 +153,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#reflectv-m">reflect(v, m)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#reflectv-object-m-object">reflect(v: object, m: object)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
     </li>
@@ -160,7 +161,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#reversedv">reversed(v)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#reversedv-object">reversed(v: object)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
     </li>
@@ -224,7 +225,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getscaledscale">getScaled(scale)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getscaledscale-double">getScaled(scale: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
     </li>
@@ -247,78 +248,66 @@
         </ul>
     </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Built-in libraries</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
-                    </li>
-                </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Built-in libraries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">UDBScript</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UDBScript</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>API &raquo;</li>
-        
-      
-    
-    <li>Vector3D</li>
+      <li>Vector3D</li>
     <li class="wy-breadcrumbs-aside">
-      
     </li>
   </ul>
-  
   <hr/>
 </div>
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <h1 id="vector3d">Vector3D</h1>
 <h2 id="constructors">Constructors</h2>
 <hr />
-<h3 id="vector3dv">Vector3D(v)</h3>
-<p>Creates a new <code>Vector3D</code> from a point.</p>
-<pre><code class="language-js">let v = new UDB.Vector3D([ 32, 64, 128 ]);
-</code></pre>
-<h4 id="parameters">Parameters</h4>
-<ul>
-<li>v: The vector to create the <code>Vector3D</code> from</li>
-</ul>
-<hr />
-<h3 id="vector3dx-y-z">Vector3D(x, y, z)</h3>
+<h3 id="vector3dx-double-y-double-z-double">Vector3D(x: double, y: double, z: double)</h3>
 <p>Creates a new <code>Vector3D</code> from x and y coordinates</p>
 <pre><code class="language-js">let v = new UDB.Vector3D(32, 64, 128);
 </code></pre>
-<h4 id="parameters_1">Parameters</h4>
+<h4 id="parameters">Parameters</h4>
 <ul>
 <li>x: The x coordinate</li>
 <li>y: The y coordinate</li>
 <li>z: The z coordinate</li>
 </ul>
+<hr />
+<h3 id="vector3dv-object">Vector3D(v: object)</h3>
+<p>Creates a new <code>Vector3D</code> from a point.</p>
+<pre><code class="language-js">let v = new UDB.Vector3D([ 32, 64, 128 ]);
+</code></pre>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li>v: The vector to create the <code>Vector3D</code> from</li>
+</ul>
 <h2 id="static-methods">Static methods</h2>
 <hr />
-<h3 id="crossproducta-b">crossProduct(a, b)</h3>
+<h3 id="crossproducta-object-b-object">crossProduct(a: object, b: object)</h3>
 <p>Returns the cross product of two <code>Vector3D</code>s.</p>
 <h4 id="parameters_2">Parameters</h4>
 <ul>
@@ -328,7 +317,7 @@
 <h4 id="return-value">Return value</h4>
 <p>Cross product of the two vectors as <code>Vector3D</code></p>
 <hr />
-<h3 id="dotproducta-b">dotProduct(a, b)</h3>
+<h3 id="dotproducta-vector3d-b-vector3d">dotProduct(a: Vector3D, b: Vector3D)</h3>
 <p>Returns the dot product of two <code>Vector3D</code>s.</p>
 <h4 id="parameters_3">Parameters</h4>
 <ul>
@@ -338,7 +327,7 @@
 <h4 id="return-value_1">Return value</h4>
 <p>The dot product of the two vectors</p>
 <hr />
-<h3 id="fromanglexyangle">fromAngleXY(angle)</h3>
+<h3 id="fromanglexyangle-double">fromAngleXY(angle: double)</h3>
 <p>Creates a <code>Vector3D</code> from an angle in radians,</p>
 <h4 id="parameters_4">Parameters</h4>
 <ul>
@@ -347,7 +336,7 @@
 <h4 id="return-value_2">Return value</h4>
 <p>Vector as <code>Vector3D</code></p>
 <hr />
-<h3 id="fromanglexyradangle">fromAngleXYRad(angle)</h3>
+<h3 id="fromanglexyradangle-double">fromAngleXYRad(angle: double)</h3>
 <p>Creates a <code>Vector3D</code> from an angle in radians</p>
 <h4 id="parameters_5">Parameters</h4>
 <ul>
@@ -356,7 +345,7 @@
 <h4 id="return-value_3">Return value</h4>
 <p>Vector as <code>Vector3D</code></p>
 <hr />
-<h3 id="fromanglexyzanglexy-anglez">fromAngleXYZ(anglexy, anglez)</h3>
+<h3 id="fromanglexyzanglexy-double-anglez-double">fromAngleXYZ(anglexy: double, anglez: double)</h3>
 <p>Creates a <code>Vector3D</code> from two angles in degrees</p>
 <h4 id="parameters_6">Parameters</h4>
 <ul>
@@ -366,7 +355,7 @@
 <h4 id="return-value_4">Return value</h4>
 <p>Vector as <code>Vector3D</code></p>
 <hr />
-<h3 id="fromanglexyzradanglexy-anglez">fromAngleXYZRad(anglexy, anglez)</h3>
+<h3 id="fromanglexyzradanglexy-double-anglez-double">fromAngleXYZRad(anglexy: double, anglez: double)</h3>
 <p>Creates a <code>Vector3D</code> from two angles in radians</p>
 <h4 id="parameters_7">Parameters</h4>
 <ul>
@@ -376,7 +365,7 @@
 <h4 id="return-value_5">Return value</h4>
 <p>Vector as <code>Vector3D</code></p>
 <hr />
-<h3 id="reflectv-m">reflect(v, m)</h3>
+<h3 id="reflectv-object-m-object">reflect(v: object, m: object)</h3>
 <p>Reflects a <code>Vector3D</code> over a mirror <code>Vector3D</code>.</p>
 <h4 id="parameters_8">Parameters</h4>
 <ul>
@@ -386,7 +375,7 @@
 <h4 id="return-value_6">Return value</h4>
 <p>The reflected vector as <code>Vector3D</code></p>
 <hr />
-<h3 id="reversedv">reversed(v)</h3>
+<h3 id="reversedv-object">reversed(v: object)</h3>
 <p>Returns a reversed <code>Vector3D</code>.</p>
 <h4 id="parameters_9">Parameters</h4>
 <ul>
@@ -441,7 +430,7 @@
 <h4 id="return-value_14">Return value</h4>
 <p>The normal as <code>Vector3D</code></p>
 <hr />
-<h3 id="getscaledscale">getScaled(scale)</h3>
+<h3 id="getscaledscale-double">getScaled(scale: double)</h3>
 <p>Return the scaled <code>Vector3D</code>.</p>
 <h4 id="parameters_10">Parameters</h4>
 <ul>
@@ -461,29 +450,21 @@
 <p><code>true</code> if <code>Vector3D</code> is normalized, otherwise <code>false</code></p>
               
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Vector2D/" class="btn btn-neutral float-left" title="Vector2D"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../Vertex/" class="btn btn-neutral float-right" title="Vertex">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Vector2D/" class="btn btn-neutral" title="Vector2D"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -491,18 +472,19 @@
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Vector2D/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Vertex/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Vector2D/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Vertex/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>

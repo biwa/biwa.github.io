@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>BlockMap - UDBScript</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "BlockMap";
+        var mkdocs_page_input_path = "BlockMap.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> UDBScript
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">UDBScript</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BlockEntry/">BlockEntry</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">BlockMap</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#constructors">Constructors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#blockmap_1">BlockMap()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#blockmaplines-bool-things-bool-sectors-bool-vertices-bool">BlockMap(lines: bool, things: bool, sectors: bool, vertices: bool)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#getblockatpos-object">getBlockAt(pos: object)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getlineblocksv1-object-v2-object">getLineBlocks(v1: object, v2: object)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_1">Return value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getrectangleblocksx-int-y-int-width-int-height-int">getRectangleBlocks(x: int, y: int, width: int, height: int)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#return-value_2">Return value</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BlockMapQueryResult/">BlockMapQueryResult</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Map/">Map</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Plane/">Plane</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Built-in libraries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UDBScript</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>API &raquo;</li>
+      <li>BlockMap</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="blockmap">BlockMap</h1>
+<p>A blockmap is used to retrieve a collection of localized map elements (things, linedefs, sectors, vertices). It can help to significantly speed up costly computations that would otherwise be applied to a large portion of the map elements. The blockmap divides the map into rectangular blocks and computes which map elements are fully or partially in each block. Then you can query the blockmap about only some of those blocks, and perform any further actions only on the map elements that are in those blocks.</p>
+<p>If you for example wanted to find out which sector is at the (0, 0) position you could write something like this without using a blockmap:</p>
+<pre><code class="language-js">UDB.Map.getSectors().findIndex((s, i) =&gt; {
+    if(s.intersect([ 0, 0 ]))
+    {
+        UDB.log(`Found ${s} after ${i} tries.`)
+        return true;
+    }
+});
+</code></pre>
+<p>This loops through all sectors of the map and uses the <code>intersect</code> method to test if the point is inside the sector. While <code>intersect</code> is quite fast on its own, doing it potentially thousands of times adds up quickly, especially if you have to loop through all sectors multiple times.
+A pretty extreme example for this is the map Bastion of Chaos. The map contains nearly 32500 sectors, and the sector at (0, 0) is number 25499. That means that the above script has to run <code>intersect</code> on 25499 sectors, even on those that are not remotely near the (0, 0) position.</p>
+<p>Using a blockmap the code could look like this:</p>
+<pre><code class="language-js">const blockmap = new UDB.BlockMap();
+
+blockmap.getBlockAt([ 0, 0 ]).getSectors().findIndex((s, i) =&gt; {
+    if (s.intersect([0, 0]))
+    {
+        UDB.log(`Found ${s} after ${i} tries.`)
+        return true;
+    }
+});
+</code></pre>
+<p>As you can see the code is quite similar, the difference being that a blockmap is created, and <code>UDB.Map</code> is replaced by <code>blockmap.getBlockAt([ 0, 0 ])</code>, the latter only getting a single block from the blockmap, that only contains the map elements that are in this block. Taking Bastion of Chaos as an example again, this code finds the sector after only 20 checks, instead of the 25499 checks in the first code example.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Creating a blockmap has a small overhead, since it has to compute which map elements are in which blocks. This overhead, however, is quickly compensated by the time saved by not looping through irrelevant map elements. You can decrease this overhead by using a <code>BlockMap</code> constructor that only adds certain map element types to the blockmap.</p>
+</div>
+<h2 id="constructors">Constructors</h2>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 5</span></p>
+<h3 id="blockmap_1">BlockMap()</h3>
+<p>Creates a blockmap that includes linedefs, things, sectors, and vertices.</p>
+<pre><code class="language-js">// Create a blockmap that includes all linedefs, things, sectors, and vertices
+const blockmap = new UDB.BlockMap();
+</code></pre>
+<hr />
+<h3 id="blockmaplines-bool-things-bool-sectors-bool-vertices-bool">BlockMap(lines: bool, things: bool, sectors: bool, vertices: bool)</h3>
+<p>Creates a blockmap that only includes certain map element types.</p>
+<pre><code class="language-js">// Create a blockmap that only includes sectors
+const blockmap = new UDB.BlockMap(false, false, true, false);
+</code></pre>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li>lines: If linedefs should be added or not</li>
+<li>things: If thigs should be added or not</li>
+<li>sectors: If sectors should be added or not</li>
+<li>vertices: If vertices should be added or not</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 5</span></p>
+<h3 id="getblockatpos-object">getBlockAt(pos: object)</h3>
+<p>Gets the <code>BlockEntry</code> at a point. The given point can be a <code>Vector2D</code> or an <code>Array</code> of two numbers.</p>
+<pre><code class="language-js">const blockmap = new UDB.BlockMap();
+const blockentry = blockmap.getBlockAt([ 64, 128 ]);
+</code></pre>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li>pos: The point to get the <code>BlockEntry</code> of</li>
+</ul>
+<h4 id="return-value">Return value</h4>
+<p>The <code>BlockEntry</code> on the given point</p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 5</span></p>
+<h3 id="getlineblocksv1-object-v2-object">getLineBlocks(v1: object, v2: object)</h3>
+<p>Gets a <code>BlockMapQueryResult</code> for the blockmap along a line between two points. The given points can be <code>Vector2D</code>s or an <code>Array</code>s of two numbers.</p>
+<pre><code class="language-js">const blockmap = new UDB.BlockMap();
+const result = blockmap.getLineBlocks([ 0, 0 ], [ 512, 256 ]);
+</code></pre>
+<h4 id="parameters_2">Parameters</h4>
+<ul>
+<li>v1: The first point</li>
+<li>v2: The second point</li>
+</ul>
+<h4 id="return-value_1">Return value</h4>
+<p>The <code>BlockMapQueryResult</code> for the line between the two points</p>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 5</span></p>
+<h3 id="getrectangleblocksx-int-y-int-width-int-height-int">getRectangleBlocks(x: int, y: int, width: int, height: int)</h3>
+<p>Gets a <code>BlockMapQueryResult</code> for the blockmap in a rectangle.</p>
+<pre><code class="language-js">const blockmap = new UDB.BlockMap();
+const result = blockmap.getRectangleBlocks(0, 0, 512, 256);
+</code></pre>
+<h4 id="parameters_3">Parameters</h4>
+<ul>
+<li>x: X position of the top-left corner of the rectangle</li>
+<li>y: Y position of the top-left corner of the rectangle</li>
+<li>width: Width of the rectangle</li>
+<li>height: Height of the rectangle</li>
+</ul>
+<h4 id="return-value_2">Return value</h4>
+<p><em>missing</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../BlockEntry/" class="btn btn-neutral float-left" title="BlockEntry"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../BlockMapQueryResult/" class="btn btn-neutral float-right" title="BlockMapQueryResult">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../BlockEntry/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../BlockMapQueryResult/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

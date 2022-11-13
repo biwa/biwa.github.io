@@ -1,76 +1,75 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Map - UDBScript</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Map";
-    var mkdocs_page_input_path = "Map.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Map - UDBScript</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Map";
+        var mkdocs_page_input_path = "Map.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> UDBScript</a>
-        <div role="search">
+          <a href=".." class="icon icon-home"> UDBScript
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">UDBScript</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Map</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">UDBScript</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../gettingstarted/">Getting started</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../changes/">Changes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Angle2D/">Angle2D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BlockEntry/">BlockEntry</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BlockMap/">BlockMap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../BlockMapQueryResult/">BlockMapQueryResult</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Data/">Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../GameConfiguration/">GameConfiguration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ImageInfo/">ImageInfo</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Line2D/">Line2D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Linedef/">Linedef</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Map</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
         <ul>
@@ -88,7 +87,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#clearallmarksmarkfalse">clearAllMarks(mark=false)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#clearallmarksmark-bool">clearAllMarks(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
     </li>
@@ -96,31 +95,31 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#clearallselected">clearAllSelected()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#clearmarkelinedefsmarkfalse">clearMarkeLinedefs(mark=false)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkelinedefsmark-bool">clearMarkeLinedefs(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#clearmarkesectorsmark-false">clearMarkeSectors(mark = false)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkesectorsmark-bool">clearMarkeSectors(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#clearmarkesidedefsmark-false">clearMarkeSidedefs(mark = false)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkesidedefsmark-bool">clearMarkeSidedefs(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#clearmarkedthingsmarkfalse">clearMarkedThings(mark=false)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkedthingsmark-bool">clearMarkedThings(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#clearmarkedverticesmarkfalse">clearMarkedVertices(mark=false)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#clearmarkedverticesmark-bool">clearMarkedVertices(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
     </li>
@@ -132,7 +131,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#clearselectedvertices">clearSelectedVertices()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#createthingpos-type0">createThing(pos, type=0)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#createthingpos-object-type-int">createThing(pos: object, type: int)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
     </li>
@@ -140,7 +139,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#createvertexpos">createVertex(pos)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#createvertexpos-object">createVertex(pos: object)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
     </li>
@@ -148,7 +147,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#drawlinesdata">drawLines(data)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#drawlinesdata-object">drawLines(data: object)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
     </li>
@@ -186,7 +185,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getmarkedlinedefsmark-true">getMarkedLinedefs(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedlinedefsmark-bool">getMarkedLinedefs(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
     </li>
@@ -194,7 +193,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getmarkedsectorsmark-true">getMarkedSectors(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedsectorsmark-bool">getMarkedSectors(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
     </li>
@@ -202,7 +201,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getmarkedsidedefsmark-true">getMarkedSidedefs(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedsidedefsmark-bool">getMarkedSidedefs(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_11">Parameters</a>
     </li>
@@ -210,7 +209,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getmarkedthingsmark-true">getMarkedThings(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedthingsmark-bool">getMarkedThings(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_12">Parameters</a>
     </li>
@@ -218,7 +217,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getmarkedverticesmarktrue">getMarkedVertices(mark=true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getmarkedverticesmark-bool">getMarkedVertices(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_13">Parameters</a>
     </li>
@@ -226,7 +225,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getmultiplenewtagscount">getMultipleNewTags(count)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getmultiplenewtagscount-int">getMultipleNewTags(count: int)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_14">Parameters</a>
     </li>
@@ -234,7 +233,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getnewtagusedtags-null">getNewTag(usedtags = null)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getnewtagusedtags-int">getNewTag(usedtags: int[])</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_15">Parameters</a>
     </li>
@@ -248,7 +247,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getselectedlinedefsselected-true">getSelectedLinedefs(selected = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getselectedlinedefsselected-bool">getSelectedLinedefs(selected: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_16">Parameters</a>
     </li>
@@ -280,7 +279,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getselectedsectorsselected-true">getSelectedSectors(selected = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getselectedsectorsselected-bool">getSelectedSectors(selected: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_17">Parameters</a>
     </li>
@@ -288,7 +287,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getselectedthingsselected-true">getSelectedThings(selected = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getselectedthingsselected-bool">getSelectedThings(selected: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_18">Parameters</a>
     </li>
@@ -296,7 +295,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getselectedverticesselectedtrue">getSelectedVertices(selected=true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getselectedverticesselected-bool">getSelectedVertices(selected: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_19">Parameters</a>
     </li>
@@ -310,7 +309,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#getsidedefsfromselectedlinedefsselected-true">getSidedefsFromSelectedLinedefs(selected = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#getsidedefsfromselectedlinedefsselected-bool">getSidedefsFromSelectedLinedefs(selected: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_20">Parameters</a>
     </li>
@@ -348,43 +347,43 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#invertmarkedvertices">invertMarkedVertices()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#joinsectorssectors">joinSectors(sectors)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#joinsectorssectors-sector">joinSectors(sectors: Sector[])</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_21">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#markselectedlinedefsmark-true">markSelectedLinedefs(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedlinedefsmark-bool">markSelectedLinedefs(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_22">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#markselectedsectorsmark-true">markSelectedSectors(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedsectorsmark-bool">markSelectedSectors(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_23">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#markselectedthingsmark-true">markSelectedThings(mark = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedthingsmark-bool">markSelectedThings(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_24">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#markselectedverticesmarktrue">markSelectedVertices(mark=true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#markselectedverticesmark-bool">markSelectedVertices(mark: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_25">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mergesectorssectors">mergeSectors(sectors)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#mergesectorssectors-sector">mergeSectors(sectors: Sector[])</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_26">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#nearestlinedefpos-maxrange-doublenan">nearestLinedef(pos, maxrange = double.NaN)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestlinedefpos-object-maxrange-double">nearestLinedef(pos: object, maxrange: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_27">Parameters</a>
     </li>
@@ -392,7 +391,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#nearestsidedefpos">nearestSidedef(pos)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestsidedefpos-object">nearestSidedef(pos: object)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_28">Parameters</a>
     </li>
@@ -400,7 +399,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#nearestthingpos-maxrange-doublenan">nearestThing(pos, maxrange = double.NaN)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestthingpos-object-maxrange-double">nearestThing(pos: object, maxrange: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_29">Parameters</a>
     </li>
@@ -408,7 +407,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#nearestvertexpos-maxrange-doublenan">nearestVertex(pos, maxrange = double.NaN)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nearestvertexpos-object-maxrange-double">nearestVertex(pos: object, maxrange: double)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_30">Parameters</a>
     </li>
@@ -416,13 +415,13 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#snapalltoaccuracyusepreciseposition-true">snapAllToAccuracy(usepreciseposition = true)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#snapalltoaccuracyusepreciseposition-bool">snapAllToAccuracy(usepreciseposition: bool)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_31">Parameters</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#snappedtogridpos">snappedToGrid(pos)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#snappedtogridpos-object">snappedToGrid(pos: object)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_32">Parameters</a>
     </li>
@@ -430,7 +429,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#stitchgeometrymergemode-mergegeometrymodeclassic">stitchGeometry(mergemode = MergeGeometryMode.CLASSIC)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#stitchgeometrymergemode-mergegeometrymode">stitchGeometry(mergemode: MergeGeometryMode)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#parameters_33">Parameters</a>
     </li>
@@ -440,67 +439,67 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enums">Enums</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mergegeometrymode">MergeGeometryMode</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#options">Options</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
     </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Built-in libraries</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
-                    </li>
-                </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Plane/">Plane</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../QueryOptions/">QueryOptions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sector/">Sector</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Sidedef/">Sidedef</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Thing/">Thing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../UDB/">UDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Vector2D/">Vector2D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Vector3D/">Vector3D</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Vertex/">Vertex</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../VisualCamera/">VisualCamera</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Built-in libraries</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Pen/">Pen</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">UDBScript</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">UDBScript</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>API &raquo;</li>
-        
-      
-    
-    <li>Map</li>
+      <li>Map</li>
     <li class="wy-breadcrumbs-aside">
-      
     </li>
   </ul>
-  
   <hr/>
 </div>
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <h1 id="map">Map</h1>
 <h2 id="properties">Properties</h2>
@@ -521,7 +520,7 @@
 <p>The map coordinates of the mouse position as a <code>Vector2D</code>. Read-only.</p>
 <h2 id="methods">Methods</h2>
 <hr />
-<h3 id="clearallmarksmarkfalse">clearAllMarks(mark=false)</h3>
+<h3 id="clearallmarksmark-bool">clearAllMarks(mark: bool)</h3>
 <p>Sets the <code>marked</code> property of all map elements. Can be passed <code>true</code> to mark all map elements.</p>
 <h4 id="parameters">Parameters</h4>
 <ul>
@@ -531,35 +530,35 @@
 <h3 id="clearallselected">clearAllSelected()</h3>
 <p>Clears all selected map elements.</p>
 <hr />
-<h3 id="clearmarkelinedefsmarkfalse">clearMarkeLinedefs(mark=false)</h3>
+<h3 id="clearmarkelinedefsmark-bool">clearMarkeLinedefs(mark: bool)</h3>
 <p>Sets the <code>marked</code> property of all <code>Linedef</code>s. Can be passed <code>true</code> to mark all <code>Linedef</code>s.</p>
 <h4 id="parameters_1">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
 <hr />
-<h3 id="clearmarkesectorsmark-false">clearMarkeSectors(mark = false)</h3>
+<h3 id="clearmarkesectorsmark-bool">clearMarkeSectors(mark: bool)</h3>
 <p>Sets the <code>marked</code> property of all <code>Sector</code>s. Can be passed <code>true</code> to mark all <code>Sector</code>s.</p>
 <h4 id="parameters_2">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
 <hr />
-<h3 id="clearmarkesidedefsmark-false">clearMarkeSidedefs(mark = false)</h3>
+<h3 id="clearmarkesidedefsmark-bool">clearMarkeSidedefs(mark: bool)</h3>
 <p>Sets the <code>marked</code> property of all <code>Sidedef</code>s. Can be passed <code>true</code> to mark all <code>Sidedef</code>s.</p>
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
 <hr />
-<h3 id="clearmarkedthingsmarkfalse">clearMarkedThings(mark=false)</h3>
+<h3 id="clearmarkedthingsmark-bool">clearMarkedThings(mark: bool)</h3>
 <p>Sets the <code>marked</code> property of all <code>Thing</code>s. Can be passed <code>true</code> to mark all <code>Thing</code>s.</p>
 <h4 id="parameters_4">Parameters</h4>
 <ul>
 <li>mark: <code>false</code> to set the <code>marked</code> property to <code>false</code> (default), <code>true</code> to set the <code>marked</code> property to <code>true</code></li>
 </ul>
 <hr />
-<h3 id="clearmarkedverticesmarkfalse">clearMarkedVertices(mark=false)</h3>
+<h3 id="clearmarkedverticesmark-bool">clearMarkedVertices(mark: bool)</h3>
 <p>Sets the <code>marked</code> property of all vertices. Can be passed <code>true</code> to mark all vertices.</p>
 <h4 id="parameters_5">Parameters</h4>
 <ul>
@@ -575,7 +574,7 @@
 <h3 id="clearselectedvertices">clearSelectedVertices()</h3>
 <p>Clears all selected vertices.</p>
 <hr />
-<h3 id="createthingpos-type0">createThing(pos, type=0)</h3>
+<h3 id="createthingpos-object-type-int">createThing(pos: object, type: int)</h3>
 <p>Creates a new <code>Thing</code> at the given position. The position can be a <code>Vector2D</code>, <code>Vector3D</code>, or an <code>Array</code> of two numbers or three numbers (note that the z position only works for game configurations that support vertical pos. A thing type can be supplied optionally.</p>
 <pre><code class="language-js">var t1 = UDB.Map.createThing(new UDB.Vector2D(32, 64));
 var t2 = UDB.Map.createThing([ 32, 64 ]);
@@ -590,7 +589,7 @@ var t4 = UDB.Map.createThing([ 32, 64 ], 3001); // Create an Imp
 <h4 id="return-value">Return value</h4>
 <p>The new <code>Thing</code></p>
 <hr />
-<h3 id="createvertexpos">createVertex(pos)</h3>
+<h3 id="createvertexpos-object">createVertex(pos: object)</h3>
 <p>Creates a new <code>Vertex</code> at the given position. The position can be a <code>Vector2D</code> or an <code>Array</code> of two numbers.</p>
 <pre><code class="language-js">var v1 = UDB.Map.createVertex(new Vector2D(32, 64));
 var v2 = UDB.Map.createVertex([ 32, 64 ]);
@@ -602,7 +601,7 @@ var v2 = UDB.Map.createVertex([ 32, 64 ]);
 <h4 id="return-value_1">Return value</h4>
 <p>The created <code>Vertex</code></p>
 <hr />
-<h3 id="drawlinesdata">drawLines(data)</h3>
+<h3 id="drawlinesdata-object">drawLines(data: object)</h3>
 <p>Draws lines. Data has to be an <code>Array</code> of <code>Array</code> of numbers, <code>Vector2D</code>s, <code>Vector3D</code>s, or objects with x and y properties. Note that the first and last element have to be at the same positions to make a complete drawing.</p>
 <pre><code class="language-js">UDB.Map.drawLines([
     new UDB.Vector2D(64, 0),
@@ -652,7 +651,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_7">Return value</h4>
 <p><code>Array</code> of <code>Linedef</code>s</p>
 <hr />
-<h3 id="getmarkedlinedefsmark-true">getMarkedLinedefs(mark = true)</h3>
+<h3 id="getmarkedlinedefsmark-bool">getMarkedLinedefs(mark: bool)</h3>
 <p>Gets all marked (default) or unmarked <code>Linedef</code>s.</p>
 <h4 id="parameters_9">Parameters</h4>
 <ul>
@@ -661,7 +660,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_8">Return value</h4>
 <p><em>missing</em></p>
 <hr />
-<h3 id="getmarkedsectorsmark-true">getMarkedSectors(mark = true)</h3>
+<h3 id="getmarkedsectorsmark-bool">getMarkedSectors(mark: bool)</h3>
 <p>Gets all marked (default) or unmarked <code>Sector</code>s.</p>
 <h4 id="parameters_10">Parameters</h4>
 <ul>
@@ -670,7 +669,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_9">Return value</h4>
 <p><em>missing</em></p>
 <hr />
-<h3 id="getmarkedsidedefsmark-true">getMarkedSidedefs(mark = true)</h3>
+<h3 id="getmarkedsidedefsmark-bool">getMarkedSidedefs(mark: bool)</h3>
 <p>Gets all marked (default) or unmarked <code>Sidedef</code>s.</p>
 <h4 id="parameters_11">Parameters</h4>
 <ul>
@@ -679,7 +678,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_10">Return value</h4>
 <p><em>missing</em></p>
 <hr />
-<h3 id="getmarkedthingsmark-true">getMarkedThings(mark = true)</h3>
+<h3 id="getmarkedthingsmark-bool">getMarkedThings(mark: bool)</h3>
 <p>Gets all marked (default) or unmarked <code>Thing</code>s.</p>
 <h4 id="parameters_12">Parameters</h4>
 <ul>
@@ -688,7 +687,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_11">Return value</h4>
 <p><em>missing</em></p>
 <hr />
-<h3 id="getmarkedverticesmarktrue">getMarkedVertices(mark=true)</h3>
+<h3 id="getmarkedverticesmark-bool">getMarkedVertices(mark: bool)</h3>
 <p>Gets all marked (default) or unmarked vertices.</p>
 <h4 id="parameters_13">Parameters</h4>
 <ul>
@@ -697,7 +696,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_12">Return value</h4>
 <p><em>missing</em></p>
 <hr />
-<h3 id="getmultiplenewtagscount">getMultipleNewTags(count)</h3>
+<h3 id="getmultiplenewtagscount-int">getMultipleNewTags(count: int)</h3>
 <p>Gets multiple new tags.</p>
 <h4 id="parameters_14">Parameters</h4>
 <ul>
@@ -706,7 +705,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_13">Return value</h4>
 <p><code>Array</code> of the new tags</p>
 <hr />
-<h3 id="getnewtagusedtags-null">getNewTag(usedtags = null)</h3>
+<h3 id="getnewtagusedtags-int">getNewTag(usedtags: int[])</h3>
 <p>Gets a new tag.</p>
 <h4 id="parameters_15">Parameters</h4>
 <ul>
@@ -720,7 +719,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_15">Return value</h4>
 <p><code>Array</code> of <code>Sector</code>s</p>
 <hr />
-<h3 id="getselectedlinedefsselected-true">getSelectedLinedefs(selected = true)</h3>
+<h3 id="getselectedlinedefsselected-bool">getSelectedLinedefs(selected: bool)</h3>
 <p>Gets all selected (default) or unselected <code>Linedef</code>s.</p>
 <h4 id="parameters_16">Parameters</h4>
 <ul>
@@ -749,7 +748,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_20">Return value</h4>
 <p><code>Array</code> of <code>Vertex</code></p>
 <hr />
-<h3 id="getselectedsectorsselected-true">getSelectedSectors(selected = true)</h3>
+<h3 id="getselectedsectorsselected-bool">getSelectedSectors(selected: bool)</h3>
 <p>Gets all selected (default) or unselected <code>Sector</code>s.</p>
 <h4 id="parameters_17">Parameters</h4>
 <ul>
@@ -758,7 +757,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_21">Return value</h4>
 <p><code>Array</code> of <code>Sector</code>s</p>
 <hr />
-<h3 id="getselectedthingsselected-true">getSelectedThings(selected = true)</h3>
+<h3 id="getselectedthingsselected-bool">getSelectedThings(selected: bool)</h3>
 <p>Gets all selected (default) or unselected <code>Thing</code>s.</p>
 <h4 id="parameters_18">Parameters</h4>
 <ul>
@@ -767,7 +766,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_22">Return value</h4>
 <p><code>Array</code> of <code>Thing</code>s</p>
 <hr />
-<h3 id="getselectedverticesselectedtrue">getSelectedVertices(selected=true)</h3>
+<h3 id="getselectedverticesselected-bool">getSelectedVertices(selected: bool)</h3>
 <p>Gets all selected (default) or unselected vertices.</p>
 <h4 id="parameters_19">Parameters</h4>
 <ul>
@@ -781,7 +780,7 @@ UDB.Map.drawLines([
 <h4 id="return-value_24">Return value</h4>
 <p><code>Array</code> of <code>Sidedef</code>s</p>
 <hr />
-<h3 id="getsidedefsfromselectedlinedefsselected-true">getSidedefsFromSelectedLinedefs(selected = true)</h3>
+<h3 id="getsidedefsfromselectedlinedefsselected-bool">getSidedefsFromSelectedLinedefs(selected: bool)</h3>
 <p>Gets all <code>Sidedef</code>s from the selected <code>Linedef</code>s.
 In classic modes this will return both sidedefs of 2-sided lines, in visual mode it will only return the actually selected <code>Sidedef</code>.</p>
 <h4 id="parameters_20">Parameters</h4>
@@ -826,49 +825,49 @@ In classic modes this will return both sidedefs of 2-sided lines, in visual mode
 <h3 id="invertmarkedvertices">invertMarkedVertices()</h3>
 <p>Inverts the <code>marked</code> property of all vertices.</p>
 <hr />
-<h3 id="joinsectorssectors">joinSectors(sectors)</h3>
+<h3 id="joinsectorssectors-sector">joinSectors(sectors: Sector[])</h3>
 <p>Joins <code>Sector</code>s, keeping lines shared by the <code>Sector</code>s. All <code>Sector</code>s will be joined with the first <code>Sector</code> in the array.</p>
 <h4 id="parameters_21">Parameters</h4>
 <ul>
 <li>sectors: <code>Array</code> of <code>Sector</code>s</li>
 </ul>
 <hr />
-<h3 id="markselectedlinedefsmark-true">markSelectedLinedefs(mark = true)</h3>
+<h3 id="markselectedlinedefsmark-bool">markSelectedLinedefs(mark: bool)</h3>
 <p>Marks (default) or unmarks all selected <code>Linedef</code>s.</p>
 <h4 id="parameters_22">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Linedef</code>s (default), <code>false</code> to unmark</li>
 </ul>
 <hr />
-<h3 id="markselectedsectorsmark-true">markSelectedSectors(mark = true)</h3>
+<h3 id="markselectedsectorsmark-bool">markSelectedSectors(mark: bool)</h3>
 <p>Marks (default) or unmarks all selected <code>Sector</code>s.</p>
 <h4 id="parameters_23">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Sector</code>s (default), <code>false</code> to unmark</li>
 </ul>
 <hr />
-<h3 id="markselectedthingsmark-true">markSelectedThings(mark = true)</h3>
+<h3 id="markselectedthingsmark-bool">markSelectedThings(mark: bool)</h3>
 <p>Marks (default) or unmarks all selected <code>Thing</code>s.</p>
 <h4 id="parameters_24">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected <code>Thing</code>s (default), <code>false</code> to unmark</li>
 </ul>
 <hr />
-<h3 id="markselectedverticesmarktrue">markSelectedVertices(mark=true)</h3>
+<h3 id="markselectedverticesmark-bool">markSelectedVertices(mark: bool)</h3>
 <p>Marks (default) or unmarks all selected vertices.</p>
 <h4 id="parameters_25">Parameters</h4>
 <ul>
 <li>mark: <code>true</code> to mark all selected vertices (default), <code>false</code> to unmark</li>
 </ul>
 <hr />
-<h3 id="mergesectorssectors">mergeSectors(sectors)</h3>
+<h3 id="mergesectorssectors-sector">mergeSectors(sectors: Sector[])</h3>
 <p>Merges <code>Sector</code>s, deleting lines shared by the <code>Sector</code>s. All <code>Sector</code>s will be merged into the first <code>Sector</code> in the array.</p>
 <h4 id="parameters_26">Parameters</h4>
 <ul>
 <li>sectors: <code>Array</code> of <code>Sector</code>s</li>
 </ul>
 <hr />
-<h3 id="nearestlinedefpos-maxrange-doublenan">nearestLinedef(pos, maxrange = double.NaN)</h3>
+<h3 id="nearestlinedefpos-object-maxrange-double">nearestLinedef(pos: object, maxrange: double)</h3>
 <p>Gets the <code>Linedef</code> that's nearest to the specified position.</p>
 <h4 id="parameters_27">Parameters</h4>
 <ul>
@@ -878,7 +877,7 @@ In classic modes this will return both sidedefs of 2-sided lines, in visual mode
 <h4 id="return-value_29">Return value</h4>
 <p>Nearest <code>Linedef</code></p>
 <hr />
-<h3 id="nearestsidedefpos">nearestSidedef(pos)</h3>
+<h3 id="nearestsidedefpos-object">nearestSidedef(pos: object)</h3>
 <p>Gets the <code>Sidedef</code> that's nearest to the specified position.</p>
 <h4 id="parameters_28">Parameters</h4>
 <ul>
@@ -888,7 +887,7 @@ In classic modes this will return both sidedefs of 2-sided lines, in visual mode
 <h4 id="return-value_30">Return value</h4>
 <p>Nearest <code>Sidedef</code></p>
 <hr />
-<h3 id="nearestthingpos-maxrange-doublenan">nearestThing(pos, maxrange = double.NaN)</h3>
+<h3 id="nearestthingpos-object-maxrange-double">nearestThing(pos: object, maxrange: double)</h3>
 <p>Gets the <code>Thing</code> that's nearest to the specified position.</p>
 <h4 id="parameters_29">Parameters</h4>
 <ul>
@@ -898,7 +897,7 @@ In classic modes this will return both sidedefs of 2-sided lines, in visual mode
 <h4 id="return-value_31">Return value</h4>
 <p>Nearest <code>Linedef</code></p>
 <hr />
-<h3 id="nearestvertexpos-maxrange-doublenan">nearestVertex(pos, maxrange = double.NaN)</h3>
+<h3 id="nearestvertexpos-object-maxrange-double">nearestVertex(pos: object, maxrange: double)</h3>
 <p>Gets the <code>Vertex</code> that's nearest to the specified position.</p>
 <h4 id="parameters_30">Parameters</h4>
 <ul>
@@ -908,14 +907,14 @@ In classic modes this will return both sidedefs of 2-sided lines, in visual mode
 <h4 id="return-value_32">Return value</h4>
 <p>Nearest <code>Vertex</code></p>
 <hr />
-<h3 id="snapalltoaccuracyusepreciseposition-true">snapAllToAccuracy(usepreciseposition = true)</h3>
+<h3 id="snapalltoaccuracyusepreciseposition-bool">snapAllToAccuracy(usepreciseposition: bool)</h3>
 <p>Snaps all vertices and things to the map format accuracy. Call this to ensure the vertices and things are at valid coordinates.</p>
 <h4 id="parameters_31">Parameters</h4>
 <ul>
 <li>usepreciseposition: <code>true</code> if decimal places defined by the map format should be used, <code>false</code> if no decimal places should be used</li>
 </ul>
 <hr />
-<h3 id="snappedtogridpos">snappedToGrid(pos)</h3>
+<h3 id="snappedtogridpos-object">snappedToGrid(pos: object)</h3>
 <p>Returns the given point snapped to the current grid.</p>
 <h4 id="parameters_32">Parameters</h4>
 <ul>
@@ -924,39 +923,44 @@ In classic modes this will return both sidedefs of 2-sided lines, in visual mode
 <h4 id="return-value_33">Return value</h4>
 <p>Snapped position as <code>Vector2D</code></p>
 <hr />
-<h3 id="stitchgeometrymergemode-mergegeometrymodeclassic">stitchGeometry(mergemode = MergeGeometryMode.CLASSIC)</h3>
+<h3 id="stitchgeometrymergemode-mergegeometrymode">stitchGeometry(mergemode: MergeGeometryMode)</h3>
 <p>Stitches marked geometry with non-marked geometry.</p>
 <h4 id="parameters_33">Parameters</h4>
 <ul>
-<li>mergemode: Mode to merge by</li>
+<li>mergemode: Mode to merge by as <code>MergeGeometryMode</code></li>
 </ul>
 <h4 id="return-value_34">Return value</h4>
 <p><code>true</code> if successful, <code>false</code> if failed</p>
+<h2 id="enums">Enums</h2>
+<hr />
+<p><span style="float:right;font-weight:normal;font-size:66%">Version: 5</span></p>
+<h3 id="mergegeometrymode">MergeGeometryMode</h3>
+<p>How geometry should be merged when geometry is stitched.</p>
+<pre><code class="language-js">UDB.Map.stitchGeometry(UDB.Map.MergeometryMode.MERGE);
+</code></pre>
+<h4 id="options">Options</h4>
+<ul>
+<li>CLASSIC: Merge vertices only</li>
+<li>MERGE: Merge vertices and lines</li>
+<li>REPLACE: Merge vertices and lines, replacing sector geometry</li>
+</ul>
               
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../QueryOptions/" class="btn btn-neutral float-right" title="QueryOptions">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Linedef/" class="btn btn-neutral" title="Linedef"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Linedef/" class="btn btn-neutral float-left" title="Linedef"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Plane/" class="btn btn-neutral float-right" title="Plane">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -964,18 +968,19 @@ In classic modes this will return both sidedefs of 2-sided lines, in visual mode
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Linedef/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../QueryOptions/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Linedef/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Plane/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
